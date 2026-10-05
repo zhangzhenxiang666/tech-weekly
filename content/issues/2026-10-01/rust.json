@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "column": "rust",
+  "date": "2026-10-01",
+  "title": "Rust 热点周报：一周进展，一眼抓住",
+  "summary": "首期预览收录语言与编译、Web 与异步、工具与生态的 7 条进展，保留发布状态、统计口径与后端开发者行动清单。",
+  "coverage": "2026-09-24—2026-10-01；原文检索日期以 America/Phoenix 标记",
+  "provenance": "2026-10-01 原始 HTML 周报完整归档；导览不替代原文。",
+  "highlights": [
+    "从 Rust 版本变化，到 Tokio 与 Topcoat，按开发者影响组织本期阅读。",
+    "正式发布、实验预览、主干合并与提案分别标注；编译器双月统计不冒充本周数据。",
+    "原文包含主题筛选、编译器图表、时间线、可勾选行动清单及 7 份参考来源。"
+  ],
+  "original": {
+    "path": "rust-weekly-2026-10-01.html",
+    "sha256": "28099269bf040bc64eec752253744e30cfad1cea8a55a5ef2d05414501e49512"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Rust 官方发布公告",
+      "url": "https://blog.rust-lang.org/2026/10/01/Rust-1.99.0/"
+    },
+    {
+      "id": "source-2",
+      "title": "Cloudflare 工程公告",
+      "url": "https://blog.cloudflare.com/rust-workers-emscripten-target/"
+    },
+    {
+      "id": "source-3",
+      "title": "Tokio 官方博客",
+      "url": "https://tokio.rs/blog/2026-09-24-topcoat-server-applications"
+    },
+    {
+      "id": "source-4",
+      "title": "编译器贡献者原始回顾",
+      "url": "https://nnethercote.github.io/2026/09/30/how-to-speed-up-the-rust-compiler-in-september-2026.html"
+    },
+    {
+      "id": "source-5",
+      "title": "rust-lang/cargo PR #17488",
+      "url": "https://github.com/rust-lang/cargo/pull/17488"
+    },
+    {
+      "id": "source-6",
+      "title": "rust-lang/rust PR #162976",
+      "url": "https://github.com/rust-lang/rust/pull/162976"
+    },
+    {
+      "id": "source-7",
+      "title": "Deser 作者原文",
+      "url": "https://lucumr.pocoo.org/2026/9/29/deser/"
+    }
+  ]
+}

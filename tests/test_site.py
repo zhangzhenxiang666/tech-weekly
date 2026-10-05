@@ -97,6 +97,15 @@ class SiteTests(unittest.TestCase):
         for value in [float('nan'),float('inf'),float('-inf')]:
             issue=self.fixture();issue['items'][0]['metadata']={'stars_delta':value}
             with self.assertRaises(ValidationError):validate_issue(issue,self.columns)
+    def test_home_displays_each_column_latest_date(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            out=Path(tmp)/'dist';builder=Builder(out=out);builder.build()
+            home=(out/'index.html').read_text()
+            for column in self.columns:
+                issues=[i for i in self.issues if i['column']==column]
+                if issues:
+                    latest=max(i['date'] for i in issues)
+                    self.assertIn(f'<time datetime="{latest}">{latest}</time>',home)
     def test_progressive_enhancement_selector(self):
         source=(ROOT/'static/site.js').read_text()
         self.assertIn("querySelector('input[data-search]')",source)
