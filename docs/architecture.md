@@ -18,7 +18,15 @@
 
 ## URL 与部署
 
-站点路径前缀集中在 `config/site.json`。首页 `/`，栏目 `/columns/<id>/`，期刊 `/issues/<date>/<id>/`，历史 `/archive/`，原件 `/originals/<filename>.html`。每期稳定链接不依赖最新排序。默认部署到项目 Pages 的 `/tech-weekly`，本地 `--base ''` 预览。
+站点路径前缀集中在 `config/site.json`。首页 `/`，栏目 `/columns/<id>/`，期刊 `/issues/<date>/<id>/`，历史 `/archive/`，全文阅读 `/originals/<filename>.html`，原始下载 `/downloads/originals/<filename>.html`。每期稳定链接不依赖最新排序。默认部署到项目 Pages 的 `/tech-weekly`，本地 `--base ''` 预览。
+
+## 完整周报的导航钩子
+
+`Builder.original(issue)` 是所有 HTML 周报共用的构建钩子。原有 `/originals/` 公开链接直接生成 `templates/reader.html`，头部从站点、栏目和本期 JSON 读取首页、栏目、本期导览、GitHub 仓库及真实期刊日期；新增一期自动使用，无须逐篇改 HTML。
+
+外壳将字节不变的原文放在带标题、可聚焦的 iframe 内，原文独立滚动，保留各自的 sticky 导航、进度条、筛选、主题、打印按钮和下载功能。站点样式及脚本不会进入原文 DOM。顶部下载链接明确指向原始 HTML；源文件及下载文件都使用相同期刊 SHA-256。iframe 是样式与 DOM 隔离，不是安全沙箱，仍只接受审查过的可信 HTML。
+
+`static/reader.js` 只渐进增强片段链接与键盘跳转：已有全文 `#片段` 会传给原文，原文片段变化反映到可分享的阅读 URL，不额外添加一条历史记录。无 JavaScript 时导航、下载及 iframe 正文仍可用。原文打印按钮在其自己的文档中工作。原文应为自包含 HTML，或使用绝对资源 URL，避免依赖原来的文件夹位置。
 
 构建是确定性的，不把构建时钟写入输出。已发布期刊和原始文件进入版本控制，构建产物 `dist/` 不入库。所有内容与模板都可本地重建，无框架、第三方字体、分析追踪或外部运行时依赖（原始周报可能有自己的外部资源）。
 

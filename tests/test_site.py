@@ -16,7 +16,7 @@ class Links(HTMLParser):
     def handle_starttag(self,tag,attrs):
         attrs=dict(attrs)
         if attrs.get('id'): self.ids.append(attrs['id'])
-        if tag in ('a','link','script'):
+        if tag in ('a','link','script','iframe'):
             for key in ('href','src'):
                 if attrs.get(key): self.links.append(attrs[key])
 
@@ -68,7 +68,7 @@ class SiteTests(unittest.TestCase):
             with tempfile.TemporaryDirectory() as tmp:
                 out=Path(tmp)/'dist';builder=Builder(base=base,out=out);builder.build()
                 for page in out.rglob('*.html'):
-                    if 'originals' in page.parts:continue
+                    if 'downloads' in page.relative_to(out).parts:continue
                     parser=Links();parser.feed(page.read_text())
                     self.assertEqual(len(parser.ids),len(set(parser.ids)),page)
                     for url in parser.links:
@@ -81,7 +81,43 @@ class SiteTests(unittest.TestCase):
                         self.assertTrue(target.is_file(),(page,url))
                 for issue in self.issues:
                     if issue.get('original'):
-                        self.assertEqual((out/'originals'/issue['original']['path']).read_bytes(),(ROOT/'content/originals'/issue['original']['path']).read_bytes())
+                        self.assertEqual((out/'downloads/originals'/issue['original']['path']).read_bytes(),(ROOT/'content/originals'/issue['original']['path']).read_bytes())
+    def test_original_reader_navigation_and_provenance(self):
+        for base in ['', '/tech-weekly']:
+            with tempfile.TemporaryDirectory() as tmp:
+                out=Path(tmp)/'dist';builder=Builder(base=base,out=out);builder.build()
+                for issue in self.issues:
+                    if not issue.get('original'):continue
+                    filename=issue['original']['path']
+                    content=(out/'originals'/filename).read_text()
+                    self.assertIn(f'href="{base}/"',content)
+                    self.assertIn(f'href="{base}/columns/{issue["column"]}/"',content)
+                    self.assertIn(f'href="{base}/{builder.route(issue)}"',content)
+                    self.assertIn(f'href="{self.site["repository"]}"',content)
+                    self.assertIn(f'<time datetime="{issue["date"]}">{issue["date"]}</time>',content)
+                    self.assertIn(f'src="{base}/downloads/originals/{filename}"',content)
+                    self.assertIn(f'download="{filename}"',content)
+                    self.assertIn('title="'+issue['title']+' · '+issue['date']+'（完整原文）"',content)
+                    self.assertIn('tabindex="0"',content)
+                    self.assertNotIn('<style>',content)
+                    self.assertNotIn('site.js',content)
+                    raw=(out/'downloads/originals'/filename).read_bytes()
+                    self.assertEqual(hashlib.sha256(raw).hexdigest(),issue['original']['sha256'])
+    def test_reader_escapes_editorial_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            builder=Builder(out=Path(tmp)/'dist')
+            issue=copy.deepcopy(next(i for i in self.issues if i.get('original')))
+            issue['title']='Report <test> "quoted"'
+            issue['summary']='Summary <tag> & details'
+            builder.original(issue)
+            content=(builder.out/'originals'/issue['original']['path']).read_text()
+            self.assertIn('Report &lt;test&gt; &quot;quoted&quot;',content)
+            self.assertIn('Summary &lt;tag&gt; &amp; details',content)
+            self.assertNotIn('<test>',content)
+    def test_reader_does_not_modify_original_sources(self):
+        sources={p:p.read_bytes() for p in (ROOT/'content/originals').glob('*.html')}
+        with tempfile.TemporaryDirectory() as tmp:Builder(out=Path(tmp)/'dist').build()
+        for path,original in sources.items():self.assertEqual(path.read_bytes(),original)
     def test_html_escaping(self):
         with tempfile.TemporaryDirectory() as tmp:
             builder=Builder(out=Path(tmp)/'dist');builder.out.mkdir();builder.issue(self.fixture())

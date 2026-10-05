@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$description">
+  <meta name="color-scheme" content="light">
+  <title>$title · $date · $site_title</title>
+  <link rel="icon" href="$base/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="$base/assets/reader.css">
+  <script src="$base/assets/reader.js" defer></script>
+</head>
+<body>
+  <a class="reader-skip" href="#reader-report">跳到周报正文</a>
+  <header class="reader-header">
+    <div class="reader-identity">
+      <a class="reader-home" href="$home" aria-label="返回$site_title首页"><span aria-hidden="true">←</span> $site_title</a>
+      <span class="reader-owner">$owner / TECH WEEKLY</span>
+    </div>
+    <nav class="reader-nav" aria-label="站点与本期导航">
+      <a href="$column_url">$column</a>
+      <a href="$issue_url">本期导览</a>
+      <a href="$repository" target="_blank" rel="noopener noreferrer">GitHub 仓库 <span aria-hidden="true">↗</span></a>
+    </nav>
+    <div class="reader-meta">
+      <span>期刊日期 <time datetime="$date">$date</time></span>
+      <a class="reader-download" href="$original_url" download="$filename">下载原始 HTML <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+  <main class="reader-main" aria-label="完整周报">
+    <iframe id="reader-report" src="$original_url" title="$title · $date（完整原文）" tabindex="0"></iframe>
+  </main>
+</body>
+</html>

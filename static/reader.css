@@ -1,0 +1,40 @@
+/* An isolated reading shell: report styles and scripts stay inside the frame. */
+* { box-sizing: border-box; }
+html { height: 100%; background: #f6f5ef; color: #243428; }
+body { margin: 0; height: 100vh; height: 100dvh; display: flex; flex-direction: column; font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 4px; }
+a:focus-visible, iframe:focus-visible { outline: 3px solid #41683c; outline-offset: -3px; border-radius: 4px; }
+.reader-header { flex: none; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 28px; padding: 10px 28px; background: #f6f5ef; border-bottom: 1px solid #d8ddd0; }
+.reader-identity { display: flex; flex-direction: column; }
+.reader-home { display: inline-flex; align-items: center; gap: 8px; min-height: 32px; font-size: 17px; font-weight: 750; }
+.reader-owner { padding-left: 23px; font: 9px/1.5 ui-monospace, monospace; letter-spacing: 1px; color: #566550; }
+.reader-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 0 20px; }
+.reader-nav a, .reader-download { display: inline-flex; align-items: center; min-height: 44px; gap: 5px; }
+.reader-meta { margin-left: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 0 18px; font-size: 12px; color: #566550; }
+.reader-meta time { margin-left: 5px; color: #243428; font-family: ui-monospace, monospace; white-space: nowrap; }
+.reader-download { font-weight: 600; color: #304e2a; }
+.reader-main { flex: 1; min-height: 0; display: flex; }
+iframe { display: block; width: 100%; height: 100%; border: 0; }
+.reader-skip { position: fixed; top: -100px; left: 12px; z-index: 10; padding: 12px 18px; background: #fff; }
+.reader-skip:focus { top: 8px; }
+@media (max-width: 850px) {
+  .reader-header { padding: 8px 16px; gap: 2px 18px; }
+  .reader-identity { flex-direction: row; align-items: center; gap: 12px; }
+  .reader-owner { padding: 0; }
+  .reader-nav { margin-left: auto; gap: 0 14px; }
+  .reader-meta { width: 100%; justify-content: space-between; margin: 0; }
+}
+@media (max-width: 600px) {
+  .reader-header { gap: 0 12px; }
+  .reader-owner { display: none; }
+  .reader-home { font-size: 15px; min-height: 44px; }
+  .reader-nav { font-size: 12px; gap: 0 12px; }
+  .reader-meta { font-size: 11px; }
+  .reader-download { min-height: 36px; }
+}
+@media (max-width: 390px) {
+  .reader-header { padding-inline: 12px; }
+  .reader-nav { gap: 0 9px; font-size: 11px; }
+  .reader-home { font-size: 14px; }
+}

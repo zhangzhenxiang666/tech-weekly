@@ -2,7 +2,7 @@
 
 一个轻量、可扩展的中文技术周刊站点，发布在 [GitHub Pages](https://zhangzhenxiang666.github.io/tech-weekly/)。
 
-目前栏目：Rust、GitHub 热门项目、AI。首页和栏目共享设计系统，每期有日期固定链接，归档可以按栏目筛选或搜索。原始 HTML 周报按字节完整保留，图表与交互仍可使用。
+目前栏目：Rust、GitHub 热门项目、AI。首页和栏目共享设计系统，每期有日期固定链接，归档可以按栏目筛选或搜索。全文阅读页保留站点首页、栏目、本期导览及 GitHub 仓库导航，显示实际期刊日期。原始 HTML 周报按字节完整保留，可单独下载，图表与交互仍可使用。
 
 ## 本地运行
 
@@ -25,6 +25,7 @@ python -m http.server 8000 --directory dist
 - `content/originals/`：原始 HTML 周报；SHA-256 防止无意修改
 - `schemas/issue-v1.schema.json`：机器可读的接入格式
 - `templates/base.html`：共享页面外壳
+- `templates/reader.html`：完整周报的共享导航外壳，隔离原文样式与脚本
 - `static/`：共享样式与渐进增强脚本
 - `scripts/columns.py`：栏目专属展示扩展点
 - `scripts/build.py`：校验、渲染、索引生成

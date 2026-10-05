@@ -156,6 +156,7 @@ class Builder:
         self.base = self.site['base_path']
         self.out = out or root / 'dist'
         self.template = Template((root / 'templates/base.html').read_text())
+        self.reader_template = Template((root / 'templates/reader.html').read_text())
 
     def url(self, path=''):
         return self.base + '/' + path.lstrip('/')
@@ -221,6 +222,26 @@ class Builder:
         body = f'''<header class="page-heading"><div class="breadcrumb"><a href="{self.url()}">首页</a><span>/</span><a href="{self.url('columns/'+col['id']+'/')}">{esc(col['name'])}</a></div><span class="badge {col['accent']}">{esc(col['name'])}</span><h1>{esc(issue['title'])}</h1><p>{esc(issue['summary'])}</p></header><div class="article-layout"><article class="article-copy">{content}</article><aside class="meta-panel"><h2>EDITION NOTES</h2><dl><dt>期刊日期</dt><dd><time datetime="{issue['date']}">{issue['date']}</time></dd><dt>覆盖范围</dt><dd>{esc(issue.get('coverage','以原文标注为准'))}</dd><dt>收录方式</dt><dd>{esc(issue.get('provenance','结构化内容归档'))}</dd><dt>参考来源</dt><dd>{len(issue['sources'])} 个链接</dd><dt>栏目说明</dt><dd>{esc(note(col['module']))}</dd></dl></aside></div><a class="back-link" href="{self.url('archive/')}">← 返回全部归档</a>'''
         self.render(self.route(issue)+'index.html',issue['title'],body,col['id'],issue['summary'])
 
+    def original(self, issue):
+        """Keep public report URLs navigable without changing archived HTML bytes."""
+        original = issue['original']
+        filename = original['path']
+        download = self.out / 'downloads/originals' / filename
+        download.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(self.root / 'content/originals' / filename, download)
+        col = self.columns[issue['column']]
+        page = self.reader_template.substitute(
+            title=esc(issue['title']), description=esc(issue['summary']),
+            site_title=esc(self.site['title']), owner=esc(self.site['owner']),
+            base=self.base, home=self.url(), repository=esc(self.site['repository']),
+            column=esc(col['name']), column_url=self.url('columns/'+col['id']+'/'),
+            issue_url=self.url(self.route(issue)), date=issue['date'],
+            original_url=self.url('downloads/originals/'+filename), filename=filename,
+        )
+        target = self.out / 'originals' / filename
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(page, encoding='utf-8')
+
     def build(self):
         require(self.out.resolve() not in {self.root.resolve(),self.root.parent.resolve()}, 'Unsafe output directory')
         if self.out.exists():
@@ -236,9 +257,7 @@ class Builder:
         for issue in self.issues:
             self.issue(issue)
             if issue.get('original'):
-                target = self.out / 'originals' / issue['original']['path']
-                target.parent.mkdir(exist_ok=True)
-                shutil.copyfile(self.root / 'content/originals' / issue['original']['path'],target)
+                self.original(issue)
         self.render('about/index.html','关于与来源',f'''<header class="page-heading"><div class="eyebrow">ABOUT THIS READING ROOM</div><h1>给技术发现，<br>一个长期的落点。</h1><p>TakeHan 的个人技术周刊，围绕 Rust、GitHub 热门项目与 AI 整理和归档。</p></header><article class="prose"><h2>怎样阅读</h2><p>首页汇总最近收录，栏目页聚合同一主题，历史归档支持搜索与筛选。每一期都有固定日期链接。已存在的 HTML 周报保留原始文件与交互，从期刊导览进入全文。</p><h2>怎样看待来源</h2><p>事实、数据和编辑判断应区分阅读。引用链接与覆盖时间随期刊保留，历史数据可能已经变化。本站对原始周报做归档整理，不默认为旧报告的每项结论提供新的核验。</p><h2>怎样持续积累</h2><p>站点采用共享页面模板和独立栏目配置。新增一期内容会进入对应栏目与日期归档；新栏目可以扩展自己的结构化字段与阅读功能。</p><h2>发布状态</h2><p>当前站点公开可读。定期采集、生成和定时发布尚未启用；新增内容需通过数据校验后提交到仓库，部署工作流负责更新站点。</p><p><a href="{esc(self.site['repository'])}">查看仓库与贡献说明 ↗</a></p></article>''', 'about')
         self.render('404.html','页面未找到',f'<div class="page-heading"><div class="eyebrow">404 / NOT ON THIS SHELF</div><h1>这一页还没收录。</h1><p>链接可能有误，或内容已移到新的归档位置。</p><a class="button" href="{self.url()}">回到首页 →</a></div>','none')
         api = self.out / 'api'
