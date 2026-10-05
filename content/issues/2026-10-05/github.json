@@ -18,142 +18,142 @@
   "sources": [
     {
       "id": "source-1",
-      "title": "Githot 10/04 存档 ↗",
+      "title": "Githot 10/04 存档",
       "url": "https://githot.dev/en/weekly/2026-10-04"
     },
     {
       "id": "source-2",
-      "title": "10/05 官方日榜 ↗",
+      "title": "10/05 官方日榜",
       "url": "https://github.com/trending"
     },
     {
       "id": "source-3",
-      "title": "Hindsight ↗",
+      "title": "Hindsight",
       "url": "https://github.com/vectorize-io/hindsight"
     },
     {
       "id": "source-4",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/vectorize-io/hindsight#readme"
     },
     {
       "id": "source-5",
-      "title": "发布说明 ↗",
+      "title": "发布说明",
       "url": "https://github.com/vectorize-io/hindsight/releases/tag/v0.10.2"
     },
     {
       "id": "source-6",
-      "title": "Impeccable ↗",
+      "title": "Impeccable",
       "url": "https://github.com/pbakaus/impeccable"
     },
     {
       "id": "source-7",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/pbakaus/impeccable#readme"
     },
     {
       "id": "source-8",
-      "title": "发布说明 ↗",
+      "title": "发布说明",
       "url": "https://github.com/pbakaus/impeccable/releases/tag/skill-v4.5.0"
     },
     {
       "id": "source-9",
-      "title": "Effect ↗",
+      "title": "Effect",
       "url": "https://github.com/Effect-TS/effect"
     },
     {
       "id": "source-10",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/Effect-TS/effect#readme"
     },
     {
       "id": "source-11",
-      "title": "发布说明 ↗",
+      "title": "发布说明",
       "url": "https://github.com/Effect-TS/effect/releases/tag/effect%404.0.1"
     },
     {
       "id": "source-12",
-      "title": "VoiceStudio ↗",
+      "title": "VoiceStudio",
       "url": "https://github.com/debpalash/VoiceStudio"
     },
     {
       "id": "source-13",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/debpalash/VoiceStudio#readme"
     },
     {
       "id": "source-14",
-      "title": "发布说明 ↗",
+      "title": "发布说明",
       "url": "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.6"
     },
     {
       "id": "source-15",
-      "title": "Paperclip ↗",
+      "title": "Paperclip",
       "url": "https://github.com/paperclipai/paperclip"
     },
     {
       "id": "source-16",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/paperclipai/paperclip#readme"
     },
     {
       "id": "source-17",
-      "title": "Agent-Reach ↗",
+      "title": "Agent-Reach",
       "url": "https://github.com/Panniantong/Agent-Reach"
     },
     {
       "id": "source-18",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/Panniantong/Agent-Reach#readme"
     },
     {
       "id": "source-19",
-      "title": "HyperFrames ↗",
+      "title": "HyperFrames",
       "url": "https://github.com/heygen-com/hyperframes"
     },
     {
       "id": "source-20",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/heygen-com/hyperframes#readme"
     },
     {
       "id": "source-21",
-      "title": "e2e ↗",
+      "title": "e2e",
       "url": "https://github.com/tester-army/e2e"
     },
     {
       "id": "source-22",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/tester-army/e2e#readme"
     },
     {
       "id": "source-23",
-      "title": "发布说明 ↗",
+      "title": "发布说明",
       "url": "https://github.com/tester-army/e2e/releases/tag/e2e%400.17.0"
     },
     {
       "id": "source-24",
-      "title": "Caddy ↗",
+      "title": "Caddy",
       "url": "https://github.com/caddyserver/caddy"
     },
     {
       "id": "source-25",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/caddyserver/caddy#readme"
     },
     {
       "id": "source-26",
-      "title": "OpenCut ↗",
+      "title": "OpenCut",
       "url": "https://github.com/OpenCut-app/OpenCut"
     },
     {
       "id": "source-27",
-      "title": "官方 README ↗",
+      "title": "官方 README",
       "url": "https://github.com/OpenCut-app/OpenCut#readme"
     },
     {
       "id": "source-28",
-      "title": "classic 版本 ↗",
+      "title": "classic 版本",
       "url": "https://github.com/OpenCut-app/opencut-classic"
     }
   ]

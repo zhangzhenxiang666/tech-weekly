@@ -18,62 +18,62 @@
   "sources": [
     {
       "id": "source-1",
-      "title": "查看官方接入文档 ↗",
+      "title": "查看官方接入文档",
       "url": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview"
     },
     {
       "id": "source-2",
-      "title": "查看版本与活动条件 ↗",
+      "title": "查看版本与活动条件",
       "url": "https://agent.minimax.io/docs/changelog"
     },
     {
       "id": "source-3",
-      "title": "查看正式版本说明 ↗",
+      "title": "查看正式版本说明",
       "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.24.7"
     },
     {
       "id": "source-4",
-      "title": "DevDay 2026 Recap ↗",
+      "title": "DevDay 2026 Recap",
       "url": "https://openai.com/index/devday-2026-recap/"
     },
     {
       "id": "source-5",
-      "title": "Introducing GPT-6.1 Sol ↗",
+      "title": "Introducing GPT-6.1 Sol",
       "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
     },
     {
       "id": "source-6",
-      "title": "Introducing Claude Sonnet 5.5 ↗",
+      "title": "Introducing Claude Sonnet 5.5",
       "url": "https://www.anthropic.com/claude-sonnet-5-5"
     },
     {
       "id": "source-7",
-      "title": "Open Agent Safety Platform ↗",
+      "title": "Open Agent Safety Platform",
       "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Launches-Open-Agent-Safety-Platform-to-Secure-Agents-From-Testing-to-Deployment/default.aspx"
     },
     {
       "id": "source-8",
-      "title": "Introducing Gemini 4 Argon ↗",
+      "title": "Introducing Gemini 4 Argon",
       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
     },
     {
       "id": "source-9",
-      "title": "Muse for Small Business ↗",
+      "title": "Muse for Small Business",
       "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/"
     },
     {
       "id": "source-10",
-      "title": "How Diffusion Controller unifies and simplifies AI image generation ↗",
+      "title": "How Diffusion Controller unifies and simplifies AI image generation",
       "url": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/"
     },
     {
       "id": "source-11",
-      "title": "Diffusion Controller: Framework, Algorithms and Parameterization ↗",
+      "title": "Diffusion Controller: Framework, Algorithms and Parameterization",
       "url": "https://research.google/pubs/diffusion-controller-framework-algorithms-and-parameterization/"
     },
     {
       "id": "source-12",
-      "title": "FTC is investigating OpenAI and Anthropic over safety risks ↗",
+      "title": "FTC is investigating OpenAI and Anthropic over safety risks",
       "url": "https://apnews.com/article/ftc-ai-investigation-anthropic-openai-89ac416717adbfb1d72f2d85e6ce83d1"
     }
   ]
