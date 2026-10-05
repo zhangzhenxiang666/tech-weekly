@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="2026年10月5日 GitHub 热门项目周报：10个项目、分开的周增与日增图表、官方版本更新与可操作的试用建议。">
+<meta name="color-scheme" content="dark light"><title>GitHub 热门项目周报 · 2026.10.05</title>
+<style>
+:root{color-scheme:dark;--bg:#0c1412;--panel:#121e19;--panel2:#18251f;--text:#f0f2e9;--muted:#adbaae;--line:#314238;--accent:#bcf78b;--accentInk:#10200c;--warn:#f2cd90;--warm:#d9ab82;--blue:#a5c9df;--radius:16px}
+[data-theme="light"]{color-scheme:light;--bg:#f5f5ed;--panel:#fffef8;--panel2:#e9eee3;--text:#16291e;--muted:#4b6050;--line:#c5d0bf;--accent:#31632c;--accentInk:#ffffff;--warn:#855718;--warm:#8c5630;--blue:#32607b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC",sans-serif;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}
+button,select,summary{cursor:pointer}button{color:inherit}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.wrap{width:min(1192px,calc(100% - 64px));margin:auto}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.14em;font-size:13px;color:var(--text)}
+.brand svg{width:31px;height:31px;color:var(--accent)}.brand span{font-weight:400;color:var(--muted)}
+.nav-actions{display:flex;align-items:center;gap:10px}.nav-date{color:var(--muted);font:12px ui-monospace,SFMono-Regular,Consolas,monospace;margin-right:12px}
+.btn{border:1px solid var(--line);border-radius:8px;padding:8px 13px;background:transparent;font-size:12px;line-height:1.7;min-height:39px}.btn:hover{background:var(--panel2);text-decoration:none}.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accentInk);font-weight:700}.btn.small{min-height:34px;padding:6px 10px}
+.hero{display:grid;grid-template-columns:1.22fr 1fr;gap:62px;padding:62px 0 45px;align-items:center}
+.eyebrow{display:flex;gap:12px;align-items:center;font-size:11px;letter-spacing:.13em;color:var(--accent);font-weight:700;margin-bottom:21px}
+.dot{width:6px;height:6px;display:inline-block;border-radius:50%;background:currentColor}
+h1{font-size:clamp(38px,4.9vw,63px);line-height:1.18;letter-spacing:-.045em;margin:0 0 23px;font-weight:800}
+h1 em{font-style:normal;color:var(--accent)}.hero-copy{color:var(--muted);font-size:16px;line-height:1.95;max-width:560px;margin:0 0 24px}
+.pills{display:flex;gap:8px;flex-wrap:wrap}.pill{border:1px solid var(--line);color:var(--muted);border-radius:100px;padding:4px 10px;font-size:11px}
+.signal-map{border:1px solid var(--line);padding:26px;border-radius:var(--radius);background:var(--panel)}
+.small-label{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.14em;color:var(--muted)}
+.signal-title{display:flex;justify-content:space-between;gap:14px;margin-bottom:24px;font-size:13px}.signal-title span:last-child{font-size:10px;color:var(--accent)}
+.flow{display:grid;grid-template-columns:1fr 24px 1fr 24px 1fr;align-items:center}.flow-node{text-align:center;border:1px solid var(--line);border-radius:9px;padding:15px 4px}.flow-node b{display:block;font-size:21px;letter-spacing:.08em;color:var(--text)}.flow-node small{display:block;font-size:9px;color:var(--accent);line-height:1.45;margin-top:9px;overflow-wrap:anywhere}.arrow{text-align:center;color:var(--muted)}.map-bottom{margin-top:21px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:12px}.map-bottom strong{color:var(--text);font-weight:500}.map-caption{font-size:10px;color:var(--muted);margin:15px 0 0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;margin-bottom:26px}
+.stat{padding:0 26px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:none}.stat b{font:36px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-.06em}.stat span{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.provenance{padding:16px 20px;border:1px solid var(--line);border-left:3px solid var(--warn);font-size:12px;color:var(--muted);background:var(--panel);border-radius:0 9px 9px 0}.provenance strong{color:var(--warn);font-weight:600}.provenance a{white-space:nowrap}
+section{padding-top:50px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:21px}.section-head h2{font-size:24px;line-height:1.3;letter-spacing:-.04em;margin:0}.section-head .n{font:11px ui-monospace,monospace;color:var(--accent);display:block;margin-bottom:11px;letter-spacing:.1em}.section-head p{margin:0;font-size:12px;color:var(--muted)}.subhead{color:var(--muted);margin:0 0 20px;font-size:13px}
+.featured{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature{padding:25px 25px 22px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);display:flex;flex-direction:column;position:relative;overflow:hidden}
+.feature-index{font:11px ui-monospace,monospace;letter-spacing:.1em;color:var(--accent);display:flex;justify-content:space-between;margin-bottom:24px}.feature-index span:last-child{color:var(--muted);letter-spacing:0}
+.feature h3{font-size:24px;margin:0 0 9px;letter-spacing:-.035em}.feature p{font-size:13px;color:var(--muted);margin:0 0 21px;line-height:1.9}.feature a{font-size:12px;margin-top:auto}.feature .rule{position:absolute;top:0;left:25px;right:25px;height:2px;background:var(--accent)}
+.charts{display:grid;grid-template-columns:1.45fr 1fr;gap:20px}.panel{padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}.panel h3{margin:0 0 5px;font-size:16px}.panel .explain{font-size:11px;color:var(--muted);margin:0 0 22px;line-height:1.8}
+.bar-row{display:grid;grid-template-columns:100px 1fr 78px;gap:13px;align-items:center;font-size:12px;margin:16px 0}.bar-name{color:var(--text)}.bar-track{height:9px;background:var(--panel2);border-radius:2px;overflow:hidden}.bar-fill{display:block;height:100%;background:var(--accent);border-radius:2px}.bar-value{text-align:right;color:var(--accent);font:12px ui-monospace,monospace;white-space:nowrap}
+.today-bars .bar-fill{background:var(--blue)}.today-bars .bar-value{color:var(--blue)}.source-line{font-size:10px;color:var(--muted);margin:22px 0 0;line-height:1.9}.mini-distribution{border-top:1px solid var(--line);margin-top:26px;padding-top:22px}.mini-distribution h4{margin:0 0 12px;font-size:12px;font-weight:500}.distribution-strip{height:7px;display:flex;gap:4px}.distribution-strip span{display:block;height:100%}.dist-labels{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px;margin-top:16px;font-size:10px;color:var(--muted)}.dist-labels b{color:var(--text);font-family:ui-monospace,monospace;margin-left:6px}.legend-dot{width:6px;height:6px;border-radius:50%;display:inline-block;margin-right:5px}
+.toolbar{display:flex;gap:12px;align-items:center;margin:0 0 15px}.search-wrap{flex:1;min-width:0;position:relative}.search-icon{position:absolute;top:13px;left:15px;color:var(--muted);width:19px;height:19px}.search-wrap input{width:100%;min-width:0;height:47px;padding:11px 16px 11px 46px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--text);font-size:13px}.search-wrap input::placeholder{color:var(--muted)}
+select{height:47px;max-width:250px;background:var(--panel);border:1px solid var(--line);border-radius:9px;color:var(--text);font-size:12px;padding:8px 35px 8px 12px}
+.filter-row{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:20px}.filters{display:flex;gap:7px;flex-wrap:wrap}.filter{padding:6px 12px;min-height:36px;border:1px solid var(--line);border-radius:100px;background:transparent;color:var(--muted);font-size:11px}.filter[aria-pressed="true"]{color:var(--accentInk);border-color:var(--accent);background:var(--accent)}.result-count{color:var(--muted);font-size:11px;white-space:nowrap}
+.projects-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}.project{padding:25px;border:1px solid var(--line);background:var(--panel);border-radius:var(--radius);scroll-margin-top:25px;min-width:0}
+.project:target{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.project-top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:17px}
+.category{font-size:10px;letter-spacing:.05em;color:var(--accent)}.stage{font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:5px;padding:2px 7px;white-space:nowrap}.stage.warning{color:var(--warn)}.project h3{font-size:26px;line-height:1.3;margin:0 0 3px;letter-spacing:-.03em}.project h3 a{color:var(--text)}.repo-name{font:10px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--muted);overflow-wrap:anywhere}
+.project-subtitle{font-weight:600;font-size:14px;line-height:1.75;margin:17px 0 9px}
+.project-desc{color:var(--muted);font-size:12px;line-height:1.95;margin:0 0 16px}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{padding:2px 7px;font-size:10px;border-radius:4px;background:var(--panel2);color:var(--muted)}
+.card-metrics{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:19px 0 15px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0}.metric b{display:block;font:23px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:-.045em}.metric:last-child b{color:var(--accent)}.daily .metric:last-child b{color:var(--blue)}.metric small{color:var(--muted);font-size:10px;display:block;margin-top:6px}
+.why{font-size:12px;line-height:1.9;margin:0 0 13px;color:var(--muted)}.why strong{font-weight:500;color:var(--text)}.update{font-size:11px;line-height:1.95;margin:0 0 15px;color:var(--muted);padding-left:12px;border-left:2px solid var(--line)}.update b{color:var(--accent);font-weight:500}.update.background b{color:var(--warn)}
+details{border-top:1px solid var(--line);font-size:12px}summary{padding-top:13px;color:var(--text);font-size:11px;min-height:38px}details[open] summary{padding-bottom:6px}.detail-content p{margin:12px 0;color:var(--muted);line-height:1.95}.detail-content b{color:var(--text);font-weight:500;display:block;margin-bottom:3px}.detail-content .caution b{color:var(--warn)}.source-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}.source-links a{font-size:10px}.footnote{font-size:10px!important;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}.empty{padding:45px;text-align:center;border:1px dashed var(--line);border-radius:var(--radius);color:var(--muted)}[hidden]{display:none!important}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;border-top:1px solid var(--line);padding-top:25px}.event{position:relative;min-width:0}.event:before{content:"";position:absolute;top:-29px;left:0;width:7px;height:7px;border-radius:50%;background:var(--accent)}.event time{font:11px ui-monospace,monospace;color:var(--muted)}.event h3{font-size:14px;margin:10px 0 8px}.event p{font-size:12px;line-height:1.9;color:var(--muted);margin:0 0 10px}.event a{font-size:10px}.old-news{margin-top:24px;font-size:11px;color:var(--muted);padding:13px 16px;background:var(--panel);border-radius:8px;border:1px solid var(--line)}
+.observations{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}.observation{padding-top:17px;border-top:2px solid var(--line)}.observation h3{font-size:15px;margin:0 0 10px}.observation p{font-size:12px;line-height:1.95;color:var(--muted);margin:0 0 13px}.observation a{font-size:10px}
+.methods{margin-top:50px;padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.methods h2{font-size:16px;margin:0 0 12px}.methods p{font-size:11px;color:var(--muted);line-height:2;margin:8px 0}.methods strong{color:var(--text);font-weight:500}.methods details{margin-top:18px}.sources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 20px;padding:16px 0}.sources-grid a{font-size:11px;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);margin:35px 0 0;padding:22px 0 35px;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:var(--muted)}footer b{color:var(--text);font-weight:500}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1000px){.wrap{width:calc(100% - 44px)}.hero{gap:30px}.signal-map{padding:19px}.hero h1{font-size:46px}.flow-node b{font-size:18px}.feature{padding:20px}.feature-index{font-size:10px}.charts{grid-template-columns:1.2fr 1fr}.bar-row{grid-template-columns:89px 1fr 69px;gap:9px}.project{padding:21px}.timeline{gap:16px}}
+@media(max-width:740px){.wrap{width:calc(100% - 36px)}.topbar{padding:18px 0}.nav-date{display:none}.brand{font-size:11px;gap:8px;letter-spacing:.06em}.brand span{display:none}.nav-actions{gap:6px}.nav-actions .btn{padding:7px 9px;min-height:36px}.hero{grid-template-columns:1fr;gap:26px;padding:38px 0 30px}.hero h1{font-size:46px}.hero-copy{font-size:14px}.eyebrow{margin-bottom:17px;font-size:10px}.signal-map{padding:22px}.signal-title{margin-bottom:16px}.flow-node{padding:11px 4px}.flow-node b{font-size:19px}.flow-node small{font-size:10px}.map-caption{margin-top:10px}.stats{grid-template-columns:1fr 1fr;padding:0;margin-top:2px}.stat{padding:18px 18px!important}.stat:first-child,.stat:nth-child(3){padding-left:0!important}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.stat b{font-size:32px}.stat span{font-size:11px}.featured,.charts,.projects-grid,.observations{grid-template-columns:1fr}.feature{padding:22px}.feature-index{margin-bottom:13px}.feature h3{font-size:23px}.feature p{margin-bottom:13px}.section-head{align-items:flex-start;gap:12px}.section-head h2{font-size:22px}.section-head p{max-width:155px;font-size:10px;text-align:right}.provenance{padding:13px 15px;font-size:11px}.panel{padding:22px}.bar-row{grid-template-columns:93px 1fr 73px}.toolbar{flex-wrap:wrap;gap:10px}.search-wrap{flex-basis:100%}.toolbar select{flex:1;min-width:0;max-width:none}.toolbar .btn{min-height:44px}.filter-row{align-items:flex-start;flex-direction:column;gap:10px}.filters{gap:6px}.filter{padding:6px 11px;min-height:39px}.result-count{align-self:flex-end}.timeline{grid-template-columns:1fr 1fr;gap:25px 20px;border-top:0;padding-top:0}.event{border-top:1px solid var(--line);padding-top:16px}.event:before{top:-4px}.sources-grid{grid-template-columns:1fr 1fr}.methods{padding:20px}section{padding-top:39px}footer{flex-direction:column;gap:8px}.project h3{font-size:27px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{html{color-scheme:light}body{--bg:#fff;--panel:#fff;--panel2:#eee;--text:#111;--muted:#444;--line:#ccc;--accent:#255b28;--accentInk:#fff;--warn:#7a4c12;--blue:#275a77;background:#fff;color:#111;font-size:10pt}.wrap{width:100%}.nav-actions,.toolbar,.filter-row,.map-caption{display:none}.hero{padding:20px 0;gap:25px}.hero h1{font-size:32px}.stats{padding:14px 0}.stat b{font-size:25px}.featured{gap:12px}.feature,.panel,.project,.methods{border-radius:5px;padding:16px}.projects-grid{display:block}.project{margin-bottom:16px;break-inside:avoid}.project[hidden]{display:block!important}section{padding-top:27px}.section-head h2{font-size:20px}.charts{grid-template-columns:1.5fr 1fr}.bar-fill,.distribution-strip{-webkit-print-color-adjust:exact;print-color-adjust:exact}.timeline{break-inside:avoid}.observations{grid-template-columns:1fr}.sources-grid{grid-template-columns:1fr 1fr}.hero,.stats,.featured{break-inside:avoid}a{color:#255b28}footer{margin-top:20px}}
+</style></head>
+<body><a href="#projects" class="sr-only">跳转到项目库</a>
+<div class="wrap">
+<header class="topbar">
+ <a class="brand" href="#top" aria-label="GitHub Weekly 首页"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 6h9v9H5zM18 6h9v9h-9zM5 19h9v9H5z" stroke="currentColor" stroke-width="2"/><path d="M18 19h9v9h-9z" fill="currentColor"/></svg>GITHUB / WEEKLY <span>开源观察</span></a>
+ <div class="nav-actions"><span class="nav-date">2026.10.05 / MON</span><button id="theme" class="btn" type="button" aria-label="切换浅色或深色主题" aria-pressed="false">浅色</button><button id="print" class="btn" type="button">打印</button><a href="#projects" class="btn primary">浏览项目 ↓</a></div>
+</header>
+<main id="top">
+ <div class="hero">
+  <div><div class="eyebrow"><span class="dot"></span>2026.10.05 · 周一刊</div>
+  <h1>从单个工具，<br>到<em>完整工作流。</em></h1>
+  <p class="hero-copy">记忆、编排、设计与媒体生产贯穿本期精选。<br>选出 10 个值得点开的项目，把热度、实际能力和使用限制分开看。</p>
+  <div class="pills"><span class="pill">回顾 09.28—10.04</span><span class="pill">含 10.05 日榜补充</span><span class="pill">中文解读 · 官方资料核验</span></div></div>
+  <aside class="signal-map" aria-label="本期选题的能力关系示意，不是市场占比图">
+    <div class="signal-title"><b>本期信号</b><span>工具 → 工作流</span></div>
+    <div class="flow"><a class="flow-node" href="#hindsight"><b>记住</b><small>Hindsight</small></a><span class="arrow">→</span><a class="flow-node" href="#paperclip"><b>协作</b><small>Paperclip</small></a><span class="arrow">→</span><a class="flow-node" href="#hyperframes"><b>产出</b><small>HyperFrames</small></a></div>
+    <div class="map-bottom"><strong>交付之外，还有工程底座。</strong><br>Effect 管理复杂异步逻辑；Caddy 处理服务入口。</div>
+    <p class="map-caption">编辑归纳的能力关系，不表示项目之间已有直接集成。</p>
+  </aside>
+ </div>
+ <div class="stats" aria-label="本期编辑统计">
+  <div class="stat"><b>10</b><span>精选项目 · 非全站排名</span></div>
+  <div class="stat"><b>07</b><span>来自 10/04 周榜存档</span></div>
+  <div class="stat"><b>03</b><span>来自 10/05 官方日榜</span></div>
+  <div class="stat"><b>04</b><span>本期范围内核实的版本更新</span></div>
+ </div>
+ <div class="provenance"><strong>先看数据口径：</strong>本次未能直接取得官方周榜，周增数采用 <a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">Githot 10/04 存档<span aria-hidden="true"> ↗</span></a>；日增数来自 <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="">10/05 官方日榜<span aria-hidden="true"> ↗</span></a>。<strong>k 为快照近似值，日增不外推为周增。</strong>项目能力与版本另查官方仓库，本页不是完整实时榜单。</div>
+
+ <section aria-labelledby="featured-title"><div class="section-head"><div><span class="n">01 / EDITOR'S PICKS</span><h2 id="featured-title">先看这三个</h2></div><p>按实际参考价值选择，<br>不是按 Star 排名。</p></div><div class="featured"><article class="feature"><div class="rule"></div>
+    <div class="feature-index"><span>01 / 记忆</span><span>09.29 · v0.10.2</span></div>
+    <h3>Hindsight</h3><p>长期任务不只是存聊天记录。先看记忆如何检索、归纳，以及出错后怎样停止无效调用。</p>
+    <a href="#hindsight">看项目与试用建议 <span aria-hidden="true">→</span></a></article><article class="feature"><div class="rule"></div>
+    <div class="feature-index"><span>02 / 设计</span><span>10.02 · Skill 4.5.0</span></div>
+    <h3>Impeccable</h3><p>把产品背景、设计检查和页面打磨组织成可复用流程，适合经常用 Agent 做界面的开发者。</p>
+    <a href="#impeccable">看项目与试用建议 <span aria-hidden="true">→</span></a></article><article class="feature"><div class="rule"></div>
+    <div class="feature-index"><span>03 / 工程化</span><span>10.04 · 4.0.1</span></div>
+    <h3>Effect</h3><p>热度之外看基础功：缓存、中断和集群恢复的修复，往往更直接影响真实服务的稳定性。</p>
+    <a href="#effect">看项目与试用建议 <span aria-hidden="true">→</span></a></article></div></section>
+
+ <section aria-labelledby="heat-title"><div class="section-head"><div><span class="n">02 / MOMENTUM</span><h2 id="heat-title">热度，拆开看</h2></div><p>同一张图只比较同一口径。<br>Star 不等于质量或生产可用性。</p></div>
+ <div class="charts">
+  <div class="panel"><h3>周增 Star · 7 个周榜精选</h3><p class="explain">存档覆盖 09/28—10/04；按显示增量排序，数值带“约”的保留原始近似精度。</p>
+   <div class="bar-row">
+    <a class="bar-name" href="#voicestudio">VoiceStudio</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:100.00%"></span></span>
+    <span class="bar-value">约 +16.8k</span></div><div class="bar-row">
+    <a class="bar-name" href="#hindsight">Hindsight</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:86.31%"></span></span>
+    <span class="bar-value">约 +14.5k</span></div><div class="bar-row">
+    <a class="bar-name" href="#paperclip">Paperclip</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:63.69%"></span></span>
+    <span class="bar-value">约 +10.7k</span></div><div class="bar-row">
+    <a class="bar-name" href="#agent-reach">Agent-Reach</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:23.81%"></span></span>
+    <span class="bar-value">约 +4k</span></div><div class="bar-row">
+    <a class="bar-name" href="#impeccable">Impeccable</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:19.64%"></span></span>
+    <span class="bar-value">约 +3.3k</span></div><div class="bar-row">
+    <a class="bar-name" href="#hyperframes">HyperFrames</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:17.86%"></span></span>
+    <span class="bar-value">约 +3k</span></div><div class="bar-row">
+    <a class="bar-name" href="#effect">Effect</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:2.77%"></span></span>
+    <span class="bar-value">+466</span></div>
+   <p class="source-line">来源：<a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">Githot · 2026-10-04<span aria-hidden="true"> ↗</span></a>。第三方存档值未与官方周榜直接复核；柱长仅用于粗略比较，不代表热度评分。</p>
+  </div>
+  <div class="panel today-bars"><h3>今日新增 Star · 3 个补充项目</h3><p class="explain">10/05 检索的 GitHub 官方日榜字段。它们没有本期可用的周增数据。</p>
+   <div class="bar-row">
+    <a class="bar-name" href="#opencut">OpenCut</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:100.00%"></span></span>
+    <span class="bar-value">+512</span></div><div class="bar-row">
+    <a class="bar-name" href="#e2e">e2e</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:67.19%"></span></span>
+    <span class="bar-value">+344</span></div><div class="bar-row">
+    <a class="bar-name" href="#caddy">Caddy</a>
+    <span class="bar-track" aria-hidden="true"><span class="bar-fill" style="width:44.14%"></span></span>
+    <span class="bar-value">+226</span></div>
+   <p class="source-line">来源：<a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="">GitHub Trending · Today<span aria-hidden="true"> ↗</span></a>。与左侧时间窗口不同，不合并排序。</p>
+   <div class="mini-distribution"><h4>本期精选的主题分布</h4><div class="distribution-strip"><span style="width:30%;background:var(--accent)" aria-hidden="true"></span><span style="width:30%;background:var(--blue)" aria-hidden="true"></span><span style="width:30%;background:var(--warm)" aria-hidden="true"></span><span style="width:10%;background:var(--muted)" aria-hidden="true"></span></div><div class="dist-labels"><span><i class="legend-dot" style="background:var(--accent)"></i>AI 基础能力<b>3</b></span><span><i class="legend-dot" style="background:var(--blue)"></i>开发与测试<b>3</b></span><span><i class="legend-dot" style="background:var(--warm)"></i>媒体创作<b>3</b></span><span><i class="legend-dot" style="background:var(--muted)"></i>基础设施<b>1</b></span></div><p class="source-line">编辑按主要用途归类，共 10 项；不是 GitHub 全站类别占比。</p></div>
+  </div>
+ </div></section>
+
+ <section id="projects" aria-labelledby="projects-title"><div class="section-head"><div><span class="n">03 / THE REPOSITORIES</span><h2 id="projects-title">项目库</h2></div><p>先读看点，再展开细节。<br>每张卡片附直接来源。</p></div>
+ <div class="toolbar">
+  <label class="search-wrap"><span class="sr-only">搜索项目、技术栈或使用场景</span><svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" stroke-width="1.5"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="1.5"/></svg><input type="search" id="search" placeholder="搜索项目、技术栈、场景…"></label>
+  <label><span class="sr-only">筛选数据范围</span><select id="scope"><option value="all">周榜 + 今日补充</option value="weekly">仅周榜存档</option><option value="daily">仅今日补充</option></select></label>
+  <label><span class="sr-only">选择排序方式</span><select id="sort"><option value="editorial">编辑顺序</option><option value="weekly">周增降序 · 缺失置后</option><option value="name">项目名称 A—Z</option></select></label>
+  <button class="btn" id="expand" type="button" aria-expanded="false">展开详情</button>
+ </div>
+ <div class="filter-row"><div class="filters" role="group" aria-label="按主要用途筛选"><button class="filter" type="button" data-filter="all" aria-pressed="true">全部 10</button><button class="filter" type="button" data-filter="AI 基础能力" aria-pressed="false">AI 基础能力 3</button><button class="filter" type="button" data-filter="开发与测试" aria-pressed="false">开发与测试 3</button><button class="filter" type="button" data-filter="媒体创作" aria-pressed="false">媒体创作 3</button><button class="filter" type="button" data-filter="基础设施" aria-pressed="false">基础设施 1</button></div><span id="count" class="result-count" role="status" aria-live="polite">显示 10 / 10 个项目</span></div>
+ <noscript><p class="provenance">当前未启用 JavaScript，所有项目仍可阅读；搜索、筛选和主题切换不可用。</p></noscript>
+ <div class="projects-grid" id="projects-grid">
+<article class="project weekly" id="hindsight" data-category="AI 基础能力"
+ data-scope="weekly" data-week="14500" data-name="Hindsight"
+ data-order="0" data-search="hindsight vectorize-io/hindsight ai 基础能力 python 让 agent 不只记住，还能回顾与归纳。 通过 retain、recall、reflect 三类操作组织长期记忆；检索结合语义、关键词、图谱与时间条件，并提供 sdk、rest api 和 mcp 接口。 需要跨会话上下文的客服、研究助手和长期任务 agent。">
+ <div class="project-top"><span class="category">AI 基础能力</span><span class="stage ">本周有发布</span></div>
+ <h3><a href="https://github.com/vectorize-io/hindsight" target="_blank" rel="noopener noreferrer" class="">Hindsight<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">vectorize-io/hindsight</span>
+ <p class="project-subtitle">让 Agent 不只记住，还能回顾与归纳。</p>
+ <p class="project-desc">通过 retain、recall、reflect 三类操作组织长期记忆；检索结合语义、关键词、图谱与时间条件，并提供 SDK、REST API 和 MCP 接口。</p>
+ <div class="tags"><span class="tag">Python</span><span class="tag">MIT</span><span class="tag">周榜存档精选</span></div>
+ <div class="card-metrics"><div class="metric"><b>约 45.3k</b><small>快照累计 Star · 10/04</small></div>
+ <div class="metric"><b>约 +14.5k</b><small>周增 Star · 10/04 存档</small></div></div>
+ <p class="why"><strong>为什么看：</strong>周榜存档显示约新增 14.5k Star；同时有可核验的新版本。比泛泛的“永久记忆”口号更值得看的是数据结构和失败处理。</p>
+ <p class="update "><b>已发布 / </b>09/29 发布 v0.10.2：加入按范围配置的记忆整合策略，并修复心理模型刷新失败后反复消耗模型调用的问题。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>需要跨会话上下文的客服、研究助手和长期任务 Agent。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>先用无敏感信息的样本，测试“事实变化、冲突记忆、删除或隔离”三个场景，再判断是否适合你的业务。</p>
+ <p class="caution"><b>限制与注意</b>记忆提取仍会调用模型，不能把归纳结果直接视为事实。接入前应验证用户隔离、检索准确率和调用成本。</p>
+ <p class="footnote">功能以官方 README 为准；推荐理由及试用路径为编辑判断，未进行实测。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/vectorize-io/hindsight#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">周增数据来源<span aria-hidden="true"> ↗</span></a><a href="https://github.com/vectorize-io/hindsight/releases/tag/v0.10.2" target="_blank" rel="noopener noreferrer" class="">发布说明<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project weekly" id="impeccable" data-category="开发与测试"
+ data-scope="weekly" data-week="3300" data-name="Impeccable"
+ data-order="1" data-search="impeccable pbakaus/impeccable 开发与测试 javascript 把“帮我做得好看一点”变成可执行的设计流程。 面向 ai 编码工具的设计指导。目前 readme 列出 24 个命令和 61 条确定性检测规则，覆盖产品背景、界面规划、审查与打磨。 使用编码 agent 搭建产品界面、官网和内部工具的开发者。">
+ <div class="project-top"><span class="category">开发与测试</span><span class="stage ">本周有发布</span></div>
+ <h3><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener noreferrer" class="">Impeccable<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">pbakaus/impeccable</span>
+ <p class="project-subtitle">把“帮我做得好看一点”变成可执行的设计流程。</p>
+ <p class="project-desc">面向 AI 编码工具的设计指导。目前 README 列出 24 个命令和 61 条确定性检测规则，覆盖产品背景、界面规划、审查与打磨。</p>
+ <div class="tags"><span class="tag">JavaScript</span><span class="tag">Apache-2.0</span><span class="tag">周榜存档精选</span></div>
+ <div class="card-metrics"><div class="metric"><b>约 75.8k</b><small>快照累计 Star · 10/04</small></div>
+ <div class="metric"><b>约 +3.3k</b><small>周增 Star · 10/04 存档</small></div></div>
+ <p class="why"><strong>为什么看：</strong>适合反复用 Agent 做官网、后台和文档页的人：重点不是换一个配色，而是让每类页面有自己的信息结构和检查流程。</p>
+ <p class="update "><b>已发布 / </b>10/02 发布 Skill 4.5.0：分别强化工作型界面、文档阅读栏和落地页的行动入口，并修复 live mode 等细节。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>使用编码 Agent 搭建产品界面、官网和内部工具的开发者。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>选择一个已有页面，先运行 /impeccable audit，再针对具体问题使用 polish；保留改动前后截图比较。</p>
+ <p class="caution"><b>限制与注意</b>规则通过不等于用户体验验证。品牌、受众与业务目标仍需明确，不宜把不同项目统一改成同一种“高级感”。</p>
+ <p class="footnote">命令数量取自 10/05 官方 README，不沿用第三方快照的旧功能描述。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/pbakaus/impeccable#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">周增数据来源<span aria-hidden="true"> ↗</span></a><a href="https://github.com/pbakaus/impeccable/releases/tag/skill-v4.5.0" target="_blank" rel="noopener noreferrer" class="">发布说明<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project weekly" id="effect" data-category="开发与测试"
+ data-scope="weekly" data-week="466" data-name="Effect"
+ data-order="2" data-search="effect effect-ts/effect 开发与测试 typescript 把错误、并发、依赖与资源生命周期放进类型系统。 为 typescript 提供类型化错误、依赖注入、结构化并发、调度、追踪和 schema 验证。官方将 4.x 标为长期支持版本。 需要管理复杂异步流程、资源与错误边界的 typescript 后端团队。">
+ <div class="project-top"><span class="category">开发与测试</span><span class="stage ">本周有发布</span></div>
+ <h3><a href="https://github.com/Effect-TS/effect" target="_blank" rel="noopener noreferrer" class="">Effect<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">Effect-TS/effect</span>
+ <p class="project-subtitle">把错误、并发、依赖与资源生命周期放进类型系统。</p>
+ <p class="project-desc">为 TypeScript 提供类型化错误、依赖注入、结构化并发、调度、追踪和 Schema 验证。官方将 4.x 标为长期支持版本。</p>
+ <div class="tags"><span class="tag">TypeScript</span><span class="tag">MIT</span><span class="tag">周榜存档精选</span></div>
+ <div class="card-metrics"><div class="metric"><b>约 16.9k</b><small>快照累计 Star · 10/04</small></div>
+ <div class="metric"><b>+466</b><small>周增 Star · 10/04 存档</small></div></div>
+ <p class="why"><strong>为什么看：</strong>热度不如生成式工具夸张，却更接近大型服务的日常问题。适合关注函数式组织方式和显式错误处理的人。</p>
+ <p class="update "><b>已发布 / </b>10/04 发布 effect@4.0.1：修正缓存与中断的交互，避免缓存被中断的结果，并修复集群请求恢复等行为。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>需要管理复杂异步流程、资源与错误边界的 TypeScript 后端团队。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>先选一条包含超时、重试和资源释放的业务链做小范围试点，而不是先改造整个项目。</p>
+ <p class="caution"><b>限制与注意</b>3.x 升 4.x 应按官方迁移指南逐项检查。引入抽象有学习成本；简单 CRUD 不必为了统一而过度封装。</p>
+ <p class="footnote">发布日期按 GitHub 页面显示；4.0.1 是补丁发布，不代表 4.0 首次发布于本周。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/Effect-TS/effect#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">周增数据来源<span aria-hidden="true"> ↗</span></a><a href="https://github.com/Effect-TS/effect/releases/tag/effect%404.0.1" target="_blank" rel="noopener noreferrer" class="">发布说明<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project weekly" id="voicestudio" data-category="媒体创作"
+ data-scope="weekly" data-week="16800" data-name="VoiceStudio"
+ data-order="3" data-search="voicestudio debpalash/voicestudio 媒体创作 python 在自己的电脑上完成语音克隆、配音与有声书。 本地优先的语音工作台，集合语音克隆、转录、视频配音和有声书生成，并提供本地 api 与 mcp 接入。 需要产品讲解音轨、多语内容或本地语音工具的创作者与开发者。">
+ <div class="project-top"><span class="category">媒体创作</span><span class="stage ">热度观察</span></div>
+ <h3><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer" class="">VoiceStudio<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">debpalash/VoiceStudio</span>
+ <p class="project-subtitle">在自己的电脑上完成语音克隆、配音与有声书。</p>
+ <p class="project-desc">本地优先的语音工作台，集合语音克隆、转录、视频配音和有声书生成，并提供本地 API 与 MCP 接入。</p>
+ <div class="tags"><span class="tag">Python</span><span class="tag">AGPL-3.0</span><span class="tag">周榜存档精选</span></div>
+ <div class="card-metrics"><div class="metric"><b>约 52.8k</b><small>快照累计 Star · 10/04</small></div>
+ <div class="metric"><b>约 +16.8k</b><small>周增 Star · 10/04 存档</small></div></div>
+ <p class="why"><strong>为什么看：</strong>在本期 7 个周榜精选中，快照周增最高。值得关注的是音频能力被组织成完整工作流，而不只是单一模型演示。</p>
+ <p class="update background"><b>前期背景 / </b>核验到的 v0.5.6 发布于 09/23，早于本期：改善工具接入、Docker 下的 MCP 和长篇音频流程；这些不是本周新发布。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>需要产品讲解音轨、多语内容或本地语音工具的创作者与开发者。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>从官方 Releases 获取安装包，用有授权的短录音和一段自写脚本完成一次小样，再评估速度与效果。</p>
+ <p class="caution"><b>限制与注意</b>不同语音模型有各自许可证和硬件需求，不能把应用许可证等同于所有模型的商用授权。克隆声音须取得许可。</p>
+ <p class="footnote">本地运行不等于零资源成本；本期没有做音质、速度或多语覆盖实测。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/debpalash/VoiceStudio#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">周增数据来源<span aria-hidden="true"> ↗</span></a><a href="https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.6" target="_blank" rel="noopener noreferrer" class="">发布说明<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project weekly" id="paperclip" data-category="AI 基础能力"
+ data-scope="weekly" data-week="10700" data-name="Paperclip"
+ data-order="4" data-search="paperclip paperclipai/paperclip ai 基础能力 typescript 从多个 agent 窗口，变成有任务、预算和审批的团队。 由 node.js 服务与 react 界面组成的 agent 编排平台，统一管理目标、任务、角色、权限、工作记录与成本。 同时协调多个编码、研究或运营 agent 的个人及团队。">
+ <div class="project-top"><span class="category">AI 基础能力</span><span class="stage ">热度观察</span></div>
+ <h3><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener noreferrer" class="">Paperclip<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">paperclipai/paperclip</span>
+ <p class="project-subtitle">从多个 Agent 窗口，变成有任务、预算和审批的团队。</p>
+ <p class="project-desc">由 Node.js 服务与 React 界面组成的 Agent 编排平台，统一管理目标、任务、角色、权限、工作记录与成本。</p>
+ <div class="tags"><span class="tag">TypeScript</span><span class="tag">MIT</span><span class="tag">周榜存档精选</span></div>
+ <div class="card-metrics"><div class="metric"><b>约 96.9k</b><small>快照累计 Star · 10/04</small></div>
+ <div class="metric"><b>约 +10.7k</b><small>周增 Star · 10/04 存档</small></div></div>
+ <p class="why"><strong>为什么看：</strong>它关注“怎样管理一组 Agent”，而不是再造一个聊天框。对需要跟踪任务归属、审核产物的人更有参考价值。</p>
+ <p class="update "><b>当前能力 / </b>10/05 核验 README：支持例行任务、共享技能、预算与审批等能力。本期未核定这些能力各自的首次发布日期。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>同时协调多个编码、研究或运营 Agent 的个人及团队。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>只接入两个 Agent 和一个非生产仓库，观察任务交接、人工审批、失败恢复与成本记录是否符合预期。</p>
+ <p class="caution"><b>限制与注意</b>预算执行依赖已记录的花费，官方说明用量上报和进行中的任务可能延迟停止；不要把预算配置当成绝对消费上限。</p>
+ <p class="footnote">平台能组织工作不等于能保证任务成功，更不等于已经实现无人经营公司。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/paperclipai/paperclip#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">周增数据来源<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project weekly" id="agent-reach" data-category="AI 基础能力"
+ data-scope="weekly" data-week="4000" data-name="Agent-Reach"
+ data-order="5" data-search="agent-reach panniantong/agent-reach ai 基础能力 python 为 agent 配好读网页、查仓库与读字幕的工具通路。 面向多平台读取与搜索的 cli 能力层，负责后端选择、环境检查和接入指导；doctor 可检查各渠道正在使用的路径。 希望让本地编码或研究 agent 获取公开网页、视频字幕与仓库信息的人。">
+ <div class="project-top"><span class="category">AI 基础能力</span><span class="stage ">热度观察</span></div>
+ <h3><a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener noreferrer" class="">Agent-Reach<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">Panniantong/Agent-Reach</span>
+ <p class="project-subtitle">为 Agent 配好读网页、查仓库与读字幕的工具通路。</p>
+ <p class="project-desc">面向多平台读取与搜索的 CLI 能力层，负责后端选择、环境检查和接入指导；doctor 可检查各渠道正在使用的路径。</p>
+ <div class="tags"><span class="tag">Python</span><span class="tag">MIT</span><span class="tag">周榜存档精选</span></div>
+ <div class="card-metrics"><div class="metric"><b>约 90.3k</b><small>快照累计 Star · 10/04</small></div>
+ <div class="metric"><b>约 +4k</b><small>周增 Star · 10/04 存档</small></div></div>
+ <p class="why"><strong>为什么看：</strong>“能联网”并不是一个稳定接口。把平台差异、工具依赖和故障诊断独立出来，对研究类 Agent 很实用。</p>
+ <p class="update "><b>今日补充 / </b>10/05 官方日榜另显示今日新增 979 Star。当前文档强调默认只读检查，修改系统须显式授权；未核定该变化的首次发布日期。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>希望让本地编码或研究 Agent 获取公开网页、视频字幕与仓库信息的人。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>按官方仓库指南安装，再运行 agent-reach doctor；先启用不需要账号登录的渠道。</p>
+ <p class="caution"><b>限制与注意</b>官方特别提醒：不要从 PyPI 安装同名包，它不是本项目。需要登录态的渠道还涉及凭据暴露和平台限制风险。</p>
+ <p class="footnote">README 中的“零 API 费用”不是对所有第三方服务、账号或未来可用性的保证。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/Panniantong/Agent-Reach#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">周增数据来源<span aria-hidden="true"> ↗</span></a><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="">今日热度补充<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project weekly" id="hyperframes" data-category="媒体创作"
+ data-scope="weekly" data-week="3000" data-name="HyperFrames"
+ data-order="6" data-search="hyperframes heygen-com/hyperframes 媒体创作 typescript 写 html，再把可定位时间的动画渲染成视频。 将 html、css、媒体资源和可寻帧动画转成 mp4 的框架，支持本地 cli 与 agent 驱动的创作流程。 想用代码维护视频模板、批量生成产品素材的前端开发者和内容团队。">
+ <div class="project-top"><span class="category">媒体创作</span><span class="stage ">热度观察</span></div>
+ <h3><a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener noreferrer" class="">HyperFrames<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">heygen-com/hyperframes</span>
+ <p class="project-subtitle">写 HTML，再把可定位时间的动画渲染成视频。</p>
+ <p class="project-desc">将 HTML、CSS、媒体资源和可寻帧动画转成 MP4 的框架，支持本地 CLI 与 Agent 驱动的创作流程。</p>
+ <div class="tags"><span class="tag">TypeScript</span><span class="tag">Apache-2.0</span><span class="tag">周榜存档精选</span></div>
+ <div class="card-metrics"><div class="metric"><b>约 56.5k</b><small>快照累计 Star · 10/04</small></div>
+ <div class="metric"><b>约 +3k</b><small>周增 Star · 10/04 存档</small></div></div>
+ <p class="why"><strong>为什么看：</strong>对已有网页开发能力的人，它把排版和动画经验延伸到视频产出，适合产品介绍、功能演示和模板化内容。</p>
+ <p class="update "><b>当前能力 / </b>10/05 核验官方 README，确认 HTML 到 MP4 的工作方式；本期未核定对应的新版本发布日期。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>想用代码维护视频模板、批量生成产品素材的前端开发者和内容团队。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>从一个十秒以内的标题动画开始，先验证预览、时间定位与最终导出的画面是否一致。</p>
+ <p class="caution"><b>限制与注意</b>浏览器里会动不代表能稳定逐帧渲染；应确认动画时间控制、素材路径和字体资源，并自行检查媒体授权。</p>
+ <p class="footnote">试用建议为编辑判断；本期没有运行视频渲染或测量性能。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/heygen-com/hyperframes#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">周增数据来源<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project daily" id="e2e" data-category="开发与测试"
+ data-scope="daily" data-week="" data-name="e2e"
+ data-order="7" data-search="e2e tester-army/e2e 开发与测试 typescript 让自然语言操作与明确断言出现在同一个测试里。 面向 web 与移动应用的端到端测试框架。agent 按目标操作，再用定位器和断言验证；通过验证的步骤可在后续运行中回放。 要为关键用户路径补充自动化测试，同时希望减少脆弱操作脚本的团队。">
+ <div class="project-top"><span class="category">开发与测试</span><span class="stage ">本周有发布</span></div>
+ <h3><a href="https://github.com/tester-army/e2e" target="_blank" rel="noopener noreferrer" class="">e2e<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">tester-army/e2e</span>
+ <p class="project-subtitle">让自然语言操作与明确断言出现在同一个测试里。</p>
+ <p class="project-desc">面向 Web 与移动应用的端到端测试框架。Agent 按目标操作，再用定位器和断言验证；通过验证的步骤可在后续运行中回放。</p>
+ <div class="tags"><span class="tag">TypeScript</span><span class="tag">Apache-2.0</span><span class="tag">官方日榜补充</span></div>
+ <div class="card-metrics"><div class="metric"><b>3,068</b><small>快照累计 Star · 10/05</small></div>
+ <div class="metric"><b>+344</b><small>今日新增 Star · 10/05</small></div></div>
+ <p class="why"><strong>为什么看：</strong>它把 Agent 的灵活性和传统测试的明确验收条件放在一起，而不是只让模型判断“看起来没问题”。</p>
+ <p class="update "><b>已发布 / </b>10/04 发布 e2e@0.17.0：扩展 Copilot 模型端点适配，并加入 OpenCode Console 登录与模型接入。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>要为关键用户路径补充自动化测试，同时希望减少脆弱操作脚本的团队。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>在测试环境选择一条登录或表单路径，保留明确的成功断言，并比较首次 Agent 执行与后续回放。</p>
+ <p class="caution"><b>限制与注意</b>官方标明仍在迈向 1.0，次版本可能改变 API 和配置。模型步骤有额外成本，测试账号与数据也需要隔离。</p>
+ <p class="footnote">仅有本次日榜增量；未取得本期周增数据，不与周榜项目混排。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/tester-army/e2e#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="">日增数据来源<span aria-hidden="true"> ↗</span></a><a href="https://github.com/tester-army/e2e/releases/tag/e2e%400.17.0" target="_blank" rel="noopener noreferrer" class="">发布说明<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project daily" id="caddy" data-category="基础设施"
+ data-scope="daily" data-week="" data-name="Caddy"
+ data-order="8" data-search="caddy caddyserver/caddy 基础设施 go 把自动 https 与可扩展 web 服务留在工具箱里。 支持 http/1.1、http/2 与 http/3 的服务器平台，提供自动 https、caddyfile、json 配置和模块化扩展。 需要部署网站、内部工具或后端服务的开发者。">
+ <div class="project-top"><span class="category">基础设施</span><span class="stage ">成熟工具观察</span></div>
+ <h3><a href="https://github.com/caddyserver/caddy" target="_blank" rel="noopener noreferrer" class="">Caddy<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">caddyserver/caddy</span>
+ <p class="project-subtitle">把自动 HTTPS 与可扩展 Web 服务留在工具箱里。</p>
+ <p class="project-desc">支持 HTTP/1.1、HTTP/2 与 HTTP/3 的服务器平台，提供自动 HTTPS、Caddyfile、JSON 配置和模块化扩展。</p>
+ <div class="tags"><span class="tag">Go</span><span class="tag">Apache-2.0</span><span class="tag">官方日榜补充</span></div>
+ <div class="card-metrics"><div class="metric"><b>76,551</b><small>快照累计 Star · 10/05</small></div>
+ <div class="metric"><b>+226</b><small>今日新增 Star · 10/05</small></div></div>
+ <p class="why"><strong>为什么看：</strong>本期不只关注 Agent。证书和服务入口是实际交付要面对的问题，成熟基础设施也值得重新看一眼。</p>
+ <p class="update "><b>今日信号 / </b>10/05 出现在本次官方日榜抓取中，今日新增 226 Star；本期没有核实到导致热度变化的具体事件。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>需要部署网站、内部工具或后端服务的开发者。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>从一个测试域名和简单站点开始，验证证书签发、配置重载与日志，再评估是否迁移现有入口。</p>
+ <p class="caution"><b>限制与注意</b>自动 HTTPS 仍依赖具体网络、域名和验证条件。既有系统迁移前应检查插件、配置与运维习惯的差异。</p>
+ <p class="footnote">入选依据为日榜观察，不把多年已有的能力包装成本周新功能。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/caddyserver/caddy#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="">日增数据来源<span aria-hidden="true"> ↗</span></a></div>
+</article>
+<article class="project daily" id="opencut" data-category="媒体创作"
+ data-scope="daily" data-week="" data-name="OpenCut"
+ data-order="9" data-search="opencut opencut-app/opencut 媒体创作 typescript / rust（重写） 值得跟踪，但先分清可用的旧版和规划中的新版。 开源视频编辑器。当前仓库说明正在从头重写，计划以 rust 核心支持跨端，并加入 editor api、插件、mcp 和无界面模式。 关注开源剪辑、创作工具插件化和 rust 媒体核心的开发者。">
+ <div class="project-top"><span class="category">媒体创作</span><span class="stage warning">重写进行中</span></div>
+ <h3><a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener noreferrer" class="">OpenCut<span aria-hidden="true"> ↗</span></a></h3><span class="repo-name">OpenCut-app/OpenCut</span>
+ <p class="project-subtitle">值得跟踪，但先分清可用的旧版和规划中的新版。</p>
+ <p class="project-desc">开源视频编辑器。当前仓库说明正在从头重写，计划以 Rust 核心支持跨端，并加入 Editor API、插件、MCP 和无界面模式。</p>
+ <div class="tags"><span class="tag">TypeScript / Rust（重写）</span><span class="tag">MIT</span><span class="tag">官方日榜补充</span></div>
+ <div class="card-metrics"><div class="metric"><b>92,129</b><small>快照累计 Star · 10/05</small></div>
+ <div class="metric"><b>+512</b><small>今日新增 Star · 10/05</small></div></div>
+ <p class="why"><strong>为什么看：</strong>它展示了创作软件从“一个编辑界面”走向可扩展、可自动化工具的方向；但热度不能替代版本成熟度判断。</p>
+ <p class="update "><b>开发中 / 非正式发布 / </b>10/05 核验 README：上述重写能力列为“即将到来”；官方仍建议当前使用 opencut-classic。</p>
+ <details><summary>适合谁、怎么试，以及要注意什么</summary><div class="detail-content">
+ <p><b>适合谁</b>关注开源剪辑、创作工具插件化和 Rust 媒体核心的开发者。</p>
+ <p><b>建议从这里开始 · 编辑建议</b>实际剪辑先看 classic 版本；研究新版时重点阅读架构与计划，不预设所列能力均已稳定可用。</p>
+ <p class="caution"><b>限制与注意</b>重写期间不要把主分支或宣传路线图直接用于生产选型。README 还说明架构设计阶段暂未准备好接受外部贡献。</p>
+ <p class="footnote">重写的首次宣布日期未核实；10/05 是本期核验日期，不是项目诞生日。</p>
+ </div></details>
+ <div class="source-links"><a href="https://github.com/OpenCut-app/OpenCut#readme" target="_blank" rel="noopener noreferrer" class="">官方 README<span aria-hidden="true"> ↗</span></a><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="">日增数据来源<span aria-hidden="true"> ↗</span></a><a href="https://github.com/OpenCut-app/opencut-classic" target="_blank" rel="noopener noreferrer" class="">classic 版本<span aria-hidden="true"> ↗</span></a></div>
+</article></div>
+ <div id="empty" class="empty" hidden>没有匹配的项目。<br><button class="btn small" type="button" id="reset">清除筛选</button></div>
+ </section>
+
+ <section aria-labelledby="release-title"><div class="section-head"><div><span class="n">04 / VERIFIED RELEASES</span><h2 id="release-title">有明确日期的更新</h2></div><p>日期按 GitHub 页面显示。<br>只列实际核验到的发布。</p></div>
+ <div class="timeline"><article class="event"><time datetime="2026-09-29">09.29</time><h3>Hindsight · v0.10.2</h3><p>范围化记忆整合策略；修复模型刷新失败后的重复调用。</p><a href="https://github.com/vectorize-io/hindsight/releases/tag/v0.10.2" target="_blank" rel="noopener noreferrer" class="">官方发布说明<span aria-hidden="true"> ↗</span></a></article><article class="event"><time datetime="2026-10-02">10.02</time><h3>Impeccable · Skill 4.5.0</h3><p>工作界面、文档与落地页采用更明确的设计约束。</p><a href="https://github.com/pbakaus/impeccable/releases/tag/skill-v4.5.0" target="_blank" rel="noopener noreferrer" class="">官方发布说明<span aria-hidden="true"> ↗</span></a></article><article class="event"><time datetime="2026-10-04">10.04</time><h3>e2e · 0.17.0</h3><p>扩展 Copilot 端点适配和 OpenCode Console 接入。</p><a href="https://github.com/tester-army/e2e/releases/tag/e2e%400.17.0" target="_blank" rel="noopener noreferrer" class="">官方发布说明<span aria-hidden="true"> ↗</span></a></article><article class="event"><time datetime="2026-10-04">10.04</time><h3>Effect · 4.0.1</h3><p>缓存不保留中断结果，修正部分集群恢复行为。</p><a href="https://github.com/Effect-TS/effect/releases/tag/effect%404.0.1" target="_blank" rel="noopener noreferrer" class="">官方发布说明<span aria-hidden="true"> ↗</span></a></article></div>
+ <div class="old-news">前期背景，不计入本周发布：VoiceStudio v0.5.6 的发布日期为 <strong>09/23</strong>。本周有热度，不等于本周才发布。<a href="https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.6" target="_blank" rel="noopener noreferrer" class="">查看发布说明<span aria-hidden="true"> ↗</span></a></div>
+ </section>
+
+ <section aria-labelledby="takeaways-title"><div class="section-head"><div><span class="n">05 / WHAT TO DO WITH IT</span><h2 id="takeaways-title">不只收藏，也要判断</h2></div><p>下列为基于入选项目的编辑观察，<br>不代表全行业统计结论。</p></div>
+ <div class="observations">
+  <article class="observation"><h3>01 / Agent 的管理问题值得单独解决</h3><p>Hindsight 处理记忆，Paperclip 处理任务与治理。接入工具前先分清你缺的是上下文、编排还是执行能力，避免把多种问题都交给一个不断膨胀的提示词。</p><a href="https://github.com/vectorize-io/hindsight" target="_blank" rel="noopener noreferrer" class="">记忆层<span aria-hidden="true"> ↗</span></a>&nbsp;&nbsp;<a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener noreferrer" class="">编排层<span aria-hidden="true"> ↗</span></a></article>
+  <article class="observation"><h3>02 / 把验收标准放进工作流</h3><p>Impeccable 提供设计检查，e2e 把自然语言动作和断言结合起来。更值得借鉴的做法，是让产物有可检查的标准，而不只让 Agent 自评“任务完成”。</p><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener noreferrer" class="">设计检查<span aria-hidden="true"> ↗</span></a>&nbsp;&nbsp;<a href="https://github.com/tester-army/e2e" target="_blank" rel="noopener noreferrer" class="">端到端验证<span aria-hidden="true"> ↗</span></a></article>
+  <article class="observation"><h3>03 / 内容工具要看产出，也要看状态</h3><p>VoiceStudio 与 HyperFrames 可用于研究音频、视频工作流；OpenCut 则要明确区分 classic 和重写版。选型时把可用版本、授权和运行成本放在宣传语前面。</p><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer" class="">本地语音<span aria-hidden="true"> ↗</span></a>&nbsp;&nbsp;<a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener noreferrer" class="">视频生成<span aria-hidden="true"> ↗</span></a>&nbsp;&nbsp;<a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener noreferrer" class="">重写状态<span aria-hidden="true"> ↗</span></a></article>
+ </div></section>
+
+ <aside class="methods" id="methodology" aria-labelledby="method-title"><h2 id="method-title">来源、时间与边界</h2>
+ <p><strong>观察范围：</strong>主要回顾 2026/09/28—10/04，另补充 10/05 日榜与检索时的官方项目状态。检索记录：2026-10-05 10:25 JST。不同页面不是同一秒采集，累计 Star 不保证与现在打开仓库时一致。</p>
+ <p><strong>热度数据：</strong>7 个项目的周增及累计 Star 使用 10/04 的 Githot 存档显示值；3 个补充项目使用 10/05 GitHub 日榜的累计及今日新增。带“约”或 k 的数值不恢复为虚构的精确整数。周增缺失不是 0；无跨期样本，不绘制增长曲线或编造环比。</p>
+ <p><strong>内容核验：</strong>功能、版本状态与许可证依据官方 README / Releases。未核定首次发布日期的能力标注为“当前能力”，不冒充本周新增；项目自述并不等于独立性能验证。热度变化的原因未知时不猜测。</p>
+ <p><strong>阅读建议：</strong>推荐顺序是编辑选择，不是 GitHub 官方排名。没有执行安装、代码审计或功能实测。对适合谁、如何试用的判断，须结合你的实际环境再验证；应用与模型、素材的许可边界可能不同。</p>
+ <details><summary>展开全部项目与榜单来源</summary><div class="sources-grid"><a href="https://githot.dev/en/weekly/2026-10-04" target="_blank" rel="noopener noreferrer" class="">Githot · 10/04 周榜存档<span aria-hidden="true"> ↗</span></a><a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" class="">GitHub · 官方日榜<span aria-hidden="true"> ↗</span></a><a href="https://github.com/vectorize-io/hindsight" target="_blank" rel="noopener noreferrer" class="">vectorize-io/hindsight<span aria-hidden="true"> ↗</span></a><a href="https://github.com/pbakaus/impeccable" target="_blank" rel="noopener noreferrer" class="">pbakaus/impeccable<span aria-hidden="true"> ↗</span></a><a href="https://github.com/Effect-TS/effect" target="_blank" rel="noopener noreferrer" class="">Effect-TS/effect<span aria-hidden="true"> ↗</span></a><a href="https://github.com/debpalash/VoiceStudio" target="_blank" rel="noopener noreferrer" class="">debpalash/VoiceStudio<span aria-hidden="true"> ↗</span></a><a href="https://github.com/paperclipai/paperclip" target="_blank" rel="noopener noreferrer" class="">paperclipai/paperclip<span aria-hidden="true"> ↗</span></a><a href="https://github.com/Panniantong/Agent-Reach" target="_blank" rel="noopener noreferrer" class="">Panniantong/Agent-Reach<span aria-hidden="true"> ↗</span></a><a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener noreferrer" class="">heygen-com/hyperframes<span aria-hidden="true"> ↗</span></a><a href="https://github.com/tester-army/e2e" target="_blank" rel="noopener noreferrer" class="">tester-army/e2e<span aria-hidden="true"> ↗</span></a><a href="https://github.com/caddyserver/caddy" target="_blank" rel="noopener noreferrer" class="">caddyserver/caddy<span aria-hidden="true"> ↗</span></a><a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener noreferrer" class="">OpenCut-app/OpenCut<span aria-hidden="true"> ↗</span></a></div></details>
+ <p><button class="btn small" id="export" type="button">导出本期数据与来源 JSON</button></p>
+ </aside>
+</main>
+<footer><span><b>GITHUB / WEEKLY</b> · 2026.10.05</span><span>独立编辑整理，非 GitHub 官方刊物 · 单文件离线阅读 · 外链需联网</span></footer>
+</div><script type="application/json" id="source-data">{"edition": "2026-10-05", "coverage": "2026-09-28—2026-10-04，另含 10/05 补充", "retrieved": "2026-10-05 10:25 JST", "weeklySource": "https://githot.dev/en/weekly/2026-10-04", "dailySource": "https://github.com/trending", "method": "周榜直连失败；周增采用第三方 10/04 存档的显示值，k 值保留近似口径。日榜数据来自 10/05 官方页面。排序为编辑精选，非官方名次。", "projects": [{"id": "hindsight", "name": "Hindsight", "repo": "vectorize-io/hindsight", "category": "AI 基础能力", "language": "Python", "license": "MIT", "scope": "weekly", "total": 45300, "totalLabel": "约 45.3k", "growth": 14500, "growthLabel": "约 +14.5k", "snapshot": "2026-10-04", "stage": "本周有发布", "subtitle": "让 Agent 不只记住，还能回顾与归纳。", "description": "通过 retain、recall、reflect 三类操作组织长期记忆；检索结合语义、关键词、图谱与时间条件，并提供 SDK、REST API 和 MCP 接口。", "why": "周榜存档显示约新增 14.5k Star；同时有可核验的新版本。比泛泛的“永久记忆”口号更值得看的是数据结构和失败处理。", "update": "09/29 发布 v0.10.2：加入按范围配置的记忆整合策略，并修复心理模型刷新失败后反复消耗模型调用的问题。", "updateKind": "已发布", "releaseDate": "2026-09-29", "releaseLabel": "v0.10.2", "releaseUrl": "https://github.com/vectorize-io/hindsight/releases/tag/v0.10.2", "audience": "需要跨会话上下文的客服、研究助手和长期任务 Agent。", "trial": "先用无敏感信息的样本，测试“事实变化、冲突记忆、删除或隔离”三个场景，再判断是否适合你的业务。", "caution": "记忆提取仍会调用模型，不能把归纳结果直接视为事实。接入前应验证用户隔离、检索准确率和调用成本。", "foot": "功能以官方 README 为准；推荐理由及试用路径为编辑判断，未进行实测。", "order": 0, "url": "https://github.com/vectorize-io/hindsight", "metricSource": "https://githot.dev/en/weekly/2026-10-04"}, {"id": "impeccable", "name": "Impeccable", "repo": "pbakaus/impeccable", "category": "开发与测试", "language": "JavaScript", "license": "Apache-2.0", "scope": "weekly", "total": 75800, "totalLabel": "约 75.8k", "growth": 3300, "growthLabel": "约 +3.3k", "snapshot": "2026-10-04", "stage": "本周有发布", "subtitle": "把“帮我做得好看一点”变成可执行的设计流程。", "description": "面向 AI 编码工具的设计指导。目前 README 列出 24 个命令和 61 条确定性检测规则，覆盖产品背景、界面规划、审查与打磨。", "why": "适合反复用 Agent 做官网、后台和文档页的人：重点不是换一个配色，而是让每类页面有自己的信息结构和检查流程。", "update": "10/02 发布 Skill 4.5.0：分别强化工作型界面、文档阅读栏和落地页的行动入口，并修复 live mode 等细节。", "updateKind": "已发布", "releaseDate": "2026-10-02", "releaseLabel": "Skill 4.5.0", "releaseUrl": "https://github.com/pbakaus/impeccable/releases/tag/skill-v4.5.0", "audience": "使用编码 Agent 搭建产品界面、官网和内部工具的开发者。", "trial": "选择一个已有页面，先运行 /impeccable audit，再针对具体问题使用 polish；保留改动前后截图比较。", "caution": "规则通过不等于用户体验验证。品牌、受众与业务目标仍需明确，不宜把不同项目统一改成同一种“高级感”。", "foot": "命令数量取自 10/05 官方 README，不沿用第三方快照的旧功能描述。", "order": 1, "url": "https://github.com/pbakaus/impeccable", "metricSource": "https://githot.dev/en/weekly/2026-10-04"}, {"id": "effect", "name": "Effect", "repo": "Effect-TS/effect", "category": "开发与测试", "language": "TypeScript", "license": "MIT", "scope": "weekly", "total": 16900, "totalLabel": "约 16.9k", "growth": 466, "growthLabel": "+466", "snapshot": "2026-10-04", "stage": "本周有发布", "subtitle": "把错误、并发、依赖与资源生命周期放进类型系统。", "description": "为 TypeScript 提供类型化错误、依赖注入、结构化并发、调度、追踪和 Schema 验证。官方将 4.x 标为长期支持版本。", "why": "热度不如生成式工具夸张，却更接近大型服务的日常问题。适合关注函数式组织方式和显式错误处理的人。", "update": "10/04 发布 effect@4.0.1：修正缓存与中断的交互，避免缓存被中断的结果，并修复集群请求恢复等行为。", "updateKind": "已发布", "releaseDate": "2026-10-04", "releaseLabel": "effect@4.0.1", "releaseUrl": "https://github.com/Effect-TS/effect/releases/tag/effect%404.0.1", "audience": "需要管理复杂异步流程、资源与错误边界的 TypeScript 后端团队。", "trial": "先选一条包含超时、重试和资源释放的业务链做小范围试点，而不是先改造整个项目。", "caution": "3.x 升 4.x 应按官方迁移指南逐项检查。引入抽象有学习成本；简单 CRUD 不必为了统一而过度封装。", "foot": "发布日期按 GitHub 页面显示；4.0.1 是补丁发布，不代表 4.0 首次发布于本周。", "order": 2, "url": "https://github.com/Effect-TS/effect", "metricSource": "https://githot.dev/en/weekly/2026-10-04"}, {"id": "voicestudio", "name": "VoiceStudio", "repo": "debpalash/VoiceStudio", "category": "媒体创作", "language": "Python", "license": "AGPL-3.0", "scope": "weekly", "total": 52800, "totalLabel": "约 52.8k", "growth": 16800, "growthLabel": "约 +16.8k", "snapshot": "2026-10-04", "stage": "热度观察", "subtitle": "在自己的电脑上完成语音克隆、配音与有声书。", "description": "本地优先的语音工作台，集合语音克隆、转录、视频配音和有声书生成，并提供本地 API 与 MCP 接入。", "why": "在本期 7 个周榜精选中，快照周增最高。值得关注的是音频能力被组织成完整工作流，而不只是单一模型演示。", "update": "核验到的 v0.5.6 发布于 09/23，早于本期：改善工具接入、Docker 下的 MCP 和长篇音频流程；这些不是本周新发布。", "updateKind": "前期背景", "releaseDate": "2026-09-23", "releaseLabel": "v0.5.6", "releaseUrl": "https://github.com/debpalash/VoiceStudio/releases/tag/v0.5.6", "audience": "需要产品讲解音轨、多语内容或本地语音工具的创作者与开发者。", "trial": "从官方 Releases 获取安装包，用有授权的短录音和一段自写脚本完成一次小样，再评估速度与效果。", "caution": "不同语音模型有各自许可证和硬件需求，不能把应用许可证等同于所有模型的商用授权。克隆声音须取得许可。", "foot": "本地运行不等于零资源成本；本期没有做音质、速度或多语覆盖实测。", "order": 3, "url": "https://github.com/debpalash/VoiceStudio", "metricSource": "https://githot.dev/en/weekly/2026-10-04"}, {"id": "paperclip", "name": "Paperclip", "repo": "paperclipai/paperclip", "category": "AI 基础能力", "language": "TypeScript", "license": "MIT", "scope": "weekly", "total": 96900, "totalLabel": "约 96.9k", "growth": 10700, "growthLabel": "约 +10.7k", "snapshot": "2026-10-04", "stage": "热度观察", "subtitle": "从多个 Agent 窗口，变成有任务、预算和审批的团队。", "description": "由 Node.js 服务与 React 界面组成的 Agent 编排平台，统一管理目标、任务、角色、权限、工作记录与成本。", "why": "它关注“怎样管理一组 Agent”，而不是再造一个聊天框。对需要跟踪任务归属、审核产物的人更有参考价值。", "update": "10/05 核验 README：支持例行任务、共享技能、预算与审批等能力。本期未核定这些能力各自的首次发布日期。", "updateKind": "当前能力", "releaseDate": null, "releaseLabel": null, "releaseUrl": null, "audience": "同时协调多个编码、研究或运营 Agent 的个人及团队。", "trial": "只接入两个 Agent 和一个非生产仓库，观察任务交接、人工审批、失败恢复与成本记录是否符合预期。", "caution": "预算执行依赖已记录的花费，官方说明用量上报和进行中的任务可能延迟停止；不要把预算配置当成绝对消费上限。", "foot": "平台能组织工作不等于能保证任务成功，更不等于已经实现无人经营公司。", "order": 4, "url": "https://github.com/paperclipai/paperclip", "metricSource": "https://githot.dev/en/weekly/2026-10-04"}, {"id": "agent-reach", "name": "Agent-Reach", "repo": "Panniantong/Agent-Reach", "category": "AI 基础能力", "language": "Python", "license": "MIT", "scope": "weekly", "total": 90300, "totalLabel": "约 90.3k", "growth": 4000, "growthLabel": "约 +4k", "snapshot": "2026-10-04", "stage": "热度观察", "subtitle": "为 Agent 配好读网页、查仓库与读字幕的工具通路。", "description": "面向多平台读取与搜索的 CLI 能力层，负责后端选择、环境检查和接入指导；doctor 可检查各渠道正在使用的路径。", "why": "“能联网”并不是一个稳定接口。把平台差异、工具依赖和故障诊断独立出来，对研究类 Agent 很实用。", "update": "10/05 官方日榜另显示今日新增 979 Star。当前文档强调默认只读检查，修改系统须显式授权；未核定该变化的首次发布日期。", "updateKind": "今日补充", "releaseDate": null, "releaseLabel": null, "releaseUrl": null, "audience": "希望让本地编码或研究 Agent 获取公开网页、视频字幕与仓库信息的人。", "trial": "按官方仓库指南安装，再运行 agent-reach doctor；先启用不需要账号登录的渠道。", "caution": "官方特别提醒：不要从 PyPI 安装同名包，它不是本项目。需要登录态的渠道还涉及凭据暴露和平台限制风险。", "foot": "README 中的“零 API 费用”不是对所有第三方服务、账号或未来可用性的保证。", "order": 5, "url": "https://github.com/Panniantong/Agent-Reach", "metricSource": "https://githot.dev/en/weekly/2026-10-04"}, {"id": "hyperframes", "name": "HyperFrames", "repo": "heygen-com/hyperframes", "category": "媒体创作", "language": "TypeScript", "license": "Apache-2.0", "scope": "weekly", "total": 56500, "totalLabel": "约 56.5k", "growth": 3000, "growthLabel": "约 +3k", "snapshot": "2026-10-04", "stage": "热度观察", "subtitle": "写 HTML，再把可定位时间的动画渲染成视频。", "description": "将 HTML、CSS、媒体资源和可寻帧动画转成 MP4 的框架，支持本地 CLI 与 Agent 驱动的创作流程。", "why": "对已有网页开发能力的人，它把排版和动画经验延伸到视频产出，适合产品介绍、功能演示和模板化内容。", "update": "10/05 核验官方 README，确认 HTML 到 MP4 的工作方式；本期未核定对应的新版本发布日期。", "updateKind": "当前能力", "releaseDate": null, "releaseLabel": null, "releaseUrl": null, "audience": "想用代码维护视频模板、批量生成产品素材的前端开发者和内容团队。", "trial": "从一个十秒以内的标题动画开始，先验证预览、时间定位与最终导出的画面是否一致。", "caution": "浏览器里会动不代表能稳定逐帧渲染；应确认动画时间控制、素材路径和字体资源，并自行检查媒体授权。", "foot": "试用建议为编辑判断；本期没有运行视频渲染或测量性能。", "order": 6, "url": "https://github.com/heygen-com/hyperframes", "metricSource": "https://githot.dev/en/weekly/2026-10-04"}, {"id": "e2e", "name": "e2e", "repo": "tester-army/e2e", "category": "开发与测试", "language": "TypeScript", "license": "Apache-2.0", "scope": "daily", "total": 3068, "totalLabel": "3,068", "growth": 344, "growthLabel": "+344", "snapshot": "2026-10-05", "stage": "本周有发布", "subtitle": "让自然语言操作与明确断言出现在同一个测试里。", "description": "面向 Web 与移动应用的端到端测试框架。Agent 按目标操作，再用定位器和断言验证；通过验证的步骤可在后续运行中回放。", "why": "它把 Agent 的灵活性和传统测试的明确验收条件放在一起，而不是只让模型判断“看起来没问题”。", "update": "10/04 发布 e2e@0.17.0：扩展 Copilot 模型端点适配，并加入 OpenCode Console 登录与模型接入。", "updateKind": "已发布", "releaseDate": "2026-10-04", "releaseLabel": "e2e@0.17.0", "releaseUrl": "https://github.com/tester-army/e2e/releases/tag/e2e%400.17.0", "audience": "要为关键用户路径补充自动化测试，同时希望减少脆弱操作脚本的团队。", "trial": "在测试环境选择一条登录或表单路径，保留明确的成功断言，并比较首次 Agent 执行与后续回放。", "caution": "官方标明仍在迈向 1.0，次版本可能改变 API 和配置。模型步骤有额外成本，测试账号与数据也需要隔离。", "foot": "仅有本次日榜增量；未取得本期周增数据，不与周榜项目混排。", "order": 7, "url": "https://github.com/tester-army/e2e", "metricSource": "https://github.com/trending"}, {"id": "caddy", "name": "Caddy", "repo": "caddyserver/caddy", "category": "基础设施", "language": "Go", "license": "Apache-2.0", "scope": "daily", "total": 76551, "totalLabel": "76,551", "growth": 226, "growthLabel": "+226", "snapshot": "2026-10-05", "stage": "成熟工具观察", "subtitle": "把自动 HTTPS 与可扩展 Web 服务留在工具箱里。", "description": "支持 HTTP/1.1、HTTP/2 与 HTTP/3 的服务器平台，提供自动 HTTPS、Caddyfile、JSON 配置和模块化扩展。", "why": "本期不只关注 Agent。证书和服务入口是实际交付要面对的问题，成熟基础设施也值得重新看一眼。", "update": "10/05 出现在本次官方日榜抓取中，今日新增 226 Star；本期没有核实到导致热度变化的具体事件。", "updateKind": "今日信号", "releaseDate": null, "releaseLabel": null, "releaseUrl": null, "audience": "需要部署网站、内部工具或后端服务的开发者。", "trial": "从一个测试域名和简单站点开始，验证证书签发、配置重载与日志，再评估是否迁移现有入口。", "caution": "自动 HTTPS 仍依赖具体网络、域名和验证条件。既有系统迁移前应检查插件、配置与运维习惯的差异。", "foot": "入选依据为日榜观察，不把多年已有的能力包装成本周新功能。", "order": 8, "url": "https://github.com/caddyserver/caddy", "metricSource": "https://github.com/trending"}, {"id": "opencut", "name": "OpenCut", "repo": "OpenCut-app/OpenCut", "category": "媒体创作", "language": "TypeScript / Rust（重写）", "license": "MIT", "scope": "daily", "total": 92129, "totalLabel": "92,129", "growth": 512, "growthLabel": "+512", "snapshot": "2026-10-05", "stage": "重写进行中", "subtitle": "值得跟踪，但先分清可用的旧版和规划中的新版。", "description": "开源视频编辑器。当前仓库说明正在从头重写，计划以 Rust 核心支持跨端，并加入 Editor API、插件、MCP 和无界面模式。", "why": "它展示了创作软件从“一个编辑界面”走向可扩展、可自动化工具的方向；但热度不能替代版本成熟度判断。", "update": "10/05 核验 README：上述重写能力列为“即将到来”；官方仍建议当前使用 opencut-classic。", "updateKind": "开发中 / 非正式发布", "releaseDate": null, "releaseLabel": null, "releaseUrl": null, "audience": "关注开源剪辑、创作工具插件化和 Rust 媒体核心的开发者。", "trial": "实际剪辑先看 classic 版本；研究新版时重点阅读架构与计划，不预设所列能力均已稳定可用。", "caution": "重写期间不要把主分支或宣传路线图直接用于生产选型。README 还说明架构设计阶段暂未准备好接受外部贡献。", "foot": "重写的首次宣布日期未核实；10/05 是本期核验日期，不是项目诞生日。", "order": 9, "url": "https://github.com/OpenCut-app/OpenCut", "metricSource": "https://github.com/trending"}]}</script><script>
+(() => {
+  "use strict";
+  const $ = (s) => document.querySelector(s);
+  const cards = Array.from(document.querySelectorAll(".project"));
+  const grid = $("#projects-grid");
+  let category = "all";
+  const apply = () => {
+    const q = $("#search").value.trim().toLocaleLowerCase();
+    const scope = $("#scope").value;
+    let count = 0;
+    for (const card of cards) {
+      const show = (category === "all" || card.dataset.category === category)
+        && (scope === "all" || card.dataset.scope === scope)
+        && (!q || card.dataset.search.includes(q));
+      card.hidden = !show;
+      if (show) count++;
+    }
+    const mode = $("#sort").value;
+    const sorted = cards.slice().sort((a, b) => {
+      if (mode === "name") return a.dataset.name.localeCompare(b.dataset.name);
+      if (mode === "weekly") {
+        const av = a.dataset.week === "" ? -1 : Number(a.dataset.week);
+        const bv = b.dataset.week === "" ? -1 : Number(b.dataset.week);
+        if (av !== bv) return bv - av;
+      }
+      return Number(a.dataset.order) - Number(b.dataset.order);
+    });
+    for (const card of sorted) grid.appendChild(card);
+    $("#count").textContent = `显示 ${count} / ${cards.length} 个项目`;
+    $("#empty").hidden = count > 0;
+  };
+  $("#search").addEventListener("input", apply);
+  $("#sort").addEventListener("change", apply);
+  $("#scope").addEventListener("change", apply);
+  document.querySelectorAll("[data-filter]").forEach(button => {
+    button.addEventListener("click", () => {
+      category = button.dataset.filter;
+      document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed", String(b === button)));
+      apply();
+    });
+  });
+  const reset = () => {
+    category = "all"; $("#search").value = ""; $("#scope").value = "all"; $("#sort").value = "editorial";
+    document.querySelectorAll("[data-filter]").forEach(b => b.setAttribute("aria-pressed",String(b.dataset.filter === "all")));
+    apply();
+  };
+  $("#reset").addEventListener("click", reset);
+  const exposeAnchor = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = document.getElementById(id);
+    if (target && target.classList.contains("project") && target.hidden) {
+      reset();
+      target.scrollIntoView({block:"start",behavior:"smooth"});
+    }
+  };
+  window.addEventListener("hashchange", exposeAnchor);
+  $("#expand").addEventListener("click", () => {
+    const visibleDetails = cards.filter(c => !c.hidden).map(c => c.querySelector("details"));
+    const opening = visibleDetails.some(d => !d.open);
+    visibleDetails.forEach(d => d.open = opening);
+    $("#expand").textContent = opening ? "收起详情" : "展开详情";
+    $("#expand").setAttribute("aria-expanded",String(opening));
+  });
+  const setTheme = (light) => {
+    document.documentElement.dataset.theme = light ? "light" : "dark";
+    $("#theme").setAttribute("aria-pressed",String(light));
+    $("#theme").textContent = light ? "深色" : "浅色";
+    try { localStorage.setItem("github-weekly-theme",light ? "light" : "dark"); } catch (_) {}
+  };
+  let initial = false;
+  try { initial = localStorage.getItem("github-weekly-theme") === "light"; } catch (_) {}
+  setTheme(initial);
+  $("#theme").addEventListener("click", () => setTheme(document.documentElement.dataset.theme !== "light"));
+  $("#print").addEventListener("click", () => window.print());
+  let savedDetails = [];
+  window.addEventListener("beforeprint", () => {
+    savedDetails = Array.from(document.querySelectorAll("details")).map(d => [d,d.open]);
+    savedDetails.forEach(([d]) => d.open = true);
+  });
+  window.addEventListener("afterprint", () => savedDetails.forEach(([d,open]) => d.open = open));
+  $("#export").addEventListener("click", () => {
+    try {
+      const parsed = JSON.parse($("#source-data").textContent);
+      const blob = new Blob([JSON.stringify(parsed,null,2)],{type:"application/json;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url; link.download = "github-weekly-2026-10-05-data.json";
+      document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(() => URL.revokeObjectURL(url),1000);
+    } catch (_) {
+      $("#export").textContent = "请在浏览器中打开后导出";
+    }
+  });
+  apply(); exposeAnchor();
+})();
+</script></body></html>

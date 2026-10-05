@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "title": "技术周刊",
+  "subtitle": "TAKEHAN / TECH WEEKLY",
+  "description": "从 Rust 到开源项目，再到 AI。把值得关注的技术，留在一个可以回看的地方。",
+  "owner": "TakeHan",
+  "base_path": "/tech-weekly",
+  "url": "https://zhangzhenxiang666.github.io/tech-weekly",
+  "repository": "https://github.com/zhangzhenxiang666/tech-weekly"
+}

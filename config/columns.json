@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "columns": [
+    {"id":"rust","name":"Rust 周报","eyebrow":"SYSTEMS & CRAFT","symbol":"Rs","description":"语言演进、生态工具与工程实践。关注更可靠的软件如何被构建。","accent":"rust","module":"rust","tags":["语言与生态","工程实践"],"empty_message":"第一期内容正在整理。发布后，会在这里按日期归档。"},
+    {"id":"github","name":"GitHub 热门项目","eyebrow":"OPEN SOURCE RADAR","symbol":"GH","description":"发现值得读、值得试的开源项目。把热度数据和真正的使用价值分开看。","accent":"github","module":"github","tags":["开源发现","项目精选"],"empty_message":"暂无已发布的项目周报。"},
+    {"id":"ai","name":"AI 周报","eyebrow":"INTELLIGENCE IN PRACTICE","symbol":"AI","description":"从模型、产品到实践与边界。记录 AI 的变化，也保留判断所需的来源。","accent":"ai","module":"ai","tags":["模型与产品","实践与边界"],"empty_message":"暂无已发布的 AI 周报。"}
+  ]
+}
