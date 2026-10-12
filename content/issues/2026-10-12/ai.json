@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "column": "ai",
+  "date": "2026-10-12",
+  "title": "AI 可视化周报｜2026-10-12",
+  "summary": "收录 10 月 5–11 日的模型、Agent、开放权重与治理动态，保留原文对发布状态、厂商自述、价格和许可的区分及资料限制。",
+  "coverage": "2026-10-05 至 2026-10-11（北京时间，UTC+8）；期刊日期 2026-10-12；原文检索时间 2026-10-12 17:17。",
+  "provenance": "来自用户重新生成并指定发布的原始 HTML 周报，逐字节归档。原文标注检索时间为 2026-10-12 17:17（北京时间）。归档阶段核验了文件完整性、SHA-256、静态脚本、外链和公开内容，未重新逐条核验新闻事实；来源链接摘自原文。原报告区分事实、厂商自述与编辑判断，未独立复测基准、成本或产品，也不把预览、候补与待交付权重视为正式可用；价格、许可和可用性以原文当时口径为准。实施前请复核最新来源，站点导览不替代原文。",
+  "highlights": [
+    "原文按模型、Agent、开放权重和治理分类整理 11 条动态。",
+    "发布状态、权重交付与许可证分别标注；厂商自测不等于独立验证。",
+    "原文保留价格切片、趋势观察、实践建议及 14 个直接来源。"
+  ],
+  "original": {
+    "path": "ai-weekly-2026-10-12.html",
+    "sha256": "de28d613069f66d532f604f1e0417b27e9f774878210353b3020ce9a86414610"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Introducing Beam",
+      "url": "https://reflection.ai/blog/introducing-beam"
+    },
+    {
+      "id": "source-2",
+      "title": "Introducing Mistral Large 4",
+      "url": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "id": "source-3",
+      "title": "Expanding the Cyber Verification Program",
+      "url": "https://www.anthropic.com/news/cyber-verification-program"
+    },
+    {
+      "id": "source-4",
+      "title": "Decisions API guide",
+      "url": "https://developers.openai.com/api/docs/guides/decisions"
+    },
+    {
+      "id": "source-5",
+      "title": "GPT‑6 and Intelligent UI for everyone",
+      "url": "https://openai.com/index/gpt-6-for-everyone/"
+    },
+    {
+      "id": "source-6",
+      "title": "Claude Haiku 5.5",
+      "url": "https://www.anthropic.com/claude-haiku-5-5"
+    },
+    {
+      "id": "source-7",
+      "title": "Building Windows for hybrid intelligence",
+      "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
+    },
+    {
+      "id": "source-8",
+      "title": "Introducing the Gemini agent",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
+    },
+    {
+      "id": "source-9",
+      "title": "2026 Usage Policy update",
+      "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+    },
+    {
+      "id": "source-10",
+      "title": "Disrupting AI-enabled “false front” operations",
+      "url": "https://openai.com/index/disrupting-ai-enabled-false-front-operations/"
+    },
+    {
+      "id": "source-11",
+      "title": "Qwen‑Image‑2.1‑Turbo model card",
+      "url": "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo"
+    },
+    {
+      "id": "source-12",
+      "title": "Qwen‑Image‑2.1 official repository",
+      "url": "https://github.com/QwenLM/Qwen-Image-2.1"
+    },
+    {
+      "id": "source-13",
+      "title": "API Changelog",
+      "url": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "id": "source-14",
+      "title": "GPT‑6 Luna model & pricing",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+    }
+  ]
+}

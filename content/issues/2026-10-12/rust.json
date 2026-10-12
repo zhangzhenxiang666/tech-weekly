@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "column": "rust",
+  "date": "2026-10-12",
+  "title": "Rust 热点周报 · 2026-10-12",
+  "summary": "围绕编译器正确性、依赖安全和基础设施整理 8 条主榜事件，保留原文的修复状态、兼容性提示、时间线和资料限制。",
+  "coverage": "2026-10-05 至 2026-10-11（北京时间，UTC+8）；期刊日期 2026-10-12；原文检索时间 2026-10-12 17:17。",
+  "provenance": "来自用户重新生成并指定发布的原始 HTML 周报，逐字节归档。原文标注检索时间为 2026-10-12 17:17（北京时间）。归档阶段核验了文件完整性、SHA-256、静态脚本、外链和公开内容，未重新逐条核验新闻事实；来源链接摘自原文。原报告区分正式发布、修复合入主干、RFC 已批准和尚未随 stable 发布；GitHub 相对时间及检索后状态更新有局限，社区周报仅用于发现线索。实施前请复核最新来源，站点导览不替代原文。",
+  "highlights": [
+    "原文重点关注 FFI bool 误编译、bip322 公告和 mold 迁移。",
+    "正式版本、主干修复与获准实施的 RFC 分别标注。",
+    "原文保留 8 条主榜、主题筛选、时间线和安全升级边界。"
+  ],
+  "original": {
+    "path": "rust-weekly-2026-10-12.html",
+    "sha256": "8d4be7884fa5504c0b006d0b57cc72395da7eeae6cd740e150522d3db8293528"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "rust-lang/rust #163911：FFI bool 误编译与修复状态",
+      "url": "https://github.com/rust-lang/rust/issues/163911"
+    },
+    {
+      "id": "source-2",
+      "title": "RUSTSEC-2026-0334：bip322 验证绕过",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0334.html"
+    },
+    {
+      "id": "source-3",
+      "title": "hyper v1.12.0：HTTP/1 上限与协议修复",
+      "url": "https://github.com/hyperium/hyper/releases/tag/v1.12.0"
+    },
+    {
+      "id": "source-4",
+      "title": "mold 3.0.0：Rust 重写版本与构建变化",
+      "url": "https://github.com/rui314/mold/releases/tag/v3.0.0"
+    },
+    {
+      "id": "source-5",
+      "title": "Chrome for Developers：jxl-rs 与 JPEG XL",
+      "url": "https://developer.chrome.com/blog/jpeg-xl-in-chrome"
+    },
+    {
+      "id": "source-6",
+      "title": "Rust RFC #3983：f16b 提案状态",
+      "url": "https://github.com/rust-lang/rfcs/pull/3983"
+    },
+    {
+      "id": "source-7",
+      "title": "Bevy 0.20：官方发布与迁移内容",
+      "url": "https://bevy.org/news/bevy-0-20/"
+    },
+    {
+      "id": "source-8",
+      "title": "noyalib",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0333.html"
+    },
+    {
+      "id": "source-9",
+      "title": "libcrux",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0331.html"
+    },
+    {
+      "id": "source-10",
+      "title": "wasapi",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0332.html"
+    },
+    {
+      "id": "source-11",
+      "title": "RustSec Advisory Database：本期安全公告索引",
+      "url": "https://rustsec.org/advisories/"
+    }
+  ]
+}
