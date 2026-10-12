@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "column": "github",
+  "date": "2026-10-12",
+  "title": "GitHub 热门项目周报 · 2026-10-12",
+  "summary": "精选 10 个项目（9 个周榜候选和 1 个重要版本补充），关注 Agent 工程化、测试可追溯性、系统工具与 Rust 数据栈；周增数据来自第三方 Githot 快照，编辑顺序不等同官方排名。",
+  "coverage": "2026-10-05 至 2026-10-11（北京时间，UTC+8）；期刊日期 2026-10-12；原文采集时间 2026-10-12 17:18 CST（北京时间）。",
+  "provenance": "来自用户重新生成并指定发布的原始 HTML 周报，逐字节归档。归档阶段核验了文件完整性、SHA-256、静态脚本、外链和公开内容，未重新逐条核验新闻事实；来源链接摘自原文。原报告称官方日榜已取得，但官方完整周榜未能读取，周榜顺序及 7 天新增 Star 使用 Githot 于 2026-10-11 保存的滚动快照，不能称为 GitHub 官方周榜。累计 Star 为原报告 2026-10-12 采集的官方仓库页或日榜口径；Polars 是编辑补充，未取得同口径周增。不从日增外推周增，不以 0 替代缺失值。原报告未进行代码审计、性能复测或安装试用；热度不等于质量、生产可用性或安全性，编辑顺序不代表官方背书。部分版本在覆盖窗口外，原文已分别标记。实施前请复核最新来源，站点导览不替代原文。",
+  "highlights": [
+    "原文围绕 Agent、测试、系统工具及数据栈整理 10 个项目。",
+    "周榜顺序与周增 Star 使用 Githot 10 月 11 日快照；官方完整周榜未能读取。",
+    "Polars 是重要版本的编辑补充，未混入缺失的同口径周增数据。"
+  ],
+  "original": {
+    "path": "github-weekly-2026-10-12.html",
+    "sha256": "d0a2d00b4dad3c6ab761cdda86c9cd04e852c9122641b507c20744e42afcbd5f"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "AnyPS5",
+      "url": "https://github.com/boykopovar/AnyPS5"
+    },
+    {
+      "id": "source-2",
+      "title": "tester-army/e2e",
+      "url": "https://github.com/tester-army/e2e"
+    },
+    {
+      "id": "source-3",
+      "title": "Polars 2.0",
+      "url": "https://github.com/pola-rs/polars"
+    },
+    {
+      "id": "source-4",
+      "title": "Githot 周榜快照（2026-10-11，覆盖 10/5—10/11）",
+      "url": "https://githot.dev/weekly"
+    },
+    {
+      "id": "source-5",
+      "title": "10 月 8 日兼容性讨论更新",
+      "url": "https://github.com/boykopovar/AnyPS5/discussions/726"
+    },
+    {
+      "id": "source-6",
+      "title": "0.19.0 发布说明（2026-10-09）",
+      "url": "https://github.com/tester-army/e2e/releases/tag/e2e%400.19.0"
+    },
+    {
+      "id": "source-7",
+      "title": "mattpocock/skills",
+      "url": "https://github.com/mattpocock/skills"
+    },
+    {
+      "id": "source-8",
+      "title": "v1.3.1 发布说明（2026-10-04）",
+      "url": "https://github.com/mattpocock/skills/releases/tag/v1.3.1"
+    },
+    {
+      "id": "source-9",
+      "title": "EpicGames/raddebugger",
+      "url": "https://github.com/EpicGames/raddebugger"
+    },
+    {
+      "id": "source-10",
+      "title": "v0.9.29-alpha 发布说明",
+      "url": "https://github.com/EpicGames/raddebugger/releases/tag/v0.9.29-alpha"
+    },
+    {
+      "id": "source-11",
+      "title": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes"
+    },
+    {
+      "id": "source-12",
+      "title": "v0.8.149 发布说明（2026-10-11）",
+      "url": "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.149"
+    },
+    {
+      "id": "source-13",
+      "title": "cursor/plugins",
+      "url": "https://github.com/cursor/plugins"
+    },
+    {
+      "id": "source-14",
+      "title": "flutter/flutter",
+      "url": "https://github.com/flutter/flutter"
+    },
+    {
+      "id": "source-15",
+      "title": "官方 Releases（未据其宣称本周新版本）",
+      "url": "https://github.com/flutter/flutter/releases"
+    },
+    {
+      "id": "source-16",
+      "title": "earthtojake/text-to-cad",
+      "url": "https://github.com/earthtojake/text-to-cad"
+    },
+    {
+      "id": "source-17",
+      "title": "v0.7.21 发布说明（2026-10-11）",
+      "url": "https://github.com/earthtojake/text-to-cad/releases/tag/v0.7.21"
+    },
+    {
+      "id": "source-18",
+      "title": "mvschwarz/openrig",
+      "url": "https://github.com/mvschwarz/openrig"
+    },
+    {
+      "id": "source-19",
+      "title": "v0.6.9 发布说明（2026-10-11）",
+      "url": "https://github.com/mvschwarz/openrig/releases/tag/v0.6.9"
+    },
+    {
+      "id": "source-20",
+      "title": "Python 2.0.0 发布说明（2026-10-06）",
+      "url": "https://github.com/pola-rs/polars/releases/tag/py-2.0.0"
+    },
+    {
+      "id": "source-21",
+      "title": "GitHub Trending 日榜（2026-10-12 采集）",
+      "url": "https://github.com/trending"
+    }
+  ]
+}
