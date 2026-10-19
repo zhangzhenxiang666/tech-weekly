@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "column": "github",
+  "date": "2026-10-19",
+  "title": "GitHub 热门项目周报｜2026-10-19",
+  "summary": "精选 10 个项目，结合热度快照、官方发布、技术栈与使用限制观察 Agent 工作流、媒体工具和桌面应用；官方完整周榜读取受限，部分热度来自第三方快照，REA 极端增量单列为异常。",
+  "coverage": "2026-10-12 至 2026-10-19（Asia/Shanghai，UTC+8）；期刊日期 2026-10-19；原文检索时间 2026-10-19 09:37。",
+  "provenance": "来自用户指定发布的原始 HTML 周报，逐字节归档。归档阶段核验了文件完整性、SHA-256、静态脚本、外链和公开内容，未重新逐条核验新闻事实；来源链接摘自原文。原报告标注覆盖 2026-10-12 至 2026-10-19，检索时间为 2026-10-19 09:37（Asia/Shanghai）。原文称官方完整周榜读取受限，官方日榜仅作当日补充线索；部分周增来自 whatstrending.ai 的 10/12 与 10/19 快照差值，部分日增来自 GitDiscover 的 10/18 存档，不能称为 GitHub 官方周榜或全站排名。REA 的极端 Star 增量作为待复核统计异常单列，不推测成因；日增不外推周增，缺失数据不以 0 代替，不混用不同来源累计值计算增长。原报告未进行独立测试或安全审计，热度不等于采用率、质量或安全性；许可证、版本与使用限制需在实施前复核最新来源。站点导览不替代原文。",
+  "highlights": [
+    "原文整理 10 个编辑精选项目，包含 Agent 工作流、媒体创作、开发工具与非 AI 应用。",
+    "官方完整周榜读取受限；第三方周增、日增及累计 Star 分开标注，REA 极端增量单列观察。",
+    "原文保留搜索、分类、排序、主题切换，以及 HyperFrames、WordCraft、Folia Major 的当周版本时间线。"
+  ],
+  "original": {
+    "path": "github-weekly-2026-10-19.html",
+    "sha256": "e9ccf983f818ed72e6f49fb2d0b08fafe32a2c28cdbd3765b9c448de1b0774c3"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes"
+    },
+    {
+      "id": "source-2",
+      "title": "storytold/wordcraft",
+      "url": "https://github.com/storytold/wordcraft"
+    },
+    {
+      "id": "source-3",
+      "title": "NationalSecurityAgency/ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra"
+    },
+    {
+      "id": "source-4",
+      "title": "whatstrending.ai 第三方周增快照（10/12 与 10/19）",
+      "url": "https://whatstrending.ai/repos"
+    },
+    {
+      "id": "source-5",
+      "title": "morluto/rea",
+      "url": "https://github.com/morluto/rea"
+    },
+    {
+      "id": "source-6",
+      "title": "morluto/rea · releases",
+      "url": "https://github.com/morluto/rea/releases"
+    },
+    {
+      "id": "source-7",
+      "title": "morluto/rea · blob/main/DISCLAIMER.md",
+      "url": "https://github.com/morluto/rea/blob/main/DISCLAIMER.md"
+    },
+    {
+      "id": "source-8",
+      "title": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio"
+    },
+    {
+      "id": "source-9",
+      "title": "debpalash/VoiceStudio · releases",
+      "url": "https://github.com/debpalash/VoiceStudio/releases"
+    },
+    {
+      "id": "source-10",
+      "title": "GitHub 官方日榜（10/19 原文采集口径）",
+      "url": "https://github.com/trending?since=daily"
+    },
+    {
+      "id": "source-11",
+      "title": "cathrynlavery/diagram-design",
+      "url": "https://github.com/cathrynlavery/diagram-design"
+    },
+    {
+      "id": "source-12",
+      "title": "cathrynlavery/diagram-design · blob/main/LICENSE",
+      "url": "https://github.com/cathrynlavery/diagram-design/blob/main/LICENSE"
+    },
+    {
+      "id": "source-13",
+      "title": "cathrynlavery/diagram-design · blob/main/PRIVACY.md",
+      "url": "https://github.com/cathrynlavery/diagram-design/blob/main/PRIVACY.md"
+    },
+    {
+      "id": "source-14",
+      "title": "NationalSecurityAgency/ghidra · security/advisories",
+      "url": "https://github.com/NationalSecurityAgency/ghidra/security/advisories"
+    },
+    {
+      "id": "source-15",
+      "title": "GitDiscover 第三方日榜存档（2026-10-18）",
+      "url": "https://gitdiscover.org/trending/2026-10-18?type=repositories"
+    },
+    {
+      "id": "source-16",
+      "title": "MadsLorentzen/ai-job-search",
+      "url": "https://github.com/MadsLorentzen/ai-job-search"
+    },
+    {
+      "id": "source-17",
+      "title": "MadsLorentzen/ai-job-search · releases",
+      "url": "https://github.com/MadsLorentzen/ai-job-search/releases"
+    },
+    {
+      "id": "source-18",
+      "title": "heygen-com/hyperframes · releases",
+      "url": "https://github.com/heygen-com/hyperframes/releases"
+    },
+    {
+      "id": "source-19",
+      "title": "heygen-com/hyperframes · blob/main/CREDITS.md",
+      "url": "https://github.com/heygen-com/hyperframes/blob/main/CREDITS.md"
+    },
+    {
+      "id": "source-20",
+      "title": "mksglu/context-mode",
+      "url": "https://github.com/mksglu/context-mode"
+    },
+    {
+      "id": "source-21",
+      "title": "mksglu/context-mode · blob/main/LICENSE",
+      "url": "https://github.com/mksglu/context-mode/blob/main/LICENSE"
+    },
+    {
+      "id": "source-22",
+      "title": "mksglu/context-mode · releases",
+      "url": "https://github.com/mksglu/context-mode/releases"
+    },
+    {
+      "id": "source-23",
+      "title": "storytold/wordcraft · releases",
+      "url": "https://github.com/storytold/wordcraft/releases"
+    },
+    {
+      "id": "source-24",
+      "title": "chthollyphile/folia-major",
+      "url": "https://github.com/chthollyphile/folia-major"
+    },
+    {
+      "id": "source-25",
+      "title": "chthollyphile/folia-major · releases/tag/v0.7.21",
+      "url": "https://github.com/chthollyphile/folia-major/releases/tag/v0.7.21"
+    },
+    {
+      "id": "source-26",
+      "title": "yt-dlp/yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp"
+    },
+    {
+      "id": "source-27",
+      "title": "yt-dlp/yt-dlp · blob/master/Changelog.md",
+      "url": "https://github.com/yt-dlp/yt-dlp/blob/master/Changelog.md"
+    },
+    {
+      "id": "source-28",
+      "title": "GitHub 官方周榜（原文标注本次无法读取）",
+      "url": "https://github.com/trending?since=weekly"
+    }
+  ]
+}
