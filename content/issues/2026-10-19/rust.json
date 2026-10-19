@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "column": "rust",
+  "date": "2026-10-19",
+  "title": "Rust 热点周报｜2026-10-19",
+  "summary": "围绕稳定版回归修复、QUIC 与 Wasm 安全补丁、异步运行时和基础设施整理 8 条当周动态，保留原文的升级条件、兼容性提醒及背景合并项边界。",
+  "coverage": "2026-10-12 至 2026-10-18（中国标准时间，UTC+8）；期刊日期 2026-10-19；原文检索时间 2026-10-19 08:19。",
+  "provenance": "来自用户指定发布的原始 HTML 周报，逐字节归档。归档阶段核验了文件完整性、SHA-256、静态脚本、外链和公开内容，未重新逐条核验新闻事实；来源链接摘自原文。原文标注检索时间为 2026-10-19 08:19（中国标准时间）。原报告将当周发布、当周安全披露与覆盖期之前的背景合并项分别标注，保留各维护线修复范围和破坏性变更提醒。事件日期采用原始来源明确写出的日历日期；安全状态与版本可能在检索后更新，实施前请复核最新来源。站点导览不替代原文。",
+  "highlights": [
+    "原文主榜包含 8 条当周动态，重点关注 Rust 1.99.1、Quinn 和 Wasmtime。",
+    "安全公告日期与补丁发布时间分别说明，保留 mykey 双端升级等兼容性条件。",
+    "原文保留主题筛选、可展开细节、时间线及 10 月 8–10 日的背景观察。"
+  ],
+  "original": {
+    "path": "rust-weekly-2026-10-19.html",
+    "sha256": "2f075a787f585235df34aa03490a3694a08463eeb4faa6e850187699ee7b27eb"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Rust Blog：Announcing Rust 1.99.1",
+      "url": "https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/"
+    },
+    {
+      "id": "source-2",
+      "title": "RUSTSEC-2026-0343 · Quinn 出站 datagram",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0343.html"
+    },
+    {
+      "id": "source-3",
+      "title": "RUSTSEC-2026-0342 · Quinn 零长度 DATAGRAM",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0342.html"
+    },
+    {
+      "id": "source-4",
+      "title": "RUSTSEC-2026-0341 · Quinn 流重组",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0341.html"
+    },
+    {
+      "id": "source-5",
+      "title": "RUSTSEC-2026-0339 · Quinn connection ID",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0339.html"
+    },
+    {
+      "id": "source-6",
+      "title": "Wasmtime 49.0.3 release",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.3"
+    },
+    {
+      "id": "source-7",
+      "title": "RUSTSEC-2026-0335 · mykey",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0335.html"
+    },
+    {
+      "id": "source-8",
+      "title": "Tokio 1.53.3 release",
+      "url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.53.3"
+    },
+    {
+      "id": "source-9",
+      "title": "RUSTSEC-2026-0337 · ic-cipher",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0337.html"
+    },
+    {
+      "id": "source-10",
+      "title": "Inside Rust：基础设施团队 Q3/Q4",
+      "url": "https://blog.rust-lang.org/inside-rust/2026/10/12/infrastructure-team-q3-recap-and-q4-plan/"
+    },
+    {
+      "id": "source-11",
+      "title": "Creusot 0.14.0 devlog",
+      "url": "https://devlog.creusot.rs/v0-14-0/"
+    },
+    {
+      "id": "source-12",
+      "title": "rust-lang/rust #160877",
+      "url": "https://github.com/rust-lang/rust/pull/160877"
+    },
+    {
+      "id": "source-13",
+      "title": "cargo #17573",
+      "url": "https://github.com/rust-lang/cargo/pull/17573"
+    },
+    {
+      "id": "source-14",
+      "title": "cargo #17568",
+      "url": "https://github.com/rust-lang/cargo/pull/17568"
+    },
+    {
+      "id": "source-15",
+      "title": "Wasmtime 48.0.6 release",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v48.0.6"
+    },
+    {
+      "id": "source-16",
+      "title": "Wasmtime 36.0.18 release",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v36.0.18"
+    },
+    {
+      "id": "source-17",
+      "title": "RUSTSEC-2026-0340 · Quinn ACK_FREQUENCY",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0340.html"
+    },
+    {
+      "id": "source-18",
+      "title": "RUSTSEC-2026-0338 · Quinn 无序读取",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0338.html"
+    }
+  ]
+}

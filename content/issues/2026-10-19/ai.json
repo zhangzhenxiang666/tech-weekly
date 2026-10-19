@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "column": "ai",
+  "date": "2026-10-19",
+  "title": "AI 可视化周报｜2026-10-19",
+  "summary": "收录 10 月 12–18 日的 11 条 AI 动态，围绕模型、记忆、执行、开放生态与治理展开，保留原文对发布状态、厂商自述、论文结果及资料限制的区分。",
+  "coverage": "2026-10-12 至 2026-10-18（UTC+8）；期刊日期 2026-10-19；原文检索时间 2026-10-19 08:09。",
+  "provenance": "来自用户指定发布的原始 HTML 周报，逐字节归档。归档阶段核验了文件完整性、SHA-256、静态脚本、外链和公开内容，未重新逐条核验新闻事实；来源链接摘自原文。原文标注检索时间为 2026-10-19 08:09（UTC+8）。原报告区分正式可用、申请访问、开放权重、开源与论文结果，未独立实测模型、工具或工作流；Google Argon 直接 API 的广泛可用性仍有资料限制，GLM-Legal 仅见申请入口。法规、许可证、价格和可用性以原文当时口径为准，实施前请复核最新来源；站点导览不替代原文。",
+  "highlights": [
+    "原文整理 11 条当周动态，覆盖模型、Agent、开放生态、部署与治理。",
+    "记忆与共享上下文、代码执行和权限审计构成本期主要观察线索。",
+    "原文保留事件筛选、开放程度对照、实践入口、直接来源及核验边界。"
+  ],
+  "original": {
+    "path": "ai-weekly-2026-10-19.html",
+    "sha256": "da9b87c66274edb1c2118f121b784a2178056e27d6d666baff80e92e688aa1d8"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Muse Wonder 官方发布",
+      "url": "https://research.meta.ai/blog/muse-wonder"
+    },
+    {
+      "id": "source-2",
+      "title": "GLM‑Legal 官方博客",
+      "url": "https://z.ai/blog/glm-legal"
+    },
+    {
+      "id": "source-3",
+      "title": "GLM‑Legal API 申请入口",
+      "url": "https://z.ai/consultation/legal"
+    },
+    {
+      "id": "source-4",
+      "title": "ReplaySSM 技术说明",
+      "url": "https://developer.nvidia.com/blog/replayssm-rethinking-state-storage-for-faster-hybrid-model-decoding/"
+    },
+    {
+      "id": "source-5",
+      "title": "Gemini 4 Argon App 可用性",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/"
+    },
+    {
+      "id": "source-6",
+      "title": "Gemini 4 Argon in Copilot",
+      "url": "https://github.blog/changelog/2026-10-13-gemini-4-argon-in-github-copilot/"
+    },
+    {
+      "id": "source-7",
+      "title": "Notion 3.8 发布说明",
+      "url": "https://www.notion.com/releases/2026-10-13"
+    },
+    {
+      "id": "source-8",
+      "title": "Run:ai 开源说明",
+      "url": "https://developer.nvidia.com/blog/nvidia-runai-is-now-open-source-as-part-of-nvidia-dsx-ai-factory-platform/"
+    },
+    {
+      "id": "source-9",
+      "title": "官方仓库",
+      "url": "https://github.com/NVIDIA-DSX-AI-Factory/runai"
+    },
+    {
+      "id": "source-10",
+      "title": "Model Release Notes",
+      "url": "https://help.openai.com/en/articles/9624314-model-release-notes"
+    },
+    {
+      "id": "source-11",
+      "title": "Implementing Decision (EU) 2026/2274",
+      "url": "https://eur-lex.europa.eu/eli/dec_impl/2026/2274/oj/eng"
+    },
+    {
+      "id": "source-12",
+      "title": "Nemotron 3.5 Super VL 发布",
+      "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/"
+    },
+    {
+      "id": "source-13",
+      "title": "Nemotron 3.5 官方模型卡",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+    },
+    {
+      "id": "source-14",
+      "title": "Agentic Autofix GA",
+      "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability/"
+    },
+    {
+      "id": "source-15",
+      "title": "Hy‑Memory 2.0 发布页",
+      "url": "https://memory.hunyuan.tencent.com/"
+    },
+    {
+      "id": "source-16",
+      "title": "Hy‑Memory 官方仓库",
+      "url": "https://github.com/Tencent-Hunyuan/Hy-Memory"
+    },
+    {
+      "id": "source-17",
+      "title": "Hy‑Memory‑30B‑A3B 模型卡",
+      "url": "https://huggingface.co/tencent/Hy-Memory-30B-A3B"
+    },
+    {
+      "id": "source-18",
+      "title": "Hy‑Memory‑30B‑A3B 论文",
+      "url": "https://arxiv.org/abs/2610.22196"
+    }
+  ]
+}

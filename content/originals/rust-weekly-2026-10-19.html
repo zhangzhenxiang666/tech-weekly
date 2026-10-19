@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#b65a2a">
+  <title>Rust 热点周报｜2026-10-19</title>
+  <style>
+    :root{--bg:#f7f1e8;--paper:#fffaf3;--ink:#281c17;--muted:#6f5b50;--copper:#b65a2a;--copper-2:#e98a48;--deep:#4a2315;--line:#decabb;--ok:#327a55;--warn:#9b5e13;--danger:#a6382f;--blue:#356986;--shadow:0 18px 45px rgba(69,35,20,.12);--radius:22px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 12% 0,#f7c999 0,transparent 27%),linear-gradient(180deg,#f4e5d3 0,var(--bg) 30rem);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;line-height:1.68}a{color:var(--copper);text-underline-offset:3px}a:hover{color:#7f3216}.wrap{width:min(1160px,calc(100% - 32px));margin:auto}.hero{position:relative;overflow:hidden;margin:24px auto 0;padding:44px clamp(24px,5vw,64px);border-radius:30px;background:linear-gradient(135deg,#3b1d12,#6d2d17 58%,#a64c22);color:#fff7ed;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;right:-70px;top:-100px;width:350px;height:350px;border:50px solid rgba(255,255,255,.08);border-radius:50%}.brand{display:flex;align-items:center;gap:14px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.brand svg{width:44px;height:44px}.hero h1{font-size:clamp(2.35rem,7vw,5rem);line-height:1.02;margin:28px 0 14px;max-width:900px}.hero .dek{font-size:clamp(1rem,2.2vw,1.28rem);max-width:800px;color:#f6dccb}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}.pill,.tag{display:inline-flex;align-items:center;border-radius:999px;font-size:.82rem;font-weight:700}.pill{padding:8px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}.statusline{margin:18px 0 0;font-size:.88rem;color:#f3cab1}.toolbar{position:sticky;top:0;z-index:20;margin:18px 0;padding:12px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px);display:flex;gap:8px;flex-wrap:wrap;box-shadow:0 6px 25px rgba(69,35,20,.08)}button{font:inherit;color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:8px 12px;border-radius:12px;cursor:pointer}button:hover,button.active{background:var(--deep);color:white;border-color:var(--deep)}.section{margin:54px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}.section h2{margin:0;font-size:clamp(1.65rem,4vw,2.4rem);line-height:1.2}.eyebrow{color:var(--copper);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem}.note{color:var(--muted);font-size:.9rem}.briefs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.brief{min-height:190px;padding:22px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}.brief .num{font-size:2.6rem;line-height:1;color:var(--copper-2);font-weight:900}.brief h3{font-size:1.15rem;margin:18px 0 8px}.brief p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{position:relative;padding:24px;border-radius:var(--radius);background:var(--paper);border:1px solid var(--line);box-shadow:0 10px 30px rgba(69,35,20,.07)}.card.priority{grid-column:span 2;background:linear-gradient(120deg,#fff8ee,#fffdf9)}.card.priority:before{content:"";position:absolute;inset:0 auto 0 0;width:7px;border-radius:22px 0 0 22px;background:linear-gradient(var(--copper-2),var(--danger))}.card[data-hidden="true"]{display:none}.card-top{display:flex;gap:12px;justify-content:space-between;align-items:start}.card h3{margin:8px 0 10px;font-size:1.34rem;line-height:1.35}.date{white-space:nowrap;color:var(--muted);font-size:.86rem}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{padding:4px 9px;border:1px solid currentColor;color:var(--copper);background:transparent}.tag.release{color:var(--ok)}.tag.security{color:var(--danger)}.tag.merged{color:var(--blue)}.tag.project{color:#6953a6}.fact{font-size:1rem;margin:14px 0}.impact{margin:14px 0;padding:13px 15px;border-radius:14px;background:#f1e2d3;border-left:4px solid var(--copper)}.impact b{color:var(--deep)}details{margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}summary{cursor:pointer;color:var(--copper);font-weight:750}details ul{padding-left:1.25rem;margin-bottom:0}.source-link{display:inline-flex;margin-top:14px;font-weight:750}.matrix{overflow:auto;margin-top:14px}.matrix table{border-collapse:collapse;width:100%;font-size:.9rem}.matrix th,.matrix td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}.matrix th{color:var(--muted)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#efe2d5;border-radius:5px;padding:.1em .35em}.timeline{position:relative;padding-left:32px}.timeline:before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:var(--line)}.event{position:relative;margin:0 0 22px;padding:18px 20px;background:var(--paper);border:1px solid var(--line);border-radius:16px}.event:before{content:"";position:absolute;left:-29px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 5px var(--bg)}.event time{font-weight:800;color:var(--copper)}.event p{margin:5px 0 0;color:var(--muted)}.background-box{padding:24px;border-radius:var(--radius);background:#efe4d7;border:1px solid #d8c0ad}.background-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.background-list article{padding:15px;background:rgba(255,255,255,.45);border-radius:14px}.background-list h3{font-size:1rem;margin:4px 0}.sources{columns:2;column-gap:40px;padding-left:1.2rem}.sources li{break-inside:avoid;margin-bottom:9px}.method{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}footer{padding:35px 0 60px;color:var(--muted);font-size:.9rem}.tiny{font-size:.8rem;color:var(--muted)}
+    @media(max-width:760px){.wrap{width:min(100% - 20px,1160px)}.hero{margin-top:10px;padding:30px 22px;border-radius:22px}.briefs,.grid,.background-list{grid-template-columns:1fr}.card.priority{grid-column:span 1}.section{margin:38px 0}.sources{columns:1}.toolbar{top:6px}.card-top{display:block}.date{display:block;margin-top:6px}}
+    @media(prefers-color-scheme:dark){:root{--bg:#17110f;--paper:#211713;--ink:#f5e7dc;--muted:#c6aa98;--line:#53382d;--deep:#ef9c61;--shadow:0 18px 45px rgba(0,0,0,.3)}body{background:radial-gradient(circle at 12% 0,#5e2d19 0,transparent 25%),var(--bg)}.impact{background:#322118}.background-box{background:#281c17}.background-list article{background:rgba(255,255,255,.04)}code{background:#3a281f}a:hover{color:#ffb07b}}
+    @media print{body{background:#fff;color:#111;font-size:10.5pt}.hero{box-shadow:none;border:1px solid #999;color:#111;background:#fff}.hero .dek,.statusline{color:#333}.toolbar{display:none}.section{margin:28px 0}.brief,.card,.event,.background-box,.method{box-shadow:none;background:#fff;break-inside:avoid}.grid{display:block}.card{margin-bottom:12px}.sources{columns:2}details{display:block}details>*{display:block!important}a{color:#111;text-decoration:none}.hero:after{display:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap hero">
+    <div class="brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="#ef9a60" stroke-width="6"/><path d="M32 3v12M32 49v12M3 32h12M49 32h12M11.5 11.5l8.5 8.5M44 44l8.5 8.5M52.5 11.5L44 20M20 44l-8.5 8.5" stroke="#fff1e7" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="10" fill="#ef9a60"/></svg>
+      Rust Weekly Signal · 中文版
+    </div>
+    <h1>Rust 热点周报</h1>
+    <p class="dek">稳定版回归修复成为本周头条；QUIC、Wasm 运行时和密码学依赖则提醒团队：补丁版本也可能承载必须尽快处理的安全边界。</p>
+    <div class="meta">
+      <span class="pill">本期日期 2026-10-19</span><span class="pill">覆盖 10-12 — 10-18</span><span class="pill">8 条当周动态</span><span class="pill">一手来源优先</span>
+    </div>
+    <p class="statusline">检索时间：2026-10-19 08:19（中国标准时间） · 截止检索时点 · 页面内日期均按原始发布/披露日期标注</p>
+  </header>
+
+  <main class="wrap">
+    <nav class="toolbar" aria-label="内容筛选">
+      <button class="active" data-filter="all">全部</button><button data-filter="compiler">编译器</button><button data-filter="async">异步 / Web</button><button data-filter="security">安全</button><button data-filter="tooling">工具</button><button data-filter="infra">基础设施</button><button id="toggleDetails">展开全部细节</button><button id="printBtn">打印 / 导出 PDF</button>
+    </nav>
+
+    <section class="section" aria-labelledby="summary-title">
+      <div class="section-head"><div><div class="eyebrow">Executive brief</div><h2 id="summary-title">本周摘要</h2></div><p class="note">按开发者实际影响排序</p></div>
+      <div class="briefs">
+        <article class="brief"><div class="num">01</div><h3>Rust 1.99.1 应优先进入 CI</h3><p>点版本修复 x86_64 FFI <code>bool</code> 错误代码生成、UEFI/部分目标链接失败及 macOS <code>rust-lld</code> 启动问题。</p></article>
+        <article class="brief"><div class="num">02</div><h3>审计 QUIC 依赖锁文件</h3><p>RustSec 于 10 月 12 日集中披露多项 <code>quinn-proto</code> 远程 DoS/内存耗尽问题；补丁已在更早的 0.11.17/0.11.18 中发布。</p></article>
+        <article class="brief"><div class="num">03</div><h3>Wasm 宿主边界需补丁</h3><p>Wasmtime 49.0.3、48.0.6、36.0.18 同日修复多项宿主崩溃、资源边界与沙箱相关公告，运行不可信组件的服务应加急评估。</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="hot-title">
+      <div class="section-head"><div><div class="eyebrow">Priority desk</div><h2 id="hot-title">热点卡片</h2></div><p class="note">“已发布 / 已披露”与“背景合并”严格区分</p></div>
+      <div class="grid" id="cards">
+        <article class="card priority" data-cat="compiler">
+          <div class="card-top"><div class="tags"><span class="tag release">已发布</span><span class="tag">rustc</span><span class="tag">稳定版</span></div><time class="date">2026-10-15</time></div>
+          <h3>1. Rust 1.99.1 修补三个稳定版回归</h3>
+          <p class="fact">Rust 发布团队推出 1.99.1：补齐可能被 LLVM 优化引入的 <code>wcslen</code> 后备实现，恢复 x86_64 FFI <code>bool</code> 返回值的零扩展，并为 macOS 的 <code>rust-lld</code> 加入定位 <code>libLLVM.dylib</code> 的 rpath。</p>
+          <div class="impact"><b>为什么重要：</b>FFI 问题属于错误代码生成，调用方可能看到非 0/1 原始值；UEFI 上使用 <code>std</code> 的项目也可能直接链接失败。使用 1.99.0、跨语言 ABI、UEFI 或绕过 rustup 直接调用工具链的团队优先升级。</div>
+          <details><summary>实际影响与升级建议</summary><ul><li>通过 rustup 使用稳定通道：运行 <code>rustup update stable</code>。</li><li>固定工具链的 CI/容器需显式改到 1.99.1 并重跑 FFI、UEFI 与 macOS 链接测试。</li><li>这是兼容性修补版；仍建议先在生产同构环境验证二进制与依赖构建。</li></ul></details>
+          <a class="source-link" href="https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/">Rust 官方发布说明 ↗</a>
+        </article>
+
+        <article class="card priority" data-cat="security async">
+          <div class="card-top"><div class="tags"><span class="tag security">安全公告</span><span class="tag">QUIC</span><span class="tag">DoS</span></div><time class="date">2026-10-12</time></div>
+          <h3>2. Quinn/QUIC 集中披露多项远程拒绝服务问题</h3>
+          <p class="fact">RustSec 同日发布一组 <code>quinn-proto</code> 公告，覆盖零长度 DATAGRAM 绕过接收缓冲上限、流重组与连接 ID 退休队列内存耗尽，以及无序读、出站 datagram 记账和 ACK_FREQUENCY 路径的 panic。</p>
+          <div class="impact"><b>为什么重要：</b>多项问题可由完成握手的远端触发；其中 DATAGRAM 接收默认启用。公告日期是本周，但修复版本并非本周新发：0.11.17 已修复三项内存耗尽，0.11.18 又修复三项 panic。</div>
+          <div class="matrix"><table><thead><tr><th>条件 / 风险</th><th>修复线</th></tr></thead><tbody><tr><td>零长度 DATAGRAM、流重组、连接 ID 队列造成内存增长</td><td><code>&gt;= 0.11.17</code></td></tr><tr><td>0.11.17 出站 datagram 记账；无序读空帧；启用 ACK_FREQUENCY</td><td><code>&gt;= 0.11.18</code></td></tr></tbody></table></div>
+          <details><summary>适用条件与操作建议</summary><ul><li>用 <code>cargo tree -i quinn-proto</code> 检查传递依赖；为覆盖全部本组公告，至少解析到 0.11.18，处于 0.11.x 的项目可优先采用更新的 0.11.19。</li><li><code>send_datagram_wait</code> 不受出站记账问题影响；ACK_FREQUENCY 默认关闭；默认有序读取不受无序读 panic 影响。</li><li>升级后做 QUIC 互通、拥塞和 datagram 压测；补丁跨越内部协议状态机，不能只看编译通过。</li></ul></details>
+          <a class="source-link" href="https://rustsec.org/advisories/RUSTSEC-2026-0343.html">RustSec 0343 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0342.html">0342</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0341.html">0341</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0339.html">0339</a>
+        </article>
+
+        <article class="card" data-cat="security tooling">
+          <div class="card-top"><div class="tags"><span class="tag security">安全修复</span><span class="tag">Wasm</span><span class="tag">WASI</span></div><time class="date">2026-10-14</time></div>
+          <h3>3. Wasmtime 三条维护线同步发布安全补丁</h3>
+          <p class="fact">Wasmtime 49.0.3、48.0.6 与 36.0.18 在 10 月 14 日发布。49.0.3 的修复清单包含组件模型异步调用/句柄边界导致的宿主 panic 或资源问题、递归类型栈溢出、带尾随斜杠的符号链接重命名沙箱逃逸，以及 wasi-http 主机与 URL 处理问题。</p>
+          <div class="impact"><b>实际影响：</b>若服务运行外部或多租户 Wasm 组件，宿主可用性和 WASI 沙箱边界需要优先评估；不要只升级 CLI，要检查应用直接依赖的 <code>wasmtime</code>/<code>wasmtime-wasi</code> 分支。</div>
+          <details><summary>升级注意</summary><ul><li>按现有维护线升级到 49.0.3、48.0.6 或 36.0.18；不同维护线回补集合不完全相同，请对照本项目所用 API 与功能。</li><li>重点回归组件异步取消、WASI 文件系统重命名、wasi-http 出站请求及资源限额。</li><li>这是已发布补丁，不是 50.0.0-rc.1 预发布版本。</li></ul></details>
+          <a class="source-link" href="https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.3">Wasmtime 49.0.3 发布说明 ↗</a>
+        </article>
+
+        <article class="card" data-cat="security">
+          <div class="card-top"><div class="tags"><span class="tag security">严重 · CVSS 9.1</span><span class="tag">SRTP</span><span class="tag">破坏性变更</span></div><time class="date">2026-10-12</time></div>
+          <h3>4. mykey 的预共享密钥模式会明文暴露 SRTP 主密钥材料</h3>
+          <p class="fact"><code>mykey</code> 在 PSK-Init 中以 NULL 加密传输 TGK，使能读取 MIKEY 消息的旁观者恢复 SRTP 主密钥并伪造消息 MAC。RustSec 将其评为 CVSS 9.1，修复于 2.0.0。</p>
+          <div class="impact"><b>兼容性风险：</b>2.0.0 改变线格式，两端必须同步升级；新旧端可能表面完成交换却得到不同 SRTP 密钥，属于静默不兼容。</div>
+          <details><summary>缓解与升级条件</summary><ul><li>使用 PSK 模式的 AES67、SMPTE ST 2110 或其他 SRTP 部署应立即盘点。</li><li>不能同步升级时，改用临时 Diffie–Hellman 模式，或只在已有端到端机密性与认证的信道中传递 PSK-Init。</li><li>升级必须安排双端切换与媒体互通验证，不适合单边滚动。</li></ul></details>
+          <a class="source-link" href="https://rustsec.org/advisories/RUSTSEC-2026-0335.html">RustSec RUSTSEC-2026-0335 ↗</a>
+        </article>
+
+        <article class="card" data-cat="async tooling">
+          <div class="card-top"><div class="tags"><span class="tag release">已发布</span><span class="tag">Tokio</span><span class="tag">异步 I/O</span></div><time class="date">2026-10-13</time></div>
+          <h3>5. Tokio 1.53.3 / 1.51.6 同步修复运行时与同步原语</h3>
+          <p class="fact">Tokio 同时更新两条维护线，新增 <code>AsyncFd::register*</code>，并弃用若干直接构造方法；修复 current-thread 运行时在 I/O 唤醒时的暂停时间自动推进，以及 <code>DuplexStream</code>、Semaphore 等在锁内唤醒/释放 waker 的问题。</p>
+          <div class="impact"><b>实际影响：</b>依赖暂停时间做确定性测试的服务、使用 <code>AsyncFd</code> 集成自定义文件描述符的库，以及高并发同步路径最值得回归。弃用不是立即破坏，但会影响后续无警告构建。</div>
+          <details><summary>升级建议</summary><ul><li>1.53.x 用户升至 1.53.3；固定在 1.51.x 的项目可升至 1.51.6。</li><li>逐步改用新的注册 API，避免新弃用警告进入严格 CI。</li><li>若测试使用 <code>time::pause</code> / <code>advance</code>，升级后重跑涉及 I/O 唤醒的用例。</li></ul></details>
+          <a class="source-link" href="https://github.com/tokio-rs/tokio/releases/tag/tokio-1.53.3">Tokio 1.53.3 发布说明 ↗</a>
+        </article>
+
+        <article class="card" data-cat="security">
+          <div class="card-top"><div class="tags"><span class="tag security">高危 · CVSS 7.5</span><span class="tag">密码学</span></div><time class="date">2026-10-12</time></div>
+          <h3>6. ic-cipher 的 Poly1305 在攻击者可控长消息上可 panic 或算错标签</h3>
+          <p class="fact"><code>ic-cipher</code> 0.2.5–0.2.19 的四块并行累加在 32 位进位上可能溢出。开启溢出检查时会 panic；默认 release 配置下则可能产生错误认证标签。影响 Poly1305、ChaCha20Poly1305 及其在 ic-rustls、ic-hpke 等上层的使用。</p>
+          <div class="impact"><b>实际影响：</b>攻击者无需密钥，只需让系统尝试打开至少 64 字节的特制 ChaCha20-Poly1305 密文即可触发相关路径。AES-GCM/AES-GCM-SIV 与短于 64 字节的消息不受此项影响。</div>
+          <details><summary>升级建议</summary><ul><li>将 <code>ic-cipher</code> 升到 <code>&gt;= 0.2.20</code>；<code>&lt; 0.2.5</code> 不受此问题影响。</li><li>检查传递依赖中的 ic-rustls、ic-hpke、ic-mac 与 ironcrypto 重导出。</li><li>不要把关闭 overflow checks 当作缓解：那会从崩溃转为错误标签。</li></ul></details>
+          <a class="source-link" href="https://rustsec.org/advisories/RUSTSEC-2026-0337.html">RustSec RUSTSEC-2026-0337 ↗</a>
+        </article>
+
+        <article class="card" data-cat="infra tooling">
+          <div class="card-top"><div class="tags"><span class="tag release">官方复盘</span><span class="tag">crates.io</span><span class="tag">docs.rs</span></div><time class="date">2026-10-12</time></div>
+          <h3>7. Rust 基础设施强化 crates.io / docs.rs 防护与供应链监测</h3>
+          <p class="fact">Rust 基础设施团队披露 Q3 进展：为 crates.io 与 docs.rs 启用 Fastly WAF 和 DDoS 防护；为 Rust 与 Rust Foundation 的 GitHub Enterprise、AWS 等接入审计日志；在 rust-lang 组织启用 Dependabot 告警，并为 rust-lang/rust 配置 Renovate 辅助依赖更新。</p>
+          <div class="impact"><b>为什么值得关注：</b>这些改动直接覆盖 Rust 分发、文档与项目依赖维护的公共基础面。官方明确说明未开启 Dependabot 自动安全 PR，而是偏好通过 Renovate 控制修复节奏。</div>
+          <details><summary>更多可核实进展</summary><ul><li>CDN 处理 crate 下载请求的计算时间降低 10%；官方同时说明网络仍主导最终下载延迟，不能解读为用户下载提速 10%。</li><li><code>riscv64gc-unknown-linux-musl</code> 升为带 host tools 的 Tier 2。</li><li>Q4 计划包括集中式安全部署环境、SAML SSO 与更严格的 crater 网络访问规则；这些仍是计划，未标为已完成。</li></ul></details>
+          <a class="source-link" href="https://blog.rust-lang.org/inside-rust/2026/10/12/infrastructure-team-q3-recap-and-q4-plan/">Inside Rust 原文 ↗</a>
+        </article>
+
+        <article class="card" data-cat="tooling">
+          <div class="card-top"><div class="tags"><span class="tag release">已发布</span><span class="tag project">形式化验证</span><span class="tag">IDE</span></div><time class="date">2026-10-13</time></div>
+          <h3>8. Creusot 0.14.0 改善证明表达与 rust-analyzer 导航</h3>
+          <p class="fact">Rust 形式化验证工具 Creusot 发布 0.14.0。新版可为嵌入 Rust 程序的 snapshot 逻辑表达式生成验证条件，使逻辑函数更自然地充当 lemma；同时让 Pearlite 规约中的“转到定义”可在 rust-analyzer 中工作。</p>
+          <div class="impact"><b>实际影响：</b>使用 Creusot 的团队可以更早发现规约错误，并减少为了证明而引入的运行时代码与借用检查绕行；IDE 导航也降低维护规约的摩擦。</div>
+          <details><summary>范围说明</summary><ul><li>0.14.0 是项目正式发布，不是 Rust 官方语言特性。</li><li>部分偏序支持从 0.13.0 已开始，本次文章补充介绍；不应全部算作 0.14.0 新增。</li><li>升级前按项目兼容矩阵检查其所需 Rust 工具链与验证后端。</li></ul></details>
+          <a class="source-link" href="https://devlog.creusot.rs/v0-14-0/">Creusot 0.14.0 发布文章 ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="timeline-title">
+      <div class="section-head"><div><div class="eyebrow">Chronology</div><h2 id="timeline-title">事件时间线</h2></div><p class="note">时间为原始来源标注日期</p></div>
+      <div class="timeline">
+        <article class="event"><time>10 月 12 日</time><p>RustSec 发布 Quinn、mykey、ic-cipher 等安全公告；Inside Rust 发布基础设施 Q3 复盘与 Q4 计划。</p></article>
+        <article class="event"><time>10 月 13 日</time><p>Tokio 1.53.3 / 1.51.6 发布；Creusot 0.14.0 发布。</p></article>
+        <article class="event"><time>10 月 14 日</time><p>Wasmtime 49.0.3、48.0.6、36.0.18 为多个维护分支发布安全补丁。</p></article>
+        <article class="event"><time>10 月 15 日</time><p>Rust 1.99.1 正式发布，修复三个稳定版回归。</p></article>
+      </div>
+    </section>
+
+    <section class="section background-box" aria-labelledby="background-title">
+      <div class="section-head"><div><div class="eyebrow">Background · 非当周新发布</div><h2 id="background-title">背景观察</h2></div><p class="note">发生在覆盖期之前，单独列示</p></div>
+      <div class="background-list">
+        <article><time class="tiny">2026-10-10 · 已合并主分支</time><h3>Wasm <code>wide-arithmetic</code> 稳定化代码合并</h3><p class="tiny">目标特性默认关闭，主要改善部分 128 位算术代码生成；“合并”不等于已随稳定 Rust 发布。</p><a href="https://github.com/rust-lang/rust/pull/160877">rust-lang/rust #160877</a></article>
+        <article><time class="tiny">2026-10-09 · 已合并 Cargo 主分支</time><h3>工作区内依赖路径改用相对指纹</h3><p class="tiny">可减少移动工作区后因绝对路径变化触发的重建；尚未据此宣称稳定 Cargo 已具备。</p><a href="https://github.com/rust-lang/cargo/pull/17573">cargo #17573</a></article>
+        <article><time class="tiny">2026-10-08 · 已合并 Cargo 主分支</time><h3>Git 获取自动探测迁移预警</h3><p class="tiny">Cargo 为后续默认 <code>net.git-fetch-with-cli=false</code> 的迁移加入 future-incompat 警告；这是预警机制，不是本周破坏性切换。</p><a href="https://github.com/rust-lang/cargo/pull/17568">cargo #17568</a></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="sources-title">
+      <div class="section-head"><div><div class="eyebrow">Primary sources</div><h2 id="sources-title">来源区</h2></div><p class="note">重要事实均回到项目/安全数据库原文</p></div>
+      <ol class="sources">
+        <li><a href="https://blog.rust-lang.org/2026/10/15/Rust-1.99.1/">Rust Blog：Announcing Rust 1.99.1</a></li>
+        <li><a href="https://github.com/tokio-rs/tokio/releases/tag/tokio-1.53.3">Tokio 1.53.3 release</a></li>
+        <li><a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.3">Wasmtime 49.0.3 release</a></li>
+        <li><a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v48.0.6">Wasmtime 48.0.6 release</a></li>
+        <li><a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v36.0.18">Wasmtime 36.0.18 release</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0343.html">RUSTSEC-2026-0343 · Quinn 出站 datagram</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0342.html">RUSTSEC-2026-0342 · Quinn 零长度 DATAGRAM</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0341.html">RUSTSEC-2026-0341 · Quinn 流重组</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0340.html">RUSTSEC-2026-0340 · Quinn ACK_FREQUENCY</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0339.html">RUSTSEC-2026-0339 · Quinn connection ID</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0338.html">RUSTSEC-2026-0338 · Quinn 无序读取</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0335.html">RUSTSEC-2026-0335 · mykey</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0337.html">RUSTSEC-2026-0337 · ic-cipher</a></li>
+        <li><a href="https://blog.rust-lang.org/inside-rust/2026/10/12/infrastructure-team-q3-recap-and-q4-plan/">Inside Rust：基础设施团队 Q3/Q4</a></li>
+        <li><a href="https://devlog.creusot.rs/v0-14-0/">Creusot 0.14.0 devlog</a></li>
+      </ol>
+      <div class="method"><b>资料完整性提示：</b>本期检索 Rust 官方博客、Inside Rust、RustSec 与项目官方发布页，主体覆盖 2026-10-12 至 2026-10-18。没有把社区周报的转述当作最终依据；10 月 8–10 日的合并项仅作背景。GitHub 发布页显示的 “released this …” 时区可能随访问环境显示，正文事件日期采用发布说明内明确写出的日历日期。未发现足以挤入本期前 8 的 Axum、Serde、SeaORM、SQLx 或 utoipa 当周正式发布，故不为覆盖面凑数。</div>
+    </section>
+  </main>
+
+  <footer class="wrap">Rust 热点周报 · 2026-10-19<br><span class="tiny">编辑整理统计仅包括本页人工筛选的 8 条当周动态，不代表社区热度、市场份额或项目排名。</span></footer>
+  <script>
+    const buttons=[...document.querySelectorAll('[data-filter]')];
+    const cards=[...document.querySelectorAll('.card[data-cat]')];
+    buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(b=>b.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;cards.forEach(c=>c.dataset.hidden=String(f!=='all'&&!c.dataset.cat.split(' ').includes(f)));}));
+    const detailBtn=document.getElementById('toggleDetails');let opened=false;
+    detailBtn.addEventListener('click',()=>{opened=!opened;document.querySelectorAll('details').forEach(d=>d.open=opened);detailBtn.textContent=opened?'收起全部细节':'展开全部细节';});
+    document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  </script>
+</body>
+</html>
