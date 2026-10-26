@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "column": "ai",
+  "date": "2026-10-26",
+  "title": "AI 可视化周报｜2026-10-26",
+  "summary": "原文整理 12 条 AI 动态，围绕模型路由、云上治理、开放权重与持续 Agent 工作台展开，区分产品状态、厂商结果与编辑判断。",
+  "coverage": "2026-10-19 至 2026-10-25（UTC+8）；期刊日期 2026-10-26。检索于 2026-10-26 08:23（UTC+8）。",
+  "provenance": "来自用户指定的原始 HTML 周报，按字节保留。归档阶段核验了文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。保留预览、正式可用、开放权重和许可证的分类，厂商评测与独立验证不混同。站点导览不替代原文。",
+  "original": {
+    "path": "ai-weekly-2026-10-26.html",
+    "sha256": "505ea7ed425fb92e314e224c89a4bba8bd39f2e290203b86366e6dbe885a87eb"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Notion 官方说明",
+      "url": "https://www.notion.com/blog/notion-ai-more-for-less"
+    },
+    {
+      "id": "source-2",
+      "title": "积分帮助文档",
+      "url": "https://www.notion.com/help/manage-your-ai-credits"
+    },
+    {
+      "id": "source-3",
+      "title": "MiniMax 官方发布",
+      "url": "https://www.minimax.io/blog/minimax-m31f"
+    },
+    {
+      "id": "source-4",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash"
+    },
+    {
+      "id": "source-5",
+      "title": "许可证",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash/blob/main/LICENSE"
+    },
+    {
+      "id": "source-6",
+      "title": "GitHub 官方 Changelog",
+      "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026/"
+    },
+    {
+      "id": "source-7",
+      "title": "RLinf v0.4 官方 Release",
+      "url": "https://github.com/RLinf/RLinf/releases/tag/v0.4"
+    },
+    {
+      "id": "source-8",
+      "title": "原始论文",
+      "url": "https://arxiv.org/abs/2610.28578"
+    },
+    {
+      "id": "source-9",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/InternScience/Sage-A1.5"
+    },
+    {
+      "id": "source-10",
+      "title": "官方 README",
+      "url": "https://github.com/XHToken/Spark-X2.6/blob/X2.6/README.md"
+    },
+    {
+      "id": "source-11",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/XHToken/Spark-X2.6-4B"
+    },
+    {
+      "id": "source-12",
+      "title": "Google Cloud 官方发布",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers"
+    },
+    {
+      "id": "source-13",
+      "title": "官方 What's New",
+      "url": "https://github.com/microsoft/foundry-dev-tools/blob/main/WHATS_NEW.md"
+    },
+    {
+      "id": "source-14",
+      "title": "Google Cloud 官方比较",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-claude-availability-on-google-cloud"
+    },
+    {
+      "id": "source-15",
+      "title": "官方模型卡与限制",
+      "url": "https://huggingface.co/HuggingFaceBio/Carbon-X"
+    },
+    {
+      "id": "source-16",
+      "title": "MiniMax 官方发布",
+      "url": "https://www.minimax.io/blog/minimax-code-mini-app-1792650729"
+    },
+    {
+      "id": "source-17",
+      "title": "社区仓库",
+      "url": "https://github.com/MiniMax-AI/MiniMax-Code-MiniApps"
+    },
+    {
+      "id": "source-18",
+      "title": "Kimi 官方技术博客",
+      "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+    },
+    {
+      "id": "source-19",
+      "title": "API 入口",
+      "url": "https://platform.kimi.ai"
+    },
+    {
+      "id": "source-20",
+      "title": "Auto 使用说明",
+      "url": "https://www.notion.com/help/auto"
+    },
+    {
+      "id": "source-21",
+      "title": "Mini App Quickstart",
+      "url": "https://agent.minimax.io/docs/miniapp/authors/quickstart"
+    }
+  ]
+}

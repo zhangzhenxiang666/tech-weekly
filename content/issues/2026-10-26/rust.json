@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "column": "rust",
+  "date": "2026-10-26",
+  "title": "Rust 热点周报｜2026-10-26",
+  "summary": "原文整理 9 条 Rust 动态，聚焦 TLS 信任链、Wasm 沙箱、Tokio 和工具链，区分已发布版本、已合并代码与开放 RFC。",
+  "coverage": "2026-10-19 至 2026-10-25（UTC+8）；期刊日期 2026-10-26。检索于 2026-10-26 08:25（中国标准时间）。",
+  "provenance": "来自用户指定的原始 HTML 周报，按字节保留。归档阶段核验了文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。保留安全补丁维护线、MSRV、兼容性条件与提案状态；实施前需复核最新官方公告。站点导览不替代原文。",
+  "original": {
+    "path": "rust-weekly-2026-10-26.html",
+    "sha256": "106a5d0c8fdf978c0359cc3b4fb5f1f420b9d455a9dbb2044c5dcb71e54a66e4"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "RustSec 0380",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0380.html"
+    },
+    {
+      "id": "source-2",
+      "title": "RustSec 0379",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0379.html"
+    },
+    {
+      "id": "source-3",
+      "title": "Rust 官方公告",
+      "url": "https://blog.rust-lang.org/2026/10/20/Rustup-1.29.2/"
+    },
+    {
+      "id": "source-4",
+      "title": "rustls-webpki 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0382.html"
+    },
+    {
+      "id": "source-5",
+      "title": "webpki-roots 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0381.html"
+    },
+    {
+      "id": "source-6",
+      "title": "Tokio 1.54.1",
+      "url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.54.1"
+    },
+    {
+      "id": "source-7",
+      "title": "1.54.0",
+      "url": "https://github.com/tokio-rs/tokio/releases/tag/tokio-1.54.0"
+    },
+    {
+      "id": "source-8",
+      "title": "Wasmtime 50.0.0 发布说明",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.0"
+    },
+    {
+      "id": "source-9",
+      "title": "rust-lang/rust #163436",
+      "url": "https://github.com/rust-lang/rust/pull/163436"
+    },
+    {
+      "id": "source-10",
+      "title": "RFC #4019",
+      "url": "https://github.com/rust-lang/rfcs/pull/4019"
+    },
+    {
+      "id": "source-11",
+      "title": "rust-lang/cargo #17602",
+      "url": "https://github.com/rust-lang/cargo/pull/17602"
+    },
+    {
+      "id": "source-12",
+      "title": "Inside Rust 原文",
+      "url": "https://blog.rust-lang.org/inside-rust/2026/10/20/gpu-target-notification-group/"
+    },
+    {
+      "id": "source-13",
+      "title": "RFC #4021",
+      "url": "https://github.com/rust-lang/rfcs/pull/4021"
+    },
+    {
+      "id": "source-14",
+      "title": "原文",
+      "url": "https://github.com/juhaku/utoipa/releases/tag/utoipa-swagger-ui-10.0.2"
+    },
+    {
+      "id": "source-15",
+      "title": "RUSTSEC-2026-0383 · webpki-root-certs",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0383.html"
+    },
+    {
+      "id": "source-16",
+      "title": "Wasmtime 49.0.4 release",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v49.0.4"
+    }
+  ]
+}

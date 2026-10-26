@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "column": "github",
+  "date": "2026-10-26",
+  "title": "GitHub 热门项目周报｜2026-10-26",
+  "summary": "原文精选 12 个项目，覆盖 AI / Agent、开发者工具、安全、基础设施、数据处理与创作应用，分别展示周榜快照、日榜线索和累计 Star。",
+  "coverage": "2026-10-19 至 2026-10-25（UTC+8）；期刊日期 2026-10-26。检索于 2026-10-26 08:20–08:26（UTC+8）。",
+  "provenance": "来自用户指定的原始 HTML 周报，按字节保留。归档阶段核验了文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。官方周榜受 robots.txt 限制，未取得完整实时周榜；使用 Githot 2026-10-24 第三方归档，滚动窗口为 2026-10-18 至 2026-10-24，与主要覆盖期相差一天。2026-10-26 官方日榜仅作补充，热度不代表新代码、质量或生产就绪。站点导览不替代原文。",
+  "original": {
+    "path": "github-weekly-2026-10-26.html",
+    "sha256": "a1853df2c9d441da65955fb561528b1cbb88f551c1a272b5d8c6fa4bc2a763e2"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "morluto/rea",
+      "url": "https://github.com/morluto/rea"
+    },
+    {
+      "id": "source-2",
+      "title": "duckdb/duckdb",
+      "url": "https://github.com/duckdb/duckdb"
+    },
+    {
+      "id": "source-3",
+      "title": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    {
+      "id": "source-4",
+      "title": "周榜快照",
+      "url": "https://githot.dev/weekly/2026-10-24"
+    },
+    {
+      "id": "source-5",
+      "title": "Release 6.8.0",
+      "url": "https://github.com/morluto/rea/releases/tag/rea-agents-6.8.0"
+    },
+    {
+      "id": "source-6",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/morluto/rea"
+    },
+    {
+      "id": "source-7",
+      "title": "Release 2.0.0",
+      "url": "https://github.com/duckdb/duckdb/releases/tag/v2.0.0"
+    },
+    {
+      "id": "source-8",
+      "title": "官方公告",
+      "url": "https://duckdb.org/2026/10/21/announcing-duckdb-200"
+    },
+    {
+      "id": "source-9",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/duckdb/duckdb"
+    },
+    {
+      "id": "source-10",
+      "title": "10-26 官方日榜",
+      "url": "https://github.com/trending"
+    },
+    {
+      "id": "source-11",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/cloudflare/security-audit-skill"
+    },
+    {
+      "id": "source-12",
+      "title": "stablyai/orca",
+      "url": "https://github.com/stablyai/orca"
+    },
+    {
+      "id": "source-13",
+      "title": "Release 1.4.240",
+      "url": "https://github.com/stablyai/orca/releases/tag/v1.4.240"
+    },
+    {
+      "id": "source-14",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/stablyai/orca"
+    },
+    {
+      "id": "source-15",
+      "title": "anomalyco/opencode",
+      "url": "https://github.com/anomalyco/opencode"
+    },
+    {
+      "id": "source-16",
+      "title": "Release 1.19.4",
+      "url": "https://github.com/anomalyco/opencode/releases/tag/v1.19.4"
+    },
+    {
+      "id": "source-17",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/anomalyco/opencode"
+    },
+    {
+      "id": "source-18",
+      "title": "akitaonrails/ai-memory",
+      "url": "https://github.com/akitaonrails/ai-memory"
+    },
+    {
+      "id": "source-19",
+      "title": "Release 3.2.5",
+      "url": "https://github.com/akitaonrails/ai-memory/releases/tag/v3.2.5"
+    },
+    {
+      "id": "source-20",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/akitaonrails/ai-memory"
+    },
+    {
+      "id": "source-21",
+      "title": "debpalash/VoiceStudio",
+      "url": "https://github.com/debpalash/VoiceStudio"
+    },
+    {
+      "id": "source-22",
+      "title": "移动版 Beta Release",
+      "url": "https://github.com/debpalash/VoiceStudio/releases/tag/mobile-v0.5.7-beta.2"
+    },
+    {
+      "id": "source-23",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/debpalash/VoiceStudio"
+    },
+    {
+      "id": "source-24",
+      "title": "heygen-com/hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes"
+    },
+    {
+      "id": "source-25",
+      "title": "Release 0.8.200",
+      "url": "https://github.com/heygen-com/hyperframes/releases/tag/v0.8.200"
+    },
+    {
+      "id": "source-26",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/heygen-com/hyperframes"
+    },
+    {
+      "id": "source-27",
+      "title": "NationalSecurityAgency/ghidra",
+      "url": "https://github.com/NationalSecurityAgency/ghidra"
+    },
+    {
+      "id": "source-28",
+      "title": "Release 12.2",
+      "url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.2_build"
+    },
+    {
+      "id": "source-29",
+      "title": "What's New",
+      "url": "https://github.com/NationalSecurityAgency/ghidra/blob/Ghidra_12.2_build/Ghidra/Configurations/Public_Release/src/global/docs/WhatsNew.md"
+    },
+    {
+      "id": "source-30",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/NationalSecurityAgency/ghidra"
+    },
+    {
+      "id": "source-31",
+      "title": "coollabsio/coolify",
+      "url": "https://github.com/coollabsio/coolify"
+    },
+    {
+      "id": "source-32",
+      "title": "Release 4.5.0",
+      "url": "https://github.com/coollabsio/coolify/releases/tag/v4.5.0"
+    },
+    {
+      "id": "source-33",
+      "title": "安全修复 4.4.7",
+      "url": "https://github.com/coollabsio/coolify/releases/tag/v4.4.7"
+    },
+    {
+      "id": "source-34",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/coollabsio/coolify"
+    },
+    {
+      "id": "source-35",
+      "title": "pola-rs/polars",
+      "url": "https://github.com/pola-rs/polars"
+    },
+    {
+      "id": "source-36",
+      "title": "Release 2.1.0",
+      "url": "https://github.com/pola-rs/polars/releases/tag/py-2.1.0"
+    },
+    {
+      "id": "source-37",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/pola-rs/polars"
+    },
+    {
+      "id": "source-38",
+      "title": "Comfy-Org/ComfyUI",
+      "url": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    {
+      "id": "source-39",
+      "title": "Release 0.42.1",
+      "url": "https://github.com/Comfy-Org/ComfyUI/releases/tag/v0.42.1"
+    },
+    {
+      "id": "source-40",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/Comfy-Org/ComfyUI"
+    }
+  ]
+}
