@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "column": "github",
+  "date": "2026-11-02",
+  "title": "GitHub 热门项目周报｜2026-11-02",
+  "summary": "原文精选 12 个项目，覆盖 AI / Agent、开发工具、安全、基础设施与应用，分别展示周榜缓存、日榜线索与官方发布。",
+  "coverage": "2026-10-26 00:00 至 2026-11-01 23:59（UTC+8）；期刊日期 2026-11-02。检索于 2026-11-02 08:05–08:42（UTC+8）。",
+  "provenance": "来自用户指定的原始 HTML 周报，按字节保留。归档阶段核验文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。官方周榜和日榜直达页受访问限制，未取得可完整保存的实时页面。周榜采用 githubtrending.today 在 2026-11-01 06:58 UTC 抓取的第三方滚动七日快照，不代表 11 月 2 日完整实时官方榜；日榜搜索索引仅作补充。站点导览不替代原文。",
+  "original": {
+    "path": "github-weekly-2026-11-02.html",
+    "sha256": "096f704fd53019ed97f8d0f54fcdc94e0bb0828b59752f5eaefb20015ef573e6"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "githubtrending.today",
+      "url": "https://githubtrending.today/weekly"
+    },
+    {
+      "id": "source-2",
+      "title": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable"
+    },
+    {
+      "id": "source-3",
+      "title": "pingdotgg/t3code",
+      "url": "https://github.com/pingdotgg/t3code"
+    },
+    {
+      "id": "source-4",
+      "title": "valkey-io/valkey",
+      "url": "https://github.com/valkey-io/valkey"
+    },
+    {
+      "id": "source-5",
+      "title": "官方 Releases",
+      "url": "https://github.com/pbakaus/impeccable/releases"
+    },
+    {
+      "id": "source-6",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/pbakaus/impeccable"
+    },
+    {
+      "id": "source-7",
+      "title": "Release v0.1.6",
+      "url": "https://github.com/pingdotgg/t3code/releases/tag/v0.1.6"
+    },
+    {
+      "id": "source-8",
+      "title": "GitHub 日榜入口",
+      "url": "https://github.com/trending"
+    },
+    {
+      "id": "source-9",
+      "title": "Release 9.1.3",
+      "url": "https://github.com/valkey-io/valkey/releases/tag/9.1.3"
+    },
+    {
+      "id": "source-10",
+      "title": "官方版本页",
+      "url": "https://valkey.io/download/"
+    },
+    {
+      "id": "source-11",
+      "title": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark"
+    },
+    {
+      "id": "source-12",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/Nutlope/hallmark"
+    },
+    {
+      "id": "source-13",
+      "title": "官方 Releases",
+      "url": "https://github.com/Nutlope/hallmark/releases"
+    },
+    {
+      "id": "source-14",
+      "title": "cloudflare/security-audit-skill",
+      "url": "https://github.com/cloudflare/security-audit-skill"
+    },
+    {
+      "id": "source-15",
+      "title": "SKILL.md",
+      "url": "https://github.com/cloudflare/security-audit-skill/blob/main/SKILL.md"
+    },
+    {
+      "id": "source-16",
+      "title": "官方 Releases",
+      "url": "https://github.com/cloudflare/security-audit-skill/releases"
+    },
+    {
+      "id": "source-17",
+      "title": "thedotmack/claude-mem",
+      "url": "https://github.com/thedotmack/claude-mem"
+    },
+    {
+      "id": "source-18",
+      "title": "Release v15.7.0",
+      "url": "https://github.com/thedotmack/claude-mem/releases/tag/v15.7.0"
+    },
+    {
+      "id": "source-19",
+      "title": "官方文档",
+      "url": "https://docs.claude-mem.ai/"
+    },
+    {
+      "id": "source-20",
+      "title": "obra/superpowers",
+      "url": "https://github.com/obra/superpowers"
+    },
+    {
+      "id": "source-21",
+      "title": "官方 Releases",
+      "url": "https://github.com/obra/superpowers/releases"
+    },
+    {
+      "id": "source-22",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/obra/superpowers"
+    },
+    {
+      "id": "source-23",
+      "title": "lightpanda-io/browser",
+      "url": "https://github.com/lightpanda-io/browser"
+    },
+    {
+      "id": "source-24",
+      "title": "Release 1.0.2",
+      "url": "https://github.com/lightpanda-io/browser/releases/tag/v1.0.2"
+    },
+    {
+      "id": "source-25",
+      "title": "hyprwm/Hyprland",
+      "url": "https://github.com/hyprwm/Hyprland"
+    },
+    {
+      "id": "source-26",
+      "title": "Release v0.57.0",
+      "url": "https://github.com/hyprwm/Hyprland/releases/tag/v0.57.0"
+    },
+    {
+      "id": "source-27",
+      "title": "astral-sh/uv",
+      "url": "https://github.com/astral-sh/uv"
+    },
+    {
+      "id": "source-28",
+      "title": "Release 0.13.6",
+      "url": "https://github.com/astral-sh/uv/releases/tag/0.13.6"
+    },
+    {
+      "id": "source-29",
+      "title": "官方文档",
+      "url": "https://docs.astral.sh/uv/"
+    },
+    {
+      "id": "source-30",
+      "title": "coollabsio/coolify",
+      "url": "https://github.com/coollabsio/coolify"
+    },
+    {
+      "id": "source-31",
+      "title": "Release v4.5.3",
+      "url": "https://github.com/coollabsio/coolify/releases/tag/v4.5.3"
+    },
+    {
+      "id": "source-32",
+      "title": "官方文档",
+      "url": "https://coolify.io/docs"
+    },
+    {
+      "id": "source-33",
+      "title": "apache/arrow-adbc",
+      "url": "https://github.com/apache/arrow-adbc"
+    },
+    {
+      "id": "source-34",
+      "title": "Apache Arrow 官方博客",
+      "url": "https://arrow.apache.org/blog/"
+    },
+    {
+      "id": "source-35",
+      "title": "官方 Releases",
+      "url": "https://github.com/apache/arrow-adbc/releases"
+    },
+    {
+      "id": "source-36",
+      "title": "GitHub API",
+      "url": "https://api.github.com/repos/apache/arrow-adbc"
+    }
+  ]
+}

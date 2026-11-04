@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "column": "ai",
+  "date": "2026-11-02",
+  "title": "AI 可视化周报｜2026-11-02",
+  "summary": "原文整理 11 条 AI 动态，涵盖视觉操作、长程代理、开放权重和推理基础设施，区分产品状态、厂商结果与编辑判断。",
+  "coverage": "2026-10-26 00:00 至 2026-11-01 23:59（UTC+8）；期刊日期 2026-11-02。检索于 2026-11-02（北京时间）。",
+  "provenance": "来自用户指定的原始 HTML 周报，按字节保留。归档阶段核验文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。保留开放权重许可证、产品访问限制及厂商评测口径。站点导览不替代原文。",
+  "original": {
+    "path": "ai-weekly-2026-11-02.html",
+    "sha256": "578a6b782abb9b20cde272849e79db4ff912366dd4f67a00d7b797b66d700d12"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "OpenAI 发布页",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra/"
+    },
+    {
+      "id": "source-2",
+      "title": "API Changelog",
+      "url": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+      "id": "source-3",
+      "title": "官方仓库",
+      "url": "https://github.com/Tencent-Hunyuan/Hy-SimulMT"
+    },
+    {
+      "id": "source-4",
+      "title": "许可证",
+      "url": "https://github.com/Tencent-Hunyuan/Hy-SimulMT/blob/main/LICENSE-Hy-SimulMT.txt"
+    },
+    {
+      "id": "source-5",
+      "title": "DeepMind 发布页",
+      "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/"
+    },
+    {
+      "id": "source-6",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/baidu/Unlimited-OCR-2"
+    },
+    {
+      "id": "source-7",
+      "title": "官方仓库",
+      "url": "https://github.com/baidu/Unlimited-OCR"
+    },
+    {
+      "id": "source-8",
+      "title": "Microsoft AI 公告",
+      "url": "https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai/"
+    },
+    {
+      "id": "source-9",
+      "title": "Foundry 使用文档",
+      "url": "https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-mai"
+    },
+    {
+      "id": "source-10",
+      "title": "Google 官方公告",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+    },
+    {
+      "id": "source-11",
+      "title": "Gemini 模型页",
+      "url": "https://deepmind.google/models/gemini/"
+    },
+    {
+      "id": "source-12",
+      "title": "NVIDIA 研究页",
+      "url": "https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/"
+    },
+    {
+      "id": "source-13",
+      "title": "Granary‑v2",
+      "url": "https://research.nvidia.com/labs/nemotron/Granary-v2/"
+    },
+    {
+      "id": "source-14",
+      "title": "Hugging Face 发布说明",
+      "url": "https://huggingface.co/blog/mistral-large4"
+    },
+    {
+      "id": "source-15",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"
+    },
+    {
+      "id": "source-16",
+      "title": "许可证",
+      "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/LICENSE"
+    },
+    {
+      "id": "source-17",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview"
+    },
+    {
+      "id": "source-18",
+      "title": "官方仓库",
+      "url": "https://github.com/OpenSenseNova/SenseNova-Loop"
+    },
+    {
+      "id": "source-19",
+      "title": "Cloudflare 事故复盘",
+      "url": "https://blog.cloudflare.com/kv-cache-exposure-remediation"
+    },
+    {
+      "id": "source-20",
+      "title": "OpenAI 公告",
+      "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/"
+    },
+    {
+      "id": "source-21",
+      "title": "IETF AIPREF 工作组",
+      "url": "https://datatracker.ietf.org/wg/aipref/about/"
+    }
+  ]
+}

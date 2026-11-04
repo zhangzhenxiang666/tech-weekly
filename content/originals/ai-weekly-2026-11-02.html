@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>AI 可视化周报｜2026-11-02</title>
+<style>
+:root{--bg:#f4f7f4;--paper:#fff;--ink:#14221b;--muted:#5d6c64;--line:#d8e1da;--green:#0d6b4d;--green2:#dff2e9;--blue:#315fb5;--blue2:#e7efff;--amber:#95620c;--amber2:#fff2ce;--red:#a44236;--red2:#ffe7e2;--violet:#6946a5;--violet2:#efe8ff;--shadow:0 18px 55px rgba(32,55,42,.09);--r:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 8% -5%,#dff4e9 0,transparent 27%),radial-gradient(circle at 95% 4%,#e4ecff 0,transparent 23%),var(--bg);color:var(--ink);font-family:Inter,"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;line-height:1.65}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.hero{padding:48px 0 26px}.eyebrow{display:flex;gap:9px;align-items:center;color:var(--green);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px}.pulse{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px #d6eee3}.hero-grid{display:grid;grid-template-columns:1.38fr .72fr;gap:26px;align-items:end;margin-top:16px}.hero h1{font-size:clamp(42px,7vw,84px);line-height:.95;margin:0;letter-spacing:-.055em}.hero h1 span{display:block;color:var(--green)}.dek{font-size:clamp(17px,2vw,22px);max-width:760px;margin:24px 0 0;color:#34473d}.meta{background:rgba(255,255,255,.72);border:1px solid rgba(216,225,218,.9);backdrop-filter:blur(12px);padding:21px;border-radius:var(--r);box-shadow:var(--shadow)}.meta b{display:block;font-size:24px}.meta small{color:var(--muted)}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}.metric{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:10px}.metric strong{font-size:20px;display:block}.metric span{font-size:11px;color:var(--muted)}.section{margin:24px 0 40px}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin:0 0 16px}.section-head h2{margin:0;font-size:clamp(26px,4vw,40px);letter-spacing:-.035em}.section-head p{margin:0;color:var(--muted);max-width:600px}.top3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.top-card{position:relative;overflow:hidden;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px;min-height:250px;box-shadow:var(--shadow)}.top-card:before{content:attr(data-n);position:absolute;right:14px;top:-24px;font-size:112px;font-weight:900;color:#edf2ee;line-height:1}.top-card>*{position:relative}.top-card .tag{display:inline-flex}.top-card h3{font-size:23px;line-height:1.25;margin:17px 0 10px}.top-card p{color:#46594e;margin:0}.top-card .take{display:block;margin-top:16px;font-weight:750;color:var(--green)}.map{margin-top:14px;background:#10251b;color:#eefbf4;border-radius:var(--r);padding:20px;overflow:auto}.map svg{display:block;width:100%;min-width:760px;height:auto}.map .lab{font:700 14px system-ui,sans-serif;fill:#eaf8f0}.map .sub{font:500 11px system-ui,sans-serif;fill:#adcec0}.map .node{fill:#173b2b;stroke:#3a745b;stroke-width:1.5}.map .hot{fill:#1e4b37;stroke:#73c8a0}.map .edge{stroke:#4b7f68;stroke-width:2;fill:none;marker-end:url(#arrow)}.map .dash{stroke-dasharray:6 5}.controls{position:sticky;top:0;z-index:10;padding:12px 0;background:linear-gradient(to bottom,rgba(244,247,244,.98) 75%,transparent)}.controls-inner{display:flex;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:10px;box-shadow:0 12px 30px rgba(20,34,27,.08)}#search{flex:1;min-width:180px;border:0;background:#f1f5f2;color:var(--ink);border-radius:12px;padding:12px 14px;font:inherit;outline:2px solid transparent}#search:focus{outline-color:#6bb291}.filters{display:flex;gap:7px;overflow:auto}.filter{border:1px solid var(--line);background:#fff;color:#314339;border-radius:999px;padding:9px 12px;font-weight:700;white-space:nowrap;cursor:pointer}.filter.active{background:var(--ink);color:#fff;border-color:var(--ink)}#result{font-size:12px;color:var(--muted);white-space:nowrap}.timeline{position:relative;display:grid;gap:16px}.timeline:before{content:"";position:absolute;left:28px;top:18px;bottom:18px;width:2px;background:linear-gradient(var(--green),#b8c8bd)}.event{position:relative;margin-left:58px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:21px 22px;box-shadow:0 10px 34px rgba(32,55,42,.055)}.event:before{content:"";position:absolute;left:-38px;top:28px;width:15px;height:15px;background:var(--paper);border:4px solid var(--green);border-radius:50%}.event[hidden]{display:none}.row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.date{font:800 12px ui-monospace,SFMono-Regular,Consolas,monospace;color:var(--green);letter-spacing:.04em}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:7px 0 9px}.tag{font-size:11px;font-weight:800;letter-spacing:.02em;border-radius:999px;padding:4px 8px;background:var(--green2);color:var(--green)}.tag.blue{background:var(--blue2);color:var(--blue)}.tag.amber{background:var(--amber2);color:var(--amber)}.tag.red{background:var(--red2);color:var(--red)}.tag.violet{background:var(--violet2);color:var(--violet)}.event h3{font-size:clamp(21px,3vw,29px);line-height:1.22;letter-spacing:-.025em;margin:0}.summary{font-size:16px;color:#354a3e;margin:11px 0}.factline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0}.fact{border:1px solid var(--line);border-radius:13px;padding:11px;background:#fafcfb}.fact b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:3px}.fact span{font-size:13px}details{border-top:1px solid var(--line);padding-top:12px;margin-top:13px}summary{cursor:pointer;color:var(--green);font-weight:800;list-style:none}summary::-webkit-details-marker{display:none}summary:after{content:"＋";float:right}.event details[open] summary:after{content:"－"}.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:13px}.detail-grid h4{margin:0 0 5px;font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}.detail-grid p{margin:0 0 12px}.source{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}.source a{display:inline-flex;align-items:center;gap:6px;border:1px solid #bdd0c3;border-radius:10px;padding:6px 9px;font-size:12px;font-weight:750}.source a:after{content:"↗"}.matrix{overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}table{border-collapse:collapse;width:100%;min-width:800px}th,td{text-align:left;padding:14px;border-bottom:1px solid var(--line);vertical-align:top}th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:#f8faf8}td{font-size:13px}tr:last-child td{border-bottom:0}.tools,.trends{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tool,.trend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}.tool h3,.trend h3{margin:8px 0;font-size:20px}.tool p,.trend p{color:#45584d}.tool ul,.trend ul{padding-left:18px;margin:10px 0}.tool .go{display:inline-block;background:var(--ink);color:#fff;border-radius:10px;padding:9px 12px;font-weight:750;margin-top:6px}.note{background:#fff8e8;border:1px solid #ead7a7;border-radius:var(--r);padding:20px;color:#5c491e}.method{background:#15231b;color:#eaf5ee;border-radius:var(--r);padding:24px}.method a{color:#9fdabd}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.method h3{margin-top:0}.method p,.method li{color:#bdd0c4}.empty{display:none;text-align:center;padding:30px;color:var(--muted)}footer{padding:10px 0 45px;color:var(--muted);font-size:12px}
+@media(max-width:860px){.hero-grid,.top3,.tools,.trends,.method-grid{grid-template-columns:1fr}.meta{margin-top:8px}.factline{grid-template-columns:1fr}.detail-grid{grid-template-columns:1fr}.controls-inner{align-items:stretch;flex-direction:column}.filters{padding-bottom:2px}.event{margin-left:38px}.timeline:before{left:18px}.event:before{left:-30px}.hero{padding-top:30px}}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1813;--paper:#17231c;--ink:#eef8f2;--muted:#a8b9af;--line:#34453b;--green:#72d1a4;--green2:#1e4635;--blue:#9abaff;--blue2:#25385c;--amber:#f1c56b;--amber2:#4f3b18;--red:#ff9d91;--red2:#522923;--violet:#c3a8ff;--violet2:#3a2c56;--shadow:none}.meta{background:#17231cdd}.top-card:before{color:#223229}.fact,.filter{background:#1b2a21}.map{background:#09120d}.filter.active{background:#eff8f2;color:#15231b}.note{background:#362c16;border-color:#645325;color:#f0d894}.controls{background:linear-gradient(to bottom,rgba(15,24,19,.98) 75%,transparent)}#search{background:#233229}.method{background:#07100b}.tool .go{background:#eef8f2;color:#14221b}}
+@media print{body{background:#fff;color:#111;font-size:10pt}.wrap{width:100%}.hero{padding-top:0}.controls,.map{display:none}.top3,.tools,.trends{grid-template-columns:repeat(3,1fr)}.event,.top-card,.tool,.trend,.matrix{box-shadow:none;break-inside:avoid}.event{margin-left:30px}details{display:block}details>summary{display:none}details>*{display:block!important}.method{background:#fff;color:#111;border:1px solid #aaa}.method p,.method li{color:#333}a{color:#111;text-decoration:underline}footer{padding-bottom:0}}
+</style>
+</head>
+<body>
+<header class="hero wrap">
+  <div class="eyebrow"><span class="pulse"></span>AI WEEKLY · 第 44 周</div>
+  <div class="hero-grid">
+    <div><h1>AI 可视化<span>周报</span></h1><p class="dek"><b>本周主线：</b>AI 从“回答”进一步走向视觉操作、长程代理与可控专业工作流；开放权重正在补齐同传、OCR、语音等垂直能力，而推理基础设施的数据隔离成为必须被验证的产品能力。</p></div>
+    <aside class="meta"><small>覆盖区间</small><b>10.26 — 11.01</b><small>发布日期与事件日期已逐项核对 · 检索于 2026-11-02（北京时间）</small><div class="metric-row"><div class="metric"><strong>11</strong><span>精选动态</span></div><div class="metric"><strong>8</strong><span>一手组织</span></div><div class="metric"><strong>5</strong><span>开放权重项目</span></div></div></aside>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="section">
+  <div class="section-head"><div><div class="eyebrow">Priority</div><h2>最值得关注的 3 件事</h2></div><p>不是“热度榜”，而是对开发、采购与部署决策最有杠杆的三项变化。</p></div>
+  <div class="top3">
+    <article class="top-card" data-n="1"><span class="tag">正式发布</span><h3>Terra 把计算机操作推入高吞吐成本带</h3><p>GPT‑6.1 Terra 已进入 API、ChatGPT Work 与 Codex；标准 API 为每百万输入/缓存输入/输出 token 1 / 0.05 / 5 美元。</p><span class="take">判断：先用真实 GUI 任务做成功率×成本评测，不以厂商榜单替代验收。</span></article>
+    <article class="top-card" data-n="2"><span class="tag violet">开放权重</span><h3>Mistral Large 4 从预览推进到权重可得</h3><p>10 月 29 日发布 FP8 与 NVFP4 权重；许可证允许广泛使用，但经营 Model-as-a-Service 需另签商业许可。</p><span class="take">判断：开放权重不等于 OSI 式开源，MaaS 团队要先做许可证审查。</span></article>
+    <article class="top-card" data-n="3"><span class="tag red">安全复盘</span><h3>KV 缓存隔离不是实现细节</h3><p>Cloudflare 披露 GLM‑5.3 的跨请求缓存暴露：事故在 8/27–9/9 发生并修复，10/26 协调公开，共确认 155 条响应受影响。</p><span class="take">判断：自建/托管推理都应把异常路径、缓存清零与租户隔离纳入上线门禁。</span></article>
+  </div>
+  <div class="map" aria-label="本周技术关系图">
+    <svg viewBox="0 0 1040 230" role="img"><defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6caf90"/></marker></defs>
+      <path class="edge" d="M200 64 C290 64 295 64 390 64"/><path class="edge" d="M650 64 C735 64 740 64 840 64"/><path class="edge dash" d="M515 105 C515 145 515 145 515 174"/><path class="edge" d="M200 184 C290 184 300 184 390 184"/><path class="edge" d="M650 184 C745 184 750 184 840 184"/>
+      <rect class="node hot" x="20" y="25" rx="16" width="180" height="78"/><text class="lab" x="42" y="55">通用模型可行动化</text><text class="sub" x="42" y="78">Terra · Carbon · Genie 4</text>
+      <rect class="node" x="390" y="25" rx="16" width="260" height="78"/><text class="lab" x="414" y="55">垂直工作流模型</text><text class="sub" x="414" y="78">同传 · OCR · 语音 · 图像</text>
+      <rect class="node" x="840" y="25" rx="16" width="180" height="78"/><text class="lab" x="862" y="55">产品/代理编排</text><text class="sub" x="862" y="78">工具调用 · 长程执行</text>
+      <rect class="node" x="20" y="145" rx="16" width="180" height="78"/><text class="lab" x="42" y="175">开放权重部署</text><text class="sub" x="42" y="198">许可 · 算力 · 推理栈</text>
+      <rect class="node hot" x="390" y="145" rx="16" width="260" height="78"/><text class="lab" x="414" y="175">运行时可信边界</text><text class="sub" x="414" y="198">KV 隔离 · 权限 · 审批</text>
+      <rect class="node" x="840" y="145" rx="16" width="180" height="78"/><text class="lab" x="862" y="175">内容治理信号</text><text class="sub" x="862" y="198">robots.txt · 仍待实施</text>
+    </svg>
+  </div>
+</section>
+
+<section class="section" id="updates">
+  <div class="section-head"><div><div class="eyebrow">Signal, not noise</div><h2>本周 11 条重要动态</h2></div><p>点击卡片展开影响、边界与编辑判断；可按分类或关键词即时筛选。</p></div>
+  <div class="controls"><div class="controls-inner"><input id="search" type="search" placeholder="搜索模型、厂商、场景、许可证…" aria-label="搜索周报"><div class="filters" role="group" aria-label="分类筛选"><button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="model">模型</button><button class="filter" data-filter="agent">Agent</button><button class="filter" data-filter="open">开放权重</button><button class="filter" data-filter="product">产品</button><button class="filter" data-filter="security">安全</button><button class="filter" data-filter="policy">政策</button></div><span id="result">11 / 11</span></div></div>
+  <div class="timeline" id="timeline">
+
+    <article class="event" data-cat="model agent product" data-search="OpenAI GPT 6.1 Terra 计算机操作 视觉 编程 API Codex Work 价格">
+      <div class="row"><div><div class="date">2026-10-26</div><div class="tags"><span class="tag">正式发布</span><span class="tag blue">API / 产品</span><span class="tag amber">专有模型</span></div><h3>GPT‑6.1 Terra 正式进入 API、Work 与 Codex</h3></div></div>
+      <p class="summary">OpenAI 发布面向视觉理解、精确计算机操作和日常专业工作的快速模型；API ID 为 <code>gpt-6.1-terra</code>，同时向 Plus、Pro、Enterprise、Edu 的 Work 与 Codex 开放，但不在 Chat 对话页提供。</p>
+      <div class="factline"><div class="fact"><b>价格</b><span>$1 输入 / $0.05 缓存输入 / $5 输出（每百万 token）</span></div><div class="fact"><b>能力边界</b><span>复杂编码仍建议 Sol 或 Astra；不支持 UAE 推理驻留</span></div><div class="fact"><b>证据性质</b><span>可用性与价格已核实；性能数据为厂商评测</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>把“看屏幕—判断—操作”推入更低成本区间，适合发票录入、后台配置、网页表单和视觉 QA 等大批量任务。开发者应以端到端成功率、人工接管率和总 token 成本做选型。</p><h4>适用</h4><p>视觉文档到结构化动作、浏览器/桌面操作、常规编码与写作。</p></div><div><h4>限制</h4><p>厂商基准不能直接外推到你的 GUI；高风险动作仍需权限最小化、审批和可回滚设计。API 费用与 ChatGPT 订阅分开计费。</p><h4>编辑判断</h4><p>这是本周最直接影响“代理是否能规模化”的正式产品发布。</p></div></div><div class="source"><a href="https://openai.com/index/introducing-gpt-6-1-terra/">OpenAI 发布页</a><a href="https://developers.openai.com/api/docs/changelog">API Changelog</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model open product" data-search="腾讯 混元 Hy SimulMT 同声传译 中英 语音 Apache 2.0">
+      <div class="date">2026-10-26</div><div class="tags"><span class="tag violet">开放权重</span><span class="tag">正式发布</span><span class="tag blue">语音</span></div><h3>腾讯混元开放 Hy‑SimulMT 实时中英同传模型</h3>
+      <p class="summary">项目同时提供模型资源、SimulInfer 推理服务和 SimulTrain 训练工具，支持中英双向流式语音输入并持续输出译文；公开代码、参数与权重采用 Apache‑2.0（第三方组件沿用各自条款）。</p>
+      <div class="factline"><div class="fact"><b>模型</b><span>30B 总参数 / 3B 激活；中英双向</span></div><div class="fact"><b>许可证</b><span>Apache‑2.0，第三方组件例外</span></div><div class="fact"><b>重要边界</b><span>语音播放与音色克隆需另配 TTS 服务</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>开源实时同传从“离线级联”转向可持续接收音频的流式系统，能用于会议字幕、直播和跨境协作原型。约 3 秒 StreamLAAL 与质量结果均为腾讯评测，不应表述为独立验证。</p></div><div><h4>限制</h4><p>目前语言对聚焦中英；完整语音到语音体验依赖外部 TTS 与音色服务，部署还要处理说话人同意、音频留存和生物特征数据合规。</p></div></div><div class="source"><a href="https://github.com/Tencent-Hunyuan/Hy-SimulMT">官方仓库</a><a href="https://github.com/Tencent-Hunyuan/Hy-SimulMT/blob/main/LICENSE-Hy-SimulMT.txt">许可证</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model agent" data-search="Google DeepMind Genie 4 世界模型 实时 模拟 音频 研究预览 候补">
+      <div class="date">2026-10-27</div><div class="tags"><span class="tag amber">研究预览</span><span class="tag red">候补名单</span><span class="tag blue">世界模型</span></div><h3>Genie 4 开启可信测试者研究预览，而非公开发布</h3>
+      <p class="summary">Google DeepMind 展示可实时交互、原生生成环境音与对话的世界模型，并用文本在运行中改变场景。当前只向可信测试者逐步开放；Project Genie 的 Ultra 用户和 Gemini API / AI Studio 早期伙伴仍属“即将到来”。</p>
+      <div class="factline"><div class="fact"><b>状态</b><span>可信测试者研究预览；其余仅候补/预告</span></div><div class="fact"><b>输出</b><span>可交互视频世界 + 原生音频</span></div><div class="fact"><b>水印</b><span>生成的视频与音频带 SynthID</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>世界模型开始从短视频生成走向可操控训练环境，为机器人、游戏测试和具身代理提供合成场景的可能性。</p></div><div><h4>限制</h4><p>不是普通开发者可直接调用的 GA 产品；长时间运行会出现视觉细节、对象恒常性和空间一致性漂移，复杂物理、文字和实时音频仍有限。</p></div></div><div class="source"><a href="https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/">DeepMind 发布页</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model open product" data-search="百度 Unlimited OCR 2 文档 解析 MIT MarathonDocBench 长文档 SR SWA">
+      <div class="date">2026-10-27</div><div class="tags"><span class="tag violet">开放权重</span><span class="tag">MIT</span><span class="tag blue">文档 AI</span></div><h3>百度发布 Unlimited‑OCR 2 与超长文档基准</h3>
+      <p class="summary">百度发布 3B 级视觉语言 OCR 模型及 MarathonDocBench，权重标注 MIT 许可，并给出 Transformers、vLLM、SGLang 等使用入口；其核心目标是通过历史视觉 token 的选择性复用处理超长文档。</p>
+      <div class="factline"><div class="fact"><b>状态</b><span>权重与模型卡已公开；百度云托管服务另行提供</span></div><div class="fact"><b>许可证</b><span>MIT</span></div><div class="fact"><b>安全提示</b><span>示例要求 trust_remote_code=True，应先审阅远程代码</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>适合合同、财报、档案扫描等跨页文档解析；开放权重让团队可在受控环境中评估中文排版、表格和跨页引用。</p></div><div><h4>限制</h4><p>“无限”是方法命名，不代表端到端显存、时延或上下文成本真正无限；模型页中的成绩是作者报告，跨页事实一致性仍需业务集评测。</p></div></div><div class="source"><a href="https://huggingface.co/baidu/Unlimited-OCR-2">官方模型卡</a><a href="https://github.com/baidu/Unlimited-OCR">官方仓库</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model product" data-search="微软 Microsoft MAI Image 2.6 Flash Foundry GA 图像 生成 编辑">
+      <div class="date">2026-10-27</div><div class="tags"><span class="tag">Foundry GA</span><span class="tag blue">图像生成</span><span class="tag amber">专有模型</span></div><h3>MAI‑Image‑2.6 与 Flash 在 Microsoft Foundry 转为 GA</h3>
+      <p class="summary">微软确认两款图像生成/编辑模型在 Foundry 正式可用：2.6 偏向质量与精细控制，Flash 面向低延迟与高吞吐；支持多图参考、网页 grounding 和动态宽高比。</p>
+      <div class="factline"><div class="fact"><b>状态</b><span>Foundry 正式可用；其他产品仍分阶段推出</span></div><div class="fact"><b>输出</b><span>PNG；生成与编辑 API 返回 base64</span></div><div class="fact"><b>可用性</b><span>区域与配额按 Foundry 部署文档；本周未见统一免费额度</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>企业团队可把图像生成纳入 Azure/Foundry 的身份、部署与治理边界；网页 grounding 适合需要当前实物、地点或品牌背景的视觉草案。</p></div><div><h4>限制</h4><p>Arena 名次与 Elo 提升属于微软引用的评测结果，不等于你场景下的质量结论。网页 grounding 会引入外部检索与版权/品牌准确性风险，生产前应审稿。</p></div></div><div class="source"><a href="https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai/">Microsoft AI 公告</a><a href="https://learn.microsoft.com/en-us/azure/foundry/foundry-models/how-to/use-foundry-models-mai">Foundry 使用文档</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model agent security" data-search="Google Gemini 4 Carbon 网络安全 编程 长程 Fairwind 可信伙伴 价格">
+      <div class="date">2026-10-28</div><div class="tags"><span class="tag amber">受限放量</span><span class="tag red">网络安全</span><span class="tag blue">长程代理</span></div><h3>Gemini 4 Carbon 先向部分网络防御者开放</h3>
+      <p class="summary">Google 发布面向长程工程和网络防御的 Gemini 4 Carbon，本周仅向 Fairwind 计划中的部分防御者与可信伙伴逐步开放；开发者、企业和消费者的广泛可用仍是“尽快推出”。</p>
+      <div class="factline"><div class="fact"><b>状态</b><span>有限访问，不是 Gemini API GA</span></div><div class="fact"><b>计划价格</b><span>$2 输入 / $10 输出；缓存输入 95% 折扣（每百万 token）</span></div><div class="fact"><b>证据性质</b><span>基准与内部安全结果主要为 Google 自述</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>前沿模型开始把漏洞发现、验证和修复串成代理流程；对安全团队而言，访问控制与评测护栏和模型能力同等重要。</p></div><div><h4>限制</h4><p>不能据此写成“所有开发者已可用”。Google 公布的 SEC‑bench Pro、ExploitGym、CWE‑bench 等结果条件不同，本报告不把它们与其他模型拼成综合排行榜。</p></div></div><div class="source"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/">Google 官方公告</a><a href="https://deepmind.google/models/gemini/">Gemini 模型页</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model open research" data-search="NVIDIA Nemotron 3.5 Transcribe Granary v2 语音 转写 说话人 翻译 OpenMDW">
+      <div class="date">2026-10-28</div><div class="tags"><span class="tag violet">开放权重</span><span class="tag blue">语音 LLM</span><span class="tag">研究发布</span></div><h3>NVIDIA 开放 Nemotron 3.5 Transcribe 与 Granary‑v2 管线</h3>
+      <p class="summary">一个模型可按自然语言指令执行逐字/清洁转写、说话人归因、翻译、语言识别和词级时间戳，覆盖 40 种语言、最长一小时录音；模型采用 OpenMDW‑1.1，Granary‑v2 管线与训练 recipes 开源，并公开部分生成标签。</p>
+      <div class="factline"><div class="fact"><b>架构</b><span>约 4.3B 激活参数；基于 30B‑A3B LLM</span></div><div class="fact"><b>数据</b><span>Granary‑v2 覆盖 48 语种；完整处理集约 843,600 小时（论文报告）</span></div><div class="fact"><b>许可</b><span>模型 OpenMDW‑1.1；代码/数据各看对应条款</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>把会议转写常见的多阶段管线压缩为可指令控制的语音模型，适合客服质检、会议纪要、字幕与跨语种检索；Granary‑v2 也提供可复用的数据治理方法。</p></div><div><h4>限制</h4><p>吞吐、WER 与说话人准确率均为论文/厂商条件下结果；硬件与量化条件会显著改变成本。语音内容和声纹属于高敏数据，需明确留存、访问与同意。</p></div></div><div class="source"><a href="https://research.nvidia.com/labs/nemotron/NVIDIA-Nemotron-3.5-Transcribe/">NVIDIA 研究页</a><a href="https://research.nvidia.com/labs/nemotron/Granary-v2/">Granary‑v2</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model open agent" data-search="Mistral Large 4 Le Chonk 1T 多模态 开放权重 FP8 NVFP4 MaaS license">
+      <div class="date">2026-10-29</div><div class="tags"><span class="tag violet">开放权重</span><span class="tag amber">非 OSI 开源</span><span class="tag blue">多模态 / Agent</span></div><h3>Mistral Large 4 权重按期开放，许可证对 MaaS 设限</h3>
+      <p class="summary">Mistral 早先已开放 API 预览，本周新增进展是 FP8 与 NVFP4 权重实际发布。模型约 1T 总参数、49B 每 token 激活（含嵌入/输出层约 52B），支持文本与图像输入及 1M 上下文。</p>
+      <div class="factline"><div class="fact"><b>新增状态</b><span>10/29 权重可下载，不再只是“月底将开放”</span></div><div class="fact"><b>许可证</b><span>Mistral Ecosystem Open‑Weight；MaaS 商业用途需另签许可</span></div><div class="fact"><b>部署门槛</b><span>超大 MoE；官方 FP8/NVFP4，另有社区 GGUF</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>长上下文、视觉与代理能力进入可自托管的超大开放权重档；适合强数据驻留要求或需要深度定制的组织。</p></div><div><h4>限制</h4><p>“开放权重”不等于无条件开源：提供第三方可控推理/训练的 Model-as-a-Service 业务要取得单独商业许可。部署还需高端多卡基础设施，社区量化质量另行验证。</p></div></div><div class="source"><a href="https://huggingface.co/blog/mistral-large4">Hugging Face 发布说明</a><a href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B">官方模型卡</a><a href="https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B/blob/main/LICENSE">许可证</a></div></details>
+    </article>
+
+    <article class="event" data-cat="model open agent" data-search="商汤 SenseNova Loop 9B Preview 循环 多模态 长上下文 Apache 2.0 MTP">
+      <div class="date">2026-10-30</div><div class="tags"><span class="tag amber">Preview</span><span class="tag violet">Apache‑2.0 权重</span><span class="tag blue">长上下文</span></div><h3>SenseNova‑Loop‑9B‑Preview 用共享层换更深计算路径</h3>
+      <p class="summary">商汤开放约 9B 参数的多模态预览模型：32 个独立解码层中有 24 层执行两遍，形成 56 次层执行；输入文本与图像、输出文本，训练序列最高 262,144 token，权重与仓库标注 Apache‑2.0。</p>
+      <div class="factline"><div class="fact"><b>状态</b><span>开放权重 Preview，不是生产稳定版</span></div><div class="fact"><b>推理</b><span>MTP 可用；Dspark 与 Dflash2 仍在训练</span></div><div class="fact"><b>兼容性</b><span>需要复现循环执行与 mHC 路由参数</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>它探索“参数量不线性增加、计算深度增加”的路线，适合文档理解、代码和工具轨迹实验；Apache‑2.0 降低二次开发摩擦。</p></div><div><h4>限制</h4><p>共享层不等于推理计算免费：一次前向仍执行 56 层；通用推理栈若不理解循环段与 mHC 会加载失败或结果错误。性能表为厂商模型卡结果。</p></div></div><div class="source"><a href="https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview">官方模型卡</a><a href="https://github.com/OpenSenseNova/SenseNova-Loop">官方仓库</a></div></details>
+    </article>
+
+    <article class="event" data-cat="security open" data-search="Cloudflare Workers AI GLM 5.3 KV cache 跨请求 数据泄露 SGLang 0.5.22">
+      <div class="date">2026-10-26（披露）</div><div class="tags"><span class="tag red">安全披露</span><span class="tag amber">事故已于 9/9 修复</span><span class="tag blue">推理基础设施</span></div><h3>Cloudflare 披露 GLM‑5.3 跨租户 KV 缓存暴露</h3>
+      <p class="summary">当超长请求超过 prefill GPU 的 KV 池容量时，SGLang 的拒绝路径没有终止请求，decode 节点继续读取残留缓存。Cloudflare 确认 8/27–9/9 期间 155 条响应受影响，未发现故意利用；只影响其 Workers AI 上该模型。</p>
+      <div class="factline"><div class="fact"><b>事件时间</b><span>8/27 起；9/8 报告；9/9 下线修复并恢复；10/26 公开</span></div><div class="fact"><b>触发阈值</b><span>提示超过 681,280 token</span></div><div class="fact"><b>修复建议</b><span>SGLang v0.5.22+ 或回移相关补丁</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>说明模型服务的隐私边界取决于缓存生命周期、错误路径和多节点协议，而不只取决于“是否训练数据留存”。采购托管服务时应要求隔离测试与事故响应证据。</p></div><div><h4>行动</h4><p>自建 SGLang 的团队应核对版本、上下文上限与实际 KV 池容量，测试 over-length、取消和传输失败路径，并确保跨租户缓存不可观察。</p></div></div><div class="source"><a href="https://blog.cloudflare.com/kv-cache-exposure-remediation">Cloudflare 事故复盘</a></div></details>
+    </article>
+
+    <article class="event" data-cat="policy security" data-search="OpenAI IETF robots.txt AI training preferences 训练 偏好 信号 网站 未来实施">
+      <div class="date">2026-10-30</div><div class="tags"><span class="tag amber">实施承诺</span><span class="tag red">尚未生效</span><span class="tag blue">内容治理</span></div><h3>OpenAI 承诺支持统一的 robots.txt AI 训练偏好信号</h3>
+      <p class="summary">OpenAI 宣布将尊重 IETF AI Preferences 工作组讨论中的共同信号，网站运营者未来可用同一规则向多家参与者表达基础生成式 AI 训练偏好；现有 OpenAI crawler 控制继续有效。</p>
+      <div class="factline"><div class="fact"><b>当前状态</b><span>公告与承诺，不是已完成的产品变更</span></div><div class="fact"><b>实施时间</b><span>官方仅称“未来数月”，未给具体日期</span></div><div class="fact"><b>现有控制</b><span>原有 robots.txt crawler 规则继续适用</span></div></div>
+      <details><summary>为什么重要 / 如何使用</summary><div class="detail-grid"><div><h4>影响</h4><p>若形成跨厂商标准，可降低发布者维护不同 crawler 名称的成本，也能让内容许可意图更机器可读。</p></div><div><h4>限制</h4><p>这是自愿信号和未来实现承诺，不等于法律层面的许可机制，也不能据此删除现有规则。站点团队当前仍应维护各提供商的 crawler 控制与合同条款。</p></div></div><div class="source"><a href="https://openai.com/index/helping-websites-express-ai-training-preferences/">OpenAI 公告</a><a href="https://datatracker.ietf.org/wg/aipref/about/">IETF AIPREF 工作组</a></div></details>
+    </article>
+  </div>
+  <div class="empty" id="empty">没有匹配项。换个关键词或选择“全部”。</div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><div class="eyebrow">Status matrix</div><h2>别把“发布”混成一件事</h2></div><p>同周产品所处阶段差异很大；以下是截至本次检索的状态，不是能力排名。</p></div>
+  <div class="matrix"><table><thead><tr><th>项目</th><th>真实状态</th><th>可获得内容</th><th>许可证 / 商业边界</th><th>主要门槛</th></tr></thead><tbody>
+    <tr><td>GPT‑6.1 Terra</td><td>正式发布</td><td>API、Work、Codex</td><td>专有服务条款</td><td>API 费用；产品/地区能力差异</td></tr>
+    <tr><td>Genie 4</td><td>研究预览</td><td>可信测试者；其余候补</td><td>未开放权重</td><td>访问资格；长期一致性</td></tr>
+    <tr><td>Gemini 4 Carbon</td><td>有限放量</td><td>部分网络防御者 / Fairwind</td><td>专有；广泛 API 未开放</td><td>受信任访问与安全评估</td></tr>
+    <tr><td>Mistral Large 4</td><td>开放权重</td><td>FP8、NVFP4；社区 GGUF</td><td>Mistral Open‑Weight；MaaS 需另签</td><td>超大模型部署资源</td></tr>
+    <tr><td>Hy‑SimulMT</td><td>开放权重与代码</td><td>模型、训练/推理工具</td><td>Apache‑2.0；第三方例外</td><td>TTS、实时音频与隐私</td></tr>
+    <tr><td>Unlimited‑OCR 2</td><td>开放权重</td><td>模型、基准、多个推理入口</td><td>MIT</td><td>远程代码审计；超长文档成本</td></tr>
+    <tr><td>Nemotron 3.5 Transcribe</td><td>研究 + 开放权重</td><td>模型、工具、部分数据标签</td><td>OpenMDW‑1.1；组件分别核验</td><td>GPU、语音隐私、场景评测</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><div class="eyebrow">Try this week</div><h2>最多 3 个值得尝试的入口</h2></div><p>以下是基于官方资料的试用建议；本报告未声称进行实际性能实测。</p></div>
+  <div class="tools">
+    <article class="tool"><span class="tag">低门槛 API</span><h3>Terra：做一条“看见并操作”的窄工作流</h3><p>适合：网页后台录入、视觉文档转动作、重复 GUI QA。先用 30–50 个真实任务记录完成率、接管点与总 token。</p><ul><li><b>入口：</b>OpenAI API，模型 <code>gpt-6.1-terra</code></li><li><b>成本：</b>$1 / $0.05 / $5（输入 / 缓存输入 / 输出，每百万 token）</li><li><b>数据：</b>按所用 API/工作区的数据控制执行；外部系统权限要最小化，写操作加审批</li></ul><a class="go" href="https://openai.com/index/introducing-gpt-6-1-terra/">查看官方入口</a></article>
+    <article class="tool"><span class="tag violet">本地文档</span><h3>Unlimited‑OCR 2：评估跨页文档抽取</h3><p>适合：合同、年报、扫描档案的结构化解析。选一个包含跨页表格、脚注、印章和低清扫描的代表集，逐字段核对。</p><ul><li><b>入口：</b>Hugging Face / Transformers、vLLM、SGLang</li><li><b>门槛：</b>3B 视觉模型需 GPU；模型示例使用 <code>trust_remote_code=True</code>，先审查代码</li><li><b>数据：</b>敏感文档优先本地部署；托管服务需核对留存与区域</li></ul><a class="go" href="https://huggingface.co/baidu/Unlimited-OCR-2">打开模型卡</a></article>
+    <article class="tool"><span class="tag blue">实时语音</span><h3>Hy‑SimulMT：搭一条中英会议字幕链路</h3><p>适合：双语会议、直播字幕和访谈辅助。先只输出文本验证延迟与术语，再决定是否接入 TTS 和音色克隆。</p><ul><li><b>入口：</b>官方 GitHub 的 SimulInfer 与模型资源</li><li><b>门槛：</b>30B/3B‑active，语音输出需独立 TTS；算力成本取决于部署</li><li><b>数据：</b>录音、说话人身份与音色克隆需明示同意、访问控制和留存期限</li></ul><a class="go" href="https://github.com/Tencent-Hunyuan/Hy-SimulMT">打开官方仓库</a></article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><div class="eyebrow">What to do</div><h2>趋势观察与行动建议</h2></div></div>
+  <div class="trends">
+    <article class="trend"><span class="tag">01 · 选型</span><h3>模型表正在变成“任务路由表”</h3><p>Terra 以低价承担高吞吐计算机操作，Carbon 面向受控的长程网络防御，Genie 仍是研究预览。用一个“最好模型”覆盖所有任务会同时浪费成本与增加风险。</p><ul><li>按任务风险、模态、时延和所需工具分层路由</li><li>对每层设置独立成功率、接管率和预算阈值</li></ul></article>
+    <article class="trend"><span class="tag violet">02 · 部署</span><h3>开放权重的真正瓶颈转向许可证与运行时</h3><p>Mistral 的 MaaS 限制、SenseNova 的特殊执行图、Nemotron 的语音栈都说明“下载得到”只是起点。</p><ul><li>上线清单同时覆盖权重许可、第三方组件、推理兼容和硬件账单</li><li>不要把“open weight”自动翻译成“开源且可任意商用”</li></ul></article>
+    <article class="trend"><span class="tag red">03 · 安全</span><h3>把推理缓存当作敏感数据存储</h3><p>Cloudflare 复盘显示，正常请求失败路径也可能把前一租户的 KV 页暴露给下一租户。只做模型级红队不够。</p><ul><li>为 over-length、取消、重试和跨节点传输建立隔离测试</li><li>向托管商索要版本、补丁、租户隔离与事故通知证据</li></ul></article>
+  </div>
+</section>
+
+<section class="section note"><b>资料局限：</b>本期已读取并对照 2026-10-26 上期原件，但没有可覆盖更早各期的完整历史索引；Mistral Large 4 只写本周新增的“权重实际开放”，不重复其更早的 API 预览。厂商基准与论文结果均按原始口径标注，未做跨口径排名；未找到可靠统一价格或免费额度的项目不推测。Carbon、Genie 4 等受限项目不表述为公众可用。</section>
+
+<section class="section method">
+  <div class="method-grid"><div><h3>编辑方法</h3><ul><li>时间窗：2026-10-26 00:00 至 2026-11-01 23:59（北京时间）。</li><li>优先级：官方公告、文档、模型卡、仓库、研究页、事故复盘；媒体仅用于发现线索，本期正文事实均回到一手来源。</li><li>“事实”指可用性、日期、价格、许可证和官方文档内容；“厂商自述/论文结果”不作为独立结论；“编辑判断”明确标记。</li></ul></div><div><h3>状态词典</h3><p><b>正式发布 / GA：</b>目标用户可按文档使用。<br><b>预览 / 有限放量：</b>能力或接口可能变化，且访问受限。<br><b>候补名单：</b>登记不等于获得访问。<br><b>开放权重：</b>权重可下载，但许可证可能限制用途。<br><b>开源：</b>仅在代码/许可明确时使用，且各组件条款可能不同。</p><p>检索时间：2026-11-02（北京时间）。所有链接均为直接来源，页面后续可能更新。</p></div></div>
+</section>
+</main>
+
+<footer class="wrap">AI 可视化周报 · 2026-11-02 · 自包含 UTF‑8 HTML · 无远程字体、图片、脚本或图表依赖</footer>
+<script>
+(()=>{const cards=[...document.querySelectorAll('.event')],buttons=[...document.querySelectorAll('.filter')],input=document.querySelector('#search'),out=document.querySelector('#result'),empty=document.querySelector('#empty');let active='all';function norm(s){return s.toLocaleLowerCase('zh-CN').replace(/\s+/g,' ')}function render(){const q=norm(input.value.trim());let shown=0;cards.forEach(card=>{const cats=card.dataset.cat.split(' '),hay=norm(card.textContent+' '+card.dataset.search),okCat=active==='all'||cats.includes(active),okText=!q||hay.includes(q),show=okCat&&okText;card.hidden=!show;if(show)shown++});out.textContent=`${shown} / ${cards.length}`;empty.style.display=shown?'none':'block'}buttons.forEach(btn=>btn.addEventListener('click',()=>{buttons.forEach(x=>{x.classList.remove('active');x.setAttribute('aria-pressed','false')});btn.classList.add('active');btn.setAttribute('aria-pressed','true');active=btn.dataset.filter;render()}));input.addEventListener('input',render);buttons[0].setAttribute('aria-pressed','true');render()})();
+</script>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#b85b2b">
+  <title>Rust 热点周报｜2026-11-02</title>
+  <style>
+    :root{--bg:#f6efe6;--paper:#fffaf4;--ink:#2b1c16;--muted:#715b4e;--copper:#b85b2b;--orange:#e78545;--rust:#7d3017;--line:#dfc9b7;--red:#a3352d;--green:#2f7653;--blue:#356b8c;--violet:#7152a4;--shadow:0 16px 44px rgba(70,35,19,.12);--r:22px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 8% 0,#f3c08e 0,transparent 28%),linear-gradient(180deg,#f2dfca,var(--bg) 34rem);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;line-height:1.68}a{color:var(--copper);text-underline-offset:3px}a:hover{color:var(--rust)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#efe0d3;border-radius:6px;padding:.1em .35em}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.hero{position:relative;overflow:hidden;margin-top:22px;padding:44px clamp(24px,5vw,64px);border-radius:30px;background:linear-gradient(132deg,#371b11,#6f2e18 60%,#ad5025);color:#fff7ef;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:370px;height:370px;right:-100px;top:-130px;border-radius:50%;border:58px solid rgba(255,255,255,.075)}.brand{display:flex;align-items:center;gap:13px;font-weight:850;letter-spacing:.09em;text-transform:uppercase}.brand svg{width:46px;height:46px}.hero h1{font-size:clamp(2.4rem,7vw,5.2rem);line-height:1;margin:27px 0 14px}.hero .dek{max-width:850px;font-size:clamp(1rem,2vw,1.28rem);color:#f6dac8}.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.pill,.tag{display:inline-flex;align-items:center;border-radius:999px;font-weight:750;font-size:.82rem}.pill{padding:8px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}.stamp{margin-top:18px;font-size:.87rem;color:#f1c7ae}.toolbar{position:sticky;top:6px;z-index:20;display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;padding:11px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px);box-shadow:0 6px 25px rgba(65,31,16,.08)}button,input{font:inherit}button{padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);cursor:pointer}button:hover,button.active{background:var(--rust);color:white;border-color:var(--rust)}.search{min-width:180px;flex:1;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink)}.section{margin:52px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}.eyebrow{color:var(--copper);font-weight:850;letter-spacing:.11em;text-transform:uppercase;font-size:.78rem}.section h2{font-size:clamp(1.65rem,4vw,2.4rem);line-height:1.2;margin:0}.note{font-size:.9rem;color:var(--muted)}.briefs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.brief{min-height:205px;padding:22px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}.brief .n{font-size:2.65rem;font-weight:900;line-height:1;color:var(--orange)}.brief h3{font-size:1.16rem;margin:18px 0 8px}.brief p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{position:relative;padding:24px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);box-shadow:0 10px 30px rgba(69,35,20,.07)}.card.priority{grid-column:span 2;background:linear-gradient(120deg,#fff6ea,#fffdf9)}.card.priority:before{content:"";position:absolute;inset:0 auto 0 0;width:7px;border-radius:22px 0 0 22px;background:linear-gradient(var(--orange),var(--red))}.card[hidden]{display:none}.card-top{display:flex;align-items:start;justify-content:space-between;gap:12px}.card h3{font-size:1.34rem;line-height:1.36;margin:8px 0 10px}.date{font-size:.86rem;color:var(--muted);white-space:nowrap}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{padding:4px 9px;border:1px solid currentColor;color:var(--copper)}.tag.release{color:var(--green)}.tag.security{color:var(--red)}.tag.proposal{color:var(--violet)}.tag.merged{color:var(--blue)}.fact{margin:14px 0}.impact{margin:14px 0;padding:13px 15px;border-radius:14px;background:#f1e1d2;border-left:4px solid var(--copper)}.impact b{color:var(--rust)}details{margin-top:15px;padding-top:12px;border-top:1px dashed var(--line)}summary{cursor:pointer;color:var(--copper);font-weight:760}details ul{margin-bottom:0;padding-left:1.2rem}.source{display:inline-flex;margin-top:14px;font-weight:760}.matrix{overflow:auto;margin-top:14px}.matrix table{width:100%;border-collapse:collapse;font-size:.9rem}.matrix th,.matrix td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}.matrix th{color:var(--muted)}.timeline{position:relative;padding-left:32px}.timeline:before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:var(--line)}.event{position:relative;margin-bottom:20px;padding:17px 20px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}.event:before{content:"";position:absolute;left:-29px;top:23px;width:12px;height:12px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 5px var(--bg)}.event time{font-weight:850;color:var(--copper)}.event p{margin:5px 0 0;color:var(--muted)}.pulse{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:23px;border:1px solid var(--line);border-radius:var(--r);background:#eee0d2}.pulse article{padding:15px;border-radius:14px;background:rgba(255,255,255,.48)}.pulse h3{font-size:1rem;margin:4px 0}.sources{columns:2;column-gap:40px;padding-left:1.2rem}.sources li{break-inside:avoid;margin-bottom:9px}.method{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}footer{padding:35px 0 60px;color:var(--muted);font-size:.9rem}.tiny{font-size:.8rem;color:var(--muted)}
+    @media(max-width:760px){.wrap{width:min(100% - 20px,1180px)}.hero{margin-top:10px;padding:30px 22px;border-radius:22px}.briefs,.grid,.pulse{grid-template-columns:1fr}.card.priority{grid-column:span 1}.section{margin:38px 0}.section-head{align-items:start;flex-direction:column}.sources{columns:1}.card-top{display:block}.date{display:block;margin-top:7px}.toolbar{top:4px}.search{order:-1;flex-basis:100%}}
+    @media(prefers-color-scheme:dark){:root{--bg:#17100d;--paper:#211713;--ink:#f5e8de;--muted:#c7ab99;--line:#51372c;--rust:#ef9860;--shadow:0 18px 45px rgba(0,0,0,.3)}body{background:radial-gradient(circle at 8% 0,#5c2b17 0,transparent 25%),var(--bg)}code{background:#39261e}.impact{background:#312018}.pulse{background:#291b16}.pulse article{background:rgba(255,255,255,.04)}}
+    @media print{body{background:white;color:#111;font-size:10.5pt}.hero{color:#111;background:white;border:1px solid #999;box-shadow:none}.hero .dek,.stamp{color:#333}.hero:after,.toolbar{display:none}.section{margin:28px 0}.brief,.card,.event,.pulse,.method{background:white;box-shadow:none;break-inside:avoid}.grid{display:block}.card{margin-bottom:12px}.sources{columns:2}details>*{display:block!important}a{color:#111;text-decoration:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap hero">
+    <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="#ee975d" stroke-width="6"/><path d="M32 3v12M32 49v12M3 32h12M49 32h12M11.5 11.5l8.5 8.5M44 44l8.5 8.5M52.5 11.5L44 20M20 44l-8.5 8.5" stroke="#fff2e8" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="10" fill="#ee975d"/></svg>Rust Weekly Signal · 中文版</div>
+    <h1>Rust 热点周报</h1>
+    <p class="dek">安全更新占据本周中心：测试重放、HTTP 代理、GraphQL、Wasm 运行时与归档解包均出现需要按使用条件处理的漏洞；语言侧则公布可变参数泛型调研结果。</p>
+    <div class="meta"><span class="pill">本期日期 2026-11-02</span><span class="pill">覆盖 10-26 — 11-01</span><span class="pill">9 条精选动态</span><span class="pill">一手来源优先</span></div>
+    <p class="stamp">检索时间：2026-11-02 08:33（中国标准时间） · 事件日期按原始公告、发布或披露日期标注</p>
+  </header>
+
+  <main class="wrap">
+    <nav class="toolbar" aria-label="内容筛选"><input id="search" class="search" type="search" placeholder="搜索标题、标签或正文…"><button class="active" data-filter="all">全部</button><button data-filter="compiler">编译器 / 语言</button><button data-filter="cargo">Cargo / 工具</button><button data-filter="async">异步 / Web</button><button data-filter="security">安全</button><button data-filter="wasm">Wasm</button><button id="toggleDetails">展开全部</button><button id="printBtn">打印 / PDF</button></nav>
+
+    <section class="section" aria-labelledby="summary-title">
+      <div class="section-head"><div><div class="eyebrow">Executive brief</div><h2 id="summary-title">3 条重点速览</h2></div><p class="note">按实际影响排序</p></div>
+      <div class="briefs">
+        <article class="brief"><div class="n">01</div><h3>Nextest 实验性重放链路可执行任意代码</h3><p><code>cargo nextest run --rerun</code> 处理恶意可移植录制时，可把未校验参数交给 Cargo；受影响版本应升级到 0.9.150。</p></article>
+        <article class="brief"><div class="n">02</div><h3>代理与 GraphQL 服务需立刻核对边界</h3><p>Pingora 的 Host、HTTP/2 限制与 hop-by-hop 头处理，以及 Juniper 的解析/验证/请求体限制，均收到高危修复。</p></article>
+        <article class="brief"><div class="n">03</div><h3>Wasmtime 50.0.1 汇集五项安全修复</h3><p>涉及 WASIp3 UDP 权限、WASI HTTP 长度、跨 Engine 类型、typed function panic 与组件资源记账；旧维护线也有对应补丁版本。</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="hot-title">
+      <div class="section-head"><div><div class="eyebrow">Priority desk</div><h2 id="hot-title">热点卡片</h2></div><p class="note">已发布、调查结果与适用条件分开标注</p></div>
+      <div class="grid" id="cards">
+        <article class="card priority" data-cat="security cargo" data-search="cargo nextest rerun portable recording arbitrary code execution ci secrets 0.9.150">
+          <div class="card-top"><div class="tags"><span class="tag security">高优先级安全</span><span class="tag">Cargo 工具</span><span class="tag">实验功能</span></div><time class="date">公告 2026-10-27</time></div>
+          <h3>1. Cargo Nextest 可移植录制重放存在任意代码执行</h3>
+          <p class="fact">RUSTSEC-2026-0412 指出，<code>cargo-nextest 0.9.125–0.9.149</code> 在 <code>cargo nextest run --rerun</code> 读取恶意可移植录制时，会把未校验的构建作用域参数传给 Cargo；攻击者可注入 <code>--config</code>，进而配置编译器包装器、链接器或依赖源并执行代码。</p>
+          <div class="impact"><b>为什么重要：</b>代码在测试真正开始前、构建阶段就能以调用者权限运行；CI 中可能接触仓库令牌和部署凭据。预先执行 <code>cargo nextest replay</code> 也不能规避，因为构建已先发生。</div>
+          <details><summary>适用条件与升级建议</summary><ul><li>仅影响启用实验性 run recording 的用户，例如设置 <code>NEXTEST_EXPERIMENTAL_RECORD=1</code>，并重放攻击者提供的录制。</li><li>升级到 <code>cargo-nextest &gt;=0.9.150</code>；可在 <code>.config/nextest.toml</code> 设置 <code>nextest-version = "0.9.150"</code> 提醒协作者。</li><li>无法升级时不要启用实验录制，也不要重放不可信录制或直接从网络管道输入；工具升级后重跑 CI 行为兼容性测试。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0412.html">RustSec RUSTSEC-2026-0412 ↗</a>
+        </article>
+
+        <article class="card priority" data-cat="security async" data-search="pingora http2 authority host cache poisoning acl bypass memory exhaustion connection header 0.9.0 0.8.1">
+          <div class="card-top"><div class="tags"><span class="tag security">高危 · 3 项</span><span class="tag">Pingora</span><span class="tag">HTTP 代理</span></div><time class="date">公告 2026-10-26</time></div>
+          <h3>2. Pingora 修复 HTTP/2 主机边界、内存耗尽与代理头绕过</h3>
+          <p class="fact">本周三项 RustSec 公告覆盖：HTTP/2 <code>:authority</code> 与 Host 不一致可导致缓存投毒或主机访问控制绕过；默认头列表与并发流限制可被远程耗尽内存；向 HTTP/1 上游转发客户端指定的 Connection/hop-by-hop 头，在特定链式代理中可能绕过 ACL。</p>
+          <div class="impact"><b>实际影响：</b>自建网关、反向代理与缓存服务若直接接收不可信 HTTP/2 或链到其他 HTTP/1 代理，应把它视为边界修复。Cloudflare 公告说明其 CDN 客户不受所述内部部署路径影响，但这不等于所有 Pingora 用户都安全。</div>
+          <div class="matrix"><table><thead><tr><th>公告</th><th>修复版本 / 条件</th></tr></thead><tbody><tr><td>0388 · Host 与 <code>:authority</code></td><td><code>pingora-core &gt;=0.9.0</code></td></tr><tr><td>0389 · HTTP/2 内存耗尽</td><td><code>pingora-core &gt;=0.8.1</code>；自定义 <code>H2Options</code> 仍须显式限额</td></tr><tr><td>0390 · Connection 头绕过</td><td><code>pingora-proxy &gt;=0.9.0</code></td></tr></tbody></table></div>
+          <details><summary>兼容性与部署建议</summary><ul><li>优先升级至 0.9.0 及以上并回归 Host 规范化、缓存键、上游路由与 400 响应。</li><li>若应用传入自定义 <code>H2Options</code>，修复后的默认值不会自动覆盖；需显式设置 <code>max_header_list_size</code> 和 <code>max_concurrent_streams</code>。</li><li>不要用 <code>HttpUpstreamRequestPolicy::preserve()</code> 恢复旧行为，除非能证明源站不依赖代理添加的安全头。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0388.html">RustSec 0388 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0389.html">0389</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0390.html">0390</a>
+        </article>
+
+        <article class="card priority" data-cat="security async" data-search="juniper graphql denial service stack overflow cpu memory body limit tokens fields hyper warp 0.17.2">
+          <div class="card-top"><div class="tags"><span class="tag security">高危 · 4 项</span><span class="tag">GraphQL</span><span class="tag">Web 后端</span></div><time class="date">公告 2026-10-29</time></div>
+          <h3>3. Juniper 系列修复无需认证即可触发的资源耗尽</h3>
+          <p class="fact"><code>juniper</code> 的深层嵌套文档可触发栈溢出，构造的 fragment/字段组合可造成超线性 CPU 与内存消耗；<code>juniper_hyper</code> 与 <code>juniper_warp</code> 还会无上限读取 POST 请求体。四项公告的 CVSS 均为 7.5。</p>
+          <div class="impact"><b>为什么重要：</b>单个未认证请求就可能终止进程或显著耗尽资源。修复不仅换算法，还引入默认深度、token、字段和 2 MiB 请求体限制，因此升级后可能拒绝过去被接受的超大查询。</div>
+          <div class="matrix"><table><thead><tr><th>包</th><th>安全版本与新默认</th></tr></thead><tbody><tr><td><code>juniper</code></td><td><code>&gt;=0.17.2</code>；深度 64、token 15,000、展开字段 15,000 等上限</td></tr><tr><td><code>juniper_hyper</code></td><td><code>&gt;=0.10.1</code>；默认请求体 2 MiB</td></tr><tr><td><code>juniper_warp</code></td><td><code>&gt;=0.9.1</code>；默认请求体 2 MiB</td></tr></tbody></table></div>
+          <details><summary>升级与兼容性建议</summary><ul><li>直接暴露 GraphQL 端点的服务应优先升级，并用真实最大查询与批量请求做回归。</li><li>确需更高限制时，使用 <code>RootNode::limit_depth/limit_tokens/limit_fields</code> 或相应 body-limit API；不要简单取消限制。</li><li>在网关层继续保留请求体、超时与并发配额；库内限制不能替代整体资源治理。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0416.html">Juniper 深度公告 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0417.html">复杂度公告</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0415.html">Hyper 适配</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0419.html">Warp 适配</a>
+        </article>
+
+        <article class="card" data-cat="security cargo" data-search="nix nar sn-releases zip slip path traversal archive arbitrary file write 0.6.0 no patch">
+          <div class="card-top"><div class="tags"><span class="tag security">高危归档解包</span><span class="tag">供应链</span><span class="tag">一项无修复版</span></div><time class="date">公告 2026-10-30</time></div>
+          <h3>4. 两个发布归档工具出现目录穿越：一个已修、一个无补丁</h3>
+          <p class="fact"><code>nix-nar::Decoder::unpack</code> 可被恶意 NAR 通过符号链接与路径组合写出目标目录；<code>sn-releases::extract_release_archive</code> 对 ZIP 条目名缺少穿越检查，可发生 zip-slip 与任意文件写入。</p>
+          <div class="impact"><b>实际影响：</b>解包通常位于安装器、更新器或发布流水线，具备较高文件权限。<code>nix-nar</code> 已在 0.6.0 修复；<code>sn-releases &lt;=0.3.1</code> 截至公告时没有修复版本，且项目被标为不再维护。</div>
+          <details><summary>处理建议</summary><ul><li><code>nix-nar</code> 升级到 <code>&gt;=0.6.0</code>，并用含符号链接与 <code>..</code> 的测试档回归。</li><li>使用 <code>sn-releases</code> 时停止解包不可信归档；迁移到维护中的替代实现，或在独立低权限沙箱中完成并验证所有目标路径。</li><li>无修复版本意味着不能把单纯重新锁定到 0.3.1 当成缓解措施。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0425.html">nix-nar 公告 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0427.html">sn-releases 公告</a>
+        </article>
+
+        <article class="card" data-cat="security wasm" data-search="wasmtime 50.0.1 wasi udp content length cross engine type confusion resources i31 nullref component">
+          <div class="card-top"><div class="tags"><span class="tag release">已发布 50.0.1</span><span class="tag security">5 项安全修复</span><span class="tag">Wasm / WASI</span></div><time class="date">发布 10-29 · 公告 10-30</time></div>
+          <h3>5. Wasmtime 50.0.1 修复 WASI 权限与组件模型边界问题</h3>
+          <p class="fact">50.0.1 集中修复五项：WASIp3 UDP 发送权限检查、WASI HTTP p2 的 Content-Length 与正文不匹配、跨 <code>Engine</code> 的宿主创建 GC struct 类型混淆、<code>i31/nullref</code> typed function 参数检查不足导致 panic，以及跨组件实例转移 borrowed resource 时未通过 <code>ResourceLimiter</code> 记账。</p>
+          <div class="impact"><b>为什么重要：</b>影响从协议完整性、权限边界到宿主内存控制，尤其值得运行不可信组件、启用 WASIp3/WASI HTTP 或使用 WasmGC 的服务检查。RustSec 给出的严重度并不相同，应按功能暴露面而不是只看一个总分判断。</div>
+          <div class="matrix"><table><thead><tr><th>维护线</th><th>包含相应补丁的版本</th></tr></thead><tbody><tr><td>50.x</td><td><code>&gt;=50.0.1</code></td></tr><tr><td>49.x</td><td><code>&gt;=49.0.5,&lt;50</code></td></tr><tr><td>48.x</td><td><code>&gt;=48.0.8,&lt;49</code></td></tr><tr><td>36.x LTS</td><td>部分公告要求 <code>&gt;=36.0.20,&lt;37</code></td></tr></tbody></table></div>
+          <details><summary>升级建议与边界</summary><ul><li>留在 36/48/49 的项目按各公告的 patched 区间核对，不要仅看到 50.0.1 就误以为必须跨主版本。</li><li>升级后重测 socket 地址策略、HTTP framing、跨 Engine 类型与 component resource limiter；这些路径并非所有应用都会触发。</li><li>50.0.1 是 50.0.0 的补丁版；若仍从 49 或更早迁移 50，上一期列出的主版本 API/行为变化仍需单独验证。</li></ul></details>
+          <a class="source" href="https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1">Wasmtime 50.0.1 发布说明 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0420.html">RustSec 0420</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0424.html">0424</a>
+        </article>
+
+        <article class="card" data-cat="security" data-search="orion crypto ml-kem ml-dsa blake2b timing llvm reset key 0.17.16 0.18.1">
+          <div class="card-top"><div class="tags"><span class="tag security">密码学修复</span><span class="tag">orion</span><span class="tag">ML-KEM / ML-DSA</span></div><time class="date">公告 2026-10-30</time></div>
+          <h3>6. Orion 修复 LLVM 引入的时序泄漏与 BLAKE2b 状态错误</h3>
+          <p class="fact">RUSTSEC-2026-0426 指出，LLVM 在部分目标上把本应常数时间的条件减法编译为依赖秘密数据的条件跳转，影响 ML-KEM 与 ML-DSA；RUSTSEC-2026-0428 则指出用不同长度密钥调用 <code>Blake2b::reset()</code> 会产生错误 tag。</p>
+          <div class="impact"><b>实际影响：</b>第一项可能泄露密钥，已观察到 i586、s390x，部分 ML-DSA 路径也涉及 x86_64；第二项在诚实协议参与方之间也会导致验证失败。两项均在 <code>0.17.16</code> 与 <code>0.18.1</code> 修复。</div>
+          <details><summary>适用条件与升级建议</summary><ul><li>使用 <code>orion</code> ML-KEM/ML-DSA 或 hazardous BLAKE2b API 的项目升级到 <code>^0.17.16</code> 或 <code>&gt;=0.18.1</code>。</li><li>时序问题的可利用性依赖编译器、CPU 和攻击者与进程的距离；不能因目标平台未在已观察列表中就假设安全。</li><li>密码学补丁升级后应重跑协议互操作、已存测试向量与跨平台构建。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0426.html">Orion 时序公告 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0428.html">BLAKE2b 公告</a>
+        </article>
+
+        <article class="card" data-cat="security async" data-search="rustls ffi use after free server name client connection c bindings 0.15.7">
+          <div class="card-top"><div class="tags"><span class="tag security">内存安全</span><span class="tag">rustls-ffi</span><span class="tag">TLS 绑定</span></div><time class="date">公告 2026-10-27</time></div>
+          <h3>7. rustls-ffi 客户端构造器修复 server_name 生命周期错误</h3>
+          <p class="fact"><code>rustls-ffi 0.12.0–0.15.6</code> 的两个客户端连接构造器在返回后仍保留调用方 <code>server_name</code> 缓冲区引用；文档又未要求该缓冲区长期存活，因此临时字符串被释放或复用后会发生 use-after-free。</p>
+          <div class="impact"><b>实际影响：</b>最可能受影响的是把临时字符串传入 C API 的其他语言绑定。<code>0.15.7</code> 改为复制输入；若调用方让 server_name 在整个配置生命周期存活，则公告说明不受影响。</div>
+          <details><summary>升级建议</summary><ul><li>升级到 <code>rustls-ffi &gt;=0.15.7</code>，并重建依赖它的本地库与语言绑定。</li><li>无法立即升级时，确保 server_name 存储在连接/配置完整生命周期内不被释放、移动或复用。</li><li>升级后重点测试临时字符串、异步连接创建和多语言 FFI 封装。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0413.html">RustSec RUSTSEC-2026-0413 ↗</a>&nbsp; · &nbsp;<a href="https://github.com/rustls/rustls-ffi/releases/tag/v/0.15.7">0.15.7 发布页</a>
+        </article>
+
+        <article class="card" data-cat="security async" data-search="pulldown cmark wikilinks exponential events markdown denial service 0.13.5">
+          <div class="card-top"><div class="tags"><span class="tag security">高危 DoS</span><span class="tag">Markdown</span><span class="tag">条件触发</span></div><time class="date">公告 2026-10-28</time></div>
+          <h3>8. pulldown-cmark 的 Wikilinks 可触发指数级事件膨胀</h3>
+          <p class="fact">启用 <code>Options::ENABLE_WIKILINKS</code> 时，带空显示文本的链接（如 <code>[[a|]]</code>）会让后续解析事件近似倍增。公告给出的复现中，112 字节输入产生 327,676 个事件，足以让收集事件或渲染 HTML 的服务耗尽内存。</p>
+          <div class="impact"><b>适用条件：</b>Wikilinks 默认关闭；只有解析不可信 Markdown 且显式启用该选项（包括通过 <code>Options::all()</code>）的应用受影响。修复已在 <code>pulldown-cmark 0.13.5</code> 发布。</div>
+          <details><summary>升级与缓解</summary><ul><li>受影响项目升级到 <code>&gt;=0.13.5</code>；0.13.0 之前版本不受该特定问题影响。</li><li>不能升级时关闭 <code>ENABLE_WIKILINKS</code>，并在服务层保留输入长度、输出事件数和渲染时间限制。</li><li>升级会改变恶意/边界输入的事件序列，应对依赖 Wikilinks 的渲染器做快照测试。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0414.html">RustSec RUSTSEC-2026-0414 ↗</a>
+        </article>
+
+        <article class="card" data-cat="compiler" data-search="variadic generics survey language tuples macros sqlx bevy hypothetical proposal">
+          <div class="card-top"><div class="tags"><span class="tag proposal">调研结果 · 非 RFC</span><span class="tag">语言设计</span><span class="tag">可变参数泛型</span></div><time class="date">发布 2026-10-27</time></div>
+          <h3>9. Inside Rust 公布可变参数泛型微型调研结果</h3>
+          <p class="fact">调研收到超过 3,300 份提交，并人工整理开放回答。受访者常见需求包括为任意长度 tuple 实现 trait、替代重复宏、解析器组合子、SQL 列/参数、张量维度与结构体字段映射；整体结论被概括为“谨慎但感兴趣”。</p>
+          <div class="impact"><b>状态边界：</b>这是语言设计输入，不是已接受 RFC、nightly 功能或稳定化计划。它说明宏和固定 tuple 长度带来的真实成本，也同时记录了对语言复杂度的担忧。</div>
+          <details><summary>开发者如何解读</summary><ul><li>库作者可用报告中的用例帮助未来提案证明收益，但当前仍需使用宏、tuple 上限或动态分发等既有方案。</li><li>SQLx、Bevy 等被回答者作为具体用例提及，不代表这些项目已承诺迁移或实现。</li><li>未来方案需要同时展示清晰可读的语法与相对宏方案的显著优势；不要据此承诺版本时间表。</li></ul></details>
+          <a class="source" href="https://blog.rust-lang.org/inside-rust/2026/10/27/variadic-generics-micro-survey-results/">Inside Rust 原文 ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="timeline-title">
+      <div class="section-head"><div><div class="eyebrow">Chronology</div><h2 id="timeline-title">事件时间线</h2></div><p class="note">同日事件合并展示</p></div>
+      <div class="timeline">
+        <article class="event"><time>10 月 26 日</time><p>RustSec 发布 Pingora 三项代理边界公告；Rust 官方发布贡献者资助说明（本期列为延伸阅读，不占主榜）。</p></article>
+        <article class="event"><time>10 月 27 日</time><p>Cargo Nextest 重放 RCE 与 rustls-ffi use-after-free 公告发布；Inside Rust 公布可变参数泛型调研结果。</p></article>
+        <article class="event"><time>10 月 28 日</time><p>pulldown-cmark Wikilinks 指数级事件膨胀公告发布。</p></article>
+        <article class="event"><time>10 月 29 日</time><p>Juniper 系列四项 GraphQL 资源耗尽公告发布；Wasmtime 50.0.1 发布。</p></article>
+        <article class="event"><time>10 月 30 日</time><p>Wasmtime/WASI 五项安全公告、Orion 两项密码学公告，以及 nix-nar / sn-releases 归档穿越公告集中发布。</p></article>
+      </div>
+    </section>
+
+    <section class="section pulse" aria-labelledby="pulse-title">
+      <article><div class="eyebrow">Stable channel</div><h3 id="pulse-title">本周无新 stable rustc</h3><p class="tiny">覆盖期内 Rust 官方博客未发布新的稳定编译器版本；没有把主分支合并或调研结果写成已发布语言功能。</p></article>
+      <article><div class="eyebrow">Ecosystem check</div><h3>Tokio / Axum / 数据库生态</h3><p class="tiny">Tokio、Axum、Serde、SeaORM、SQLx、utoipa 在 10 月 26 日至 11 月 1 日未发现足以进入主榜的重要正式发布；本期不为覆盖面凑数。</p></article>
+      <article><div class="eyebrow">背景 / 延伸</div><h3>如何资助 Rust 贡献者</h3><p class="tiny">Rust Funding 团队 10 月 26 日介绍维护者基金、可资助 Project Goals 与个人赞助路径。这是生态治理信息，不是工具链发布。 <a href="https://blog.rust-lang.org/2026/10/26/how-to-fund-rust-contributors/">Rust Blog 原文</a></p></article>
+    </section>
+
+    <section class="section" aria-labelledby="sources-title">
+      <div class="section-head"><div><div class="eyebrow">Primary sources</div><h2 id="sources-title">来源区</h2></div><p class="note">社区周报仅用于发现线索</p></div>
+      <ol class="sources">
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0412.html">RUSTSEC-2026-0412 · cargo-nextest RCE</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0388.html">RUSTSEC-2026-0388 · Pingora Host 边界</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0389.html">RUSTSEC-2026-0389 · Pingora HTTP/2 DoS</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0390.html">RUSTSEC-2026-0390 · Pingora 代理头</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0416.html">RUSTSEC-2026-0416 · Juniper 栈溢出</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0417.html">RUSTSEC-2026-0417 · Juniper 复杂度</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0415.html">RUSTSEC-2026-0415 · juniper_hyper</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0419.html">RUSTSEC-2026-0419 · juniper_warp</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0425.html">RUSTSEC-2026-0425 · nix-nar</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0427.html">RUSTSEC-2026-0427 · sn-releases</a></li>
+        <li><a href="https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1">Wasmtime 50.0.1 release</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0420.html">RUSTSEC-2026-0420 · WASIp3 UDP</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0421.html">RUSTSEC-2026-0421 · WASI HTTP</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0422.html">RUSTSEC-2026-0422 · typed function panic</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0423.html">RUSTSEC-2026-0423 · 跨 Engine 类型混淆</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0424.html">RUSTSEC-2026-0424 · 组件资源记账</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0426.html">RUSTSEC-2026-0426 · Orion 时序泄漏</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0428.html">RUSTSEC-2026-0428 · Orion BLAKE2b</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0413.html">RUSTSEC-2026-0413 · rustls-ffi</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0414.html">RUSTSEC-2026-0414 · pulldown-cmark</a></li>
+        <li><a href="https://blog.rust-lang.org/inside-rust/2026/10/27/variadic-generics-micro-survey-results/">Inside Rust：Variadic Generics 调研</a></li>
+        <li><a href="https://blog.rust-lang.org/2026/10/26/how-to-fund-rust-contributors/">Rust Blog：How to fund Rust contributors</a></li>
+      </ol>
+      <div class="method"><b>资料完整性提示：</b>主体覆盖 2026-10-26 至 2026-11-01，检索截至 2026-11-02 08:33（中国标准时间）。先以 Rust 官方博客、Inside Rust、RustSec 和项目官方 Releases 核验；This Week in Rust 仅用于发现候选，未作为重要事实的唯一依据。本期 RustSec 公告密集，因此安全条目占比高；没有发现当周新的 stable Rust 编译器版本，也未发现 Tokio、Axum、Serde、SeaORM、SQLx 或 utoipa 足以挤入主榜的重要正式发布。所有“修复版本”均需结合实际启用功能、维护分支、MSRV 与应用回归测试判断，不能把跨主版本升级视为无条件兼容。</div>
+    </section>
+  </main>
+
+  <footer class="wrap">Rust 热点周报 · 2026-11-02<br><span class="tiny">“9 条精选”仅是本页编辑整理计数，不代表市场份额、项目排名或量化热度。</span></footer>
+  <script>
+    const cards=[...document.querySelectorAll('.card[data-cat]')],filters=[...document.querySelectorAll('[data-filter]')],search=document.getElementById('search');let active='all';
+    function refresh(){const q=search.value.trim().toLowerCase();cards.forEach(c=>{const byCat=active==='all'||c.dataset.cat.split(' ').includes(active);const hay=(c.dataset.search+' '+c.textContent).toLowerCase();c.hidden=!(byCat&&(!q||hay.includes(q)));});}
+    filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;refresh();}));search.addEventListener('input',refresh);
+    let opened=false;document.getElementById('toggleDetails').addEventListener('click',e=>{opened=!opened;document.querySelectorAll('details').forEach(d=>d.open=opened);e.currentTarget.textContent=opened?'收起全部':'展开全部';});document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  </script>
+</body>
+</html>

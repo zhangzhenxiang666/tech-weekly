@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "column": "rust",
+  "date": "2026-11-02",
+  "title": "Rust 热点周报｜2026-11-02",
+  "summary": "原文整理 9 条 Rust 动态，侧重 RustSec 安全公告、修复版本与部署兼容性，保留生态发布情况与资料限制。",
+  "coverage": "2026-10-26 00:00 至 2026-11-01 23:59（UTC+8）；期刊日期 2026-11-02。检索截至 2026-11-02 08:33（中国标准时间）。",
+  "provenance": "来自用户指定的原始 HTML 周报，按字节保留。归档阶段核验文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。修复版本须结合功能、维护分支、MSRV 和应用回归判断，不把跨主版本升级视为无条件兼容。站点导览不替代原文。",
+  "original": {
+    "path": "rust-weekly-2026-11-02.html",
+    "sha256": "f750b17c0cf23056bf6f5c43bc73fb0f346b4032c810cfde06a3954db3728feb"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "RustSec RUSTSEC-2026-0412 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0412.html"
+    },
+    {
+      "id": "source-2",
+      "title": "RustSec 0388 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0388.html"
+    },
+    {
+      "id": "source-3",
+      "title": "0389",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0389.html"
+    },
+    {
+      "id": "source-4",
+      "title": "0390",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0390.html"
+    },
+    {
+      "id": "source-5",
+      "title": "Juniper 深度公告 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0416.html"
+    },
+    {
+      "id": "source-6",
+      "title": "复杂度公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0417.html"
+    },
+    {
+      "id": "source-7",
+      "title": "Hyper 适配",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0415.html"
+    },
+    {
+      "id": "source-8",
+      "title": "Warp 适配",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0419.html"
+    },
+    {
+      "id": "source-9",
+      "title": "nix-nar 公告 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0425.html"
+    },
+    {
+      "id": "source-10",
+      "title": "sn-releases 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0427.html"
+    },
+    {
+      "id": "source-11",
+      "title": "Wasmtime 50.0.1 发布说明 ↗",
+      "url": "https://github.com/bytecodealliance/wasmtime/releases/tag/v50.0.1"
+    },
+    {
+      "id": "source-12",
+      "title": "RustSec 0420",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0420.html"
+    },
+    {
+      "id": "source-13",
+      "title": "0424",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0424.html"
+    },
+    {
+      "id": "source-14",
+      "title": "Orion 时序公告 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0426.html"
+    },
+    {
+      "id": "source-15",
+      "title": "BLAKE2b 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0428.html"
+    },
+    {
+      "id": "source-16",
+      "title": "RustSec RUSTSEC-2026-0413 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0413.html"
+    },
+    {
+      "id": "source-17",
+      "title": "0.15.7 发布页",
+      "url": "https://github.com/rustls/rustls-ffi/releases/tag/v/0.15.7"
+    },
+    {
+      "id": "source-18",
+      "title": "RustSec RUSTSEC-2026-0414 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0414.html"
+    },
+    {
+      "id": "source-19",
+      "title": "Inside Rust 原文 ↗",
+      "url": "https://blog.rust-lang.org/inside-rust/2026/10/27/variadic-generics-micro-survey-results/"
+    },
+    {
+      "id": "source-20",
+      "title": "Rust Blog 原文",
+      "url": "https://blog.rust-lang.org/2026/10/26/how-to-fund-rust-contributors/"
+    },
+    {
+      "id": "source-21",
+      "title": "RUSTSEC-2026-0421 · WASI HTTP",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0421.html"
+    },
+    {
+      "id": "source-22",
+      "title": "RUSTSEC-2026-0422 · typed function panic",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0422.html"
+    },
+    {
+      "id": "source-23",
+      "title": "RUSTSEC-2026-0423 · 跨 Engine 类型混淆",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0423.html"
+    }
+  ]
+}
