@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "column": "rust",
+  "date": "2026-11-09",
+  "title": "Rust 热点周报｜2026-11-09",
+  "summary": "原文整理 8 条 Rust 动态，涵盖 Actix 请求边界、数据库内存安全、文件解析、rustup 回归修复与编译器性能取舍，区分稳定发布和项目进展。",
+  "coverage": "2026-11-02 至 2026-11-08；期刊日期 2026-11-09。检索截至 2026-11-09 08:19（中国标准时间）。",
+  "provenance": "来自用户指定原始对话及持久文件的当期 HTML 周报，按字节保留。归档阶段核验文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。保留 11 月 1 日 RFC 的背景区标注、修复版本的 feature/MSRV/主版本兼容性限制，以及 rustc 主分支性能变化和项目进展不等于稳定能力的说明。站点导览不替代原文。",
+  "original": {
+    "path": "rust-weekly-2026-11-09.html",
+    "sha256": "544a873133bbd330f2ea9c41c76d2c8c3fe446bce55ec9b36ba879072f79b3e4"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "请求走私公告 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0446.html"
+    },
+    {
+      "id": "source-2",
+      "title": "Brotli 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0455.html"
+    },
+    {
+      "id": "source-3",
+      "title": "Actix Web 解压公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0447.html"
+    },
+    {
+      "id": "source-4",
+      "title": "文件泄露公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0443.html"
+    },
+    {
+      "id": "source-5",
+      "title": "SurrealKV 公告 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0452.html"
+    },
+    {
+      "id": "source-6",
+      "title": "UAF 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0453.html"
+    },
+    {
+      "id": "source-7",
+      "title": "Send/Sync 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0454.html"
+    },
+    {
+      "id": "source-8",
+      "title": "RustSec RUSTSEC-2026-0450 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0450.html"
+    },
+    {
+      "id": "source-9",
+      "title": "zip 公告 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0429.html"
+    },
+    {
+      "id": "source-10",
+      "title": "calamine 公告",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0436.html"
+    },
+    {
+      "id": "source-11",
+      "title": "RustSec RUSTSEC-2026-0433 ↗",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0433.html"
+    },
+    {
+      "id": "source-12",
+      "title": "Rust 官方公告 ↗",
+      "url": "https://blog.rust-lang.org/2026/11/03/Rustup-1.29.3/"
+    },
+    {
+      "id": "source-13",
+      "title": "rustc-perf 完整报告 ↗",
+      "url": "https://github.com/rust-lang/rustc-perf/blob/87c69dbbcdc5f571ebe50dc0107c846b6a102422/triage/2026/2026-11-02.md"
+    },
+    {
+      "id": "source-14",
+      "title": "rust-lang/rust #164484",
+      "url": "https://github.com/rust-lang/rust/pull/164484"
+    },
+    {
+      "id": "source-15",
+      "title": "项目进展报告 ↗",
+      "url": "https://blog.antoyo.xyz/rustc_codegen_gcc-progress-report-44"
+    },
+    {
+      "id": "source-16",
+      "title": "官方仓库",
+      "url": "https://github.com/rust-lang/rustc_codegen_gcc"
+    },
+    {
+      "id": "source-17",
+      "title": "Cargo #17671",
+      "url": "https://github.com/rust-lang/cargo/issues/17671"
+    },
+    {
+      "id": "source-18",
+      "title": "RFC 原文",
+      "url": "https://github.com/rust-lang/rfcs/pull/4013"
+    },
+    {
+      "id": "source-19",
+      "title": "RUSTSEC-2026-0448 · actix-http 解压",
+      "url": "https://rustsec.org/advisories/RUSTSEC-2026-0448.html"
+    }
+  ]
+}

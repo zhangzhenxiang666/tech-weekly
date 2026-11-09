@@ -1,0 +1,215 @@
+{
+  "schema_version": 1,
+  "column": "github",
+  "date": "2026-11-09",
+  "title": "GitHub 热门项目周报｜2026-11-09",
+  "summary": "原文精选 10 个项目，分别展示 8 个周榜快照项目与 2 个官方日榜补充项目，区分热度指标、版本发布和实际使用限制。",
+  "coverage": "2026-11-02 00:00 至 2026-11-08 23:59（UTC+8）；期刊日期 2026-11-09。检索于 2026-11-09 08:45–08:52（UTC+8）。",
+  "provenance": "来自用户指定原始对话及持久文件的当期 HTML 周报，按字节保留。归档阶段核验文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。官方实时周榜未完整取得。周增与周榜顺序来自 Trendoday 在 2026-11-08 22:36 UTC 保存的独立快照，并与 11-08 06:58 UTC 的另一独立缓存交叉检查；日榜为 11 月 9 日官方页面的搜索索引解析。保留滚动七日、自然周、周增、日增和编辑顺序的差别，不改称完整实时官方周榜。站点导览不替代原文。",
+  "original": {
+    "path": "github-weekly-2026-11-09.html",
+    "sha256": "67b1e83b2f685745be3cdb00f18729cc704da9f27fe9a733daa77d76857495d1"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "Trendoday",
+      "url": "https://trendoday.com/github/trending/weekly"
+    },
+    {
+      "id": "source-2",
+      "title": "另一份 11-08 06:58 UTC 独立缓存",
+      "url": "https://githubtrending.today/weekly/"
+    },
+    {
+      "id": "source-3",
+      "title": "GitHub 官方日榜",
+      "url": "https://github.com/trending"
+    },
+    {
+      "id": "source-4",
+      "title": "NVIDIA/auto-ontology",
+      "url": "https://github.com/NVIDIA/auto-ontology"
+    },
+    {
+      "id": "source-5",
+      "title": "pingdotgg/t3code",
+      "url": "https://github.com/pingdotgg/t3code"
+    },
+    {
+      "id": "source-6",
+      "title": "dsx-ai-factory/nvke",
+      "url": "https://github.com/dsx-ai-factory/nvke"
+    },
+    {
+      "id": "source-7",
+      "title": "官方 CI / 1.2.0 提交",
+      "url": "https://github.com/NVIDIA/auto-ontology/actions/workflows/ci-python.yml"
+    },
+    {
+      "id": "source-8",
+      "title": "官方 Releases",
+      "url": "https://github.com/NVIDIA/auto-ontology/releases"
+    },
+    {
+      "id": "source-9",
+      "title": "LICENSE",
+      "url": "https://github.com/NVIDIA/auto-ontology/blob/main/LICENSE"
+    },
+    {
+      "id": "source-10",
+      "title": "Release v0.1.7",
+      "url": "https://github.com/pingdotgg/t3code/releases/tag/v0.1.7"
+    },
+    {
+      "id": "source-11",
+      "title": "官方 Releases / 夜版",
+      "url": "https://github.com/pingdotgg/t3code/releases"
+    },
+    {
+      "id": "source-12",
+      "title": "LICENSE",
+      "url": "https://github.com/pingdotgg/t3code/blob/main/LICENSE"
+    },
+    {
+      "id": "source-13",
+      "title": "max-sixty/worktrunk",
+      "url": "https://github.com/max-sixty/worktrunk"
+    },
+    {
+      "id": "source-14",
+      "title": "v0.82.0 发布 PR",
+      "url": "https://github.com/max-sixty/worktrunk/pull/4716"
+    },
+    {
+      "id": "source-15",
+      "title": "最近正式 Release",
+      "url": "https://github.com/max-sixty/worktrunk/releases/tag/v0.81.0"
+    },
+    {
+      "id": "source-16",
+      "title": "LICENSE",
+      "url": "https://github.com/max-sixty/worktrunk/blob/main/LICENSE"
+    },
+    {
+      "id": "source-17",
+      "title": "D4Vinci/Scrapling",
+      "url": "https://github.com/D4Vinci/Scrapling"
+    },
+    {
+      "id": "source-18",
+      "title": "官方 Changelog 0.5.1",
+      "url": "https://scrapling.readthedocs.io/en/latest/changelog.html#v0-5-1-2026-11-04"
+    },
+    {
+      "id": "source-19",
+      "title": "官方提交记录",
+      "url": "https://github.com/D4Vinci/Scrapling/commits/main/"
+    },
+    {
+      "id": "source-20",
+      "title": "LICENSE",
+      "url": "https://github.com/D4Vinci/Scrapling/blob/main/LICENSE"
+    },
+    {
+      "id": "source-21",
+      "title": "thedotmack/claude-mem",
+      "url": "https://github.com/thedotmack/claude-mem"
+    },
+    {
+      "id": "source-22",
+      "title": "Release v15.10.0",
+      "url": "https://github.com/thedotmack/claude-mem/releases/tag/v15.10.0"
+    },
+    {
+      "id": "source-23",
+      "title": "Telemetry 文档",
+      "url": "https://docs.claude-mem.ai/telemetry"
+    },
+    {
+      "id": "source-24",
+      "title": "LICENSE",
+      "url": "https://github.com/thedotmack/claude-mem/blob/main/LICENSE"
+    },
+    {
+      "id": "source-25",
+      "title": "Release v0.23.1",
+      "url": "https://github.com/dsx-ai-factory/nvke/releases/tag/v0.23.1"
+    },
+    {
+      "id": "source-26",
+      "title": "LICENSE",
+      "url": "https://github.com/dsx-ai-factory/nvke/blob/main/LICENSE"
+    },
+    {
+      "id": "source-27",
+      "title": "vercel-labs/agent-browser",
+      "url": "https://github.com/vercel-labs/agent-browser"
+    },
+    {
+      "id": "source-28",
+      "title": "Release v0.41.2",
+      "url": "https://github.com/vercel-labs/agent-browser/releases/tag/v0.41.2"
+    },
+    {
+      "id": "source-29",
+      "title": "官方提交记录",
+      "url": "https://github.com/vercel-labs/agent-browser/commits/main/"
+    },
+    {
+      "id": "source-30",
+      "title": "LICENSE",
+      "url": "https://github.com/vercel-labs/agent-browser/blob/main/LICENSE"
+    },
+    {
+      "id": "source-31",
+      "title": "github/spec-kit",
+      "url": "https://github.com/github/spec-kit"
+    },
+    {
+      "id": "source-32",
+      "title": "官方提交记录",
+      "url": "https://github.com/github/spec-kit/commits/main/"
+    },
+    {
+      "id": "source-33",
+      "title": "最近正式 Release",
+      "url": "https://github.com/github/spec-kit/releases/tag/v1.0.6"
+    },
+    {
+      "id": "source-34",
+      "title": "LICENSE",
+      "url": "https://github.com/github/spec-kit/blob/main/LICENSE"
+    },
+    {
+      "id": "source-35",
+      "title": "hyprwm/Hyprland",
+      "url": "https://github.com/hyprwm/Hyprland"
+    },
+    {
+      "id": "source-36",
+      "title": "Release v0.57.1",
+      "url": "https://github.com/hyprwm/Hyprland/releases/tag/v0.57.1"
+    },
+    {
+      "id": "source-37",
+      "title": "LICENSE",
+      "url": "https://github.com/hyprwm/Hyprland/blob/main/LICENSE"
+    },
+    {
+      "id": "source-38",
+      "title": "sherlock-project/sherlock",
+      "url": "https://github.com/sherlock-project/sherlock"
+    },
+    {
+      "id": "source-39",
+      "title": "Release v0.16.2",
+      "url": "https://github.com/sherlock-project/sherlock/releases/tag/v0.16.2"
+    },
+    {
+      "id": "source-40",
+      "title": "LICENSE",
+      "url": "https://github.com/sherlock-project/sherlock/blob/master/LICENSE"
+    }
+  ]
+}

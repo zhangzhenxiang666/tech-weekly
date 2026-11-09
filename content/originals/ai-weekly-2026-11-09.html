@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>AI 可视化周报｜2026-11-09</title>
+  <style>
+    :root{--bg:#f4f6f4;--paper:#fff;--ink:#17211d;--muted:#607067;--line:#dbe3de;--green:#196b4b;--green2:#dff4e9;--blue:#2457a6;--blue2:#e8f0ff;--amber:#9c5b00;--amber2:#fff1d5;--red:#9f3434;--red2:#fee9e7;--violet:#6846a5;--violet2:#f0eaff;--shadow:0 12px 34px rgba(30,52,41,.08);--r:18px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#e9f3ed 0,#f4f6f4 330px);color:var(--ink);font-family:Inter,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif;line-height:1.7}a{color:var(--blue);text-underline-offset:3px}button,input{font:inherit}.wrap{max-width:1180px;margin:auto;padding:28px 22px 68px}.hero{position:relative;overflow:hidden;background:#142a21;color:#f5fff9;border-radius:28px;padding:44px;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:330px;height:330px;border:75px solid rgba(112,232,177,.12);border-radius:50%;right:-105px;top:-155px}.eyebrow{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#a8d9c2}.hero h1{font-size:clamp(32px,6vw,64px);line-height:1.08;margin:9px 0 12px;letter-spacing:-.035em}.hero .lead{max-width:860px;font-size:clamp(17px,2.2vw,23px);color:#d4e8de;margin:0}.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}.meta span,.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 11px;font-size:12px;font-weight:700}.meta span{border:1px solid #426354;background:#203b30;color:#dcefe5}.section{margin-top:34px}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;margin-bottom:14px}.section h2{margin:0;font-size:24px;letter-spacing:-.02em}.section-note{font-size:13px;color:var(--muted)}.topgrid,.toolgrid,.trendgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.topcard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:21px;box-shadow:var(--shadow)}.topcard .n{font:800 34px/1 Georgia,serif;color:var(--green)}.topcard h3{margin:11px 0 7px;font-size:18px;line-height:1.4}.topcard p{margin:0;color:#4f5f56;font-size:14px}.status-board{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.status-card,.map-card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px}.status-list{display:grid;gap:9px}.status-row{display:grid;grid-template-columns:120px 1fr;gap:12px;align-items:start;border-top:1px solid var(--line);padding-top:9px}.status-row:first-child{border-top:0;padding-top:0}.status-row b{font-size:13px}.status-row span{font-size:13px;color:var(--muted)}.map-card svg{width:100%;height:auto;display:block}.controls{position:sticky;top:10px;z-index:5;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;padding:11px;display:flex;gap:10px;flex-wrap:wrap;box-shadow:0 8px 22px rgba(40,70,53,.08)}.search{flex:1;min-width:230px;border:1px solid #cdd8d1;border-radius:11px;padding:9px 12px;background:white;color:var(--ink)}.filters{display:flex;gap:6px;flex-wrap:wrap}.filter{border:1px solid #cbd8d0;background:#f8faf9;color:#385146;border-radius:999px;padding:7px 12px;cursor:pointer}.filter.active{background:var(--green);border-color:var(--green);color:#fff}.result{align-self:center;color:var(--muted);font-size:12px;min-width:68px;text-align:right}.timeline{position:relative;margin-top:15px}.timeline:before{content:"";position:absolute;left:19px;top:17px;bottom:17px;width:2px;background:#cbd9d1}.event{position:relative;margin:0 0 13px 55px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:0 7px 22px rgba(30,52,41,.055)}.event:before{content:"";position:absolute;left:-43px;top:24px;width:12px;height:12px;background:var(--green);border:5px solid var(--bg);border-radius:50%}.event.hidden{display:none}.event-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}.date{white-space:nowrap;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}.event h3{margin:3px 0 7px;font-size:20px;line-height:1.35}.event .summary{margin:0;color:#44544b}.labels{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}.pill{padding:3px 9px}.model{background:var(--blue2);color:var(--blue)}.agent{background:var(--green2);color:var(--green)}.open{background:var(--violet2);color:var(--violet)}.product{background:var(--amber2);color:var(--amber)}.security{background:var(--red2);color:var(--red)}.privacy{background:#e6f3f4;color:#22646a}.fact{background:#edf0ee;color:#425047}.preview{background:#fff0d2;color:#865000}.limited{background:#fee7e4;color:#963535}.details{margin-top:14px;border-top:1px solid var(--line);padding-top:8px}.details summary{cursor:pointer;color:var(--green);font-weight:750;list-style:none}.details summary::-webkit-details-marker{display:none}.details summary:after{content:"＋";float:right}.details[open] summary:after{content:"－"}.detail-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;margin-top:12px}.detail-grid div{font-size:14px}.detail-grid b{display:block;font-size:12px;letter-spacing:.05em;color:var(--muted);text-transform:uppercase;margin-bottom:3px}.sources{grid-column:1/-1;background:#f6f8f7;border-radius:11px;padding:10px 12px}.sources a{margin-right:14px}.tool{background:#182c24;color:#edf9f3;border-radius:var(--r);padding:21px}.tool .pill{background:#2b4b3e;color:#c8e8d8}.tool h3{margin:12px 0 6px;font-size:19px}.tool p{color:#bed4c8;margin:7px 0;font-size:14px}.tool b{color:white}.tool a{color:#9bdbbd}.trend{border-left:4px solid var(--green);background:white;border-radius:0 15px 15px 0;padding:16px 18px}.trend h3{margin:0 0 5px;font-size:17px}.trend p{margin:0;color:#55655c;font-size:14px}.notice{background:#fff8e8;border:1px solid #f0d89f;border-radius:14px;padding:14px 16px;color:#694b14;font-size:14px}.method{background:#edf1ee;border-radius:16px;padding:18px;color:#506057;font-size:13px}.method h2{color:var(--ink)}.method ul{margin:7px 0 0;padding-left:20px}.footer{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.empty{display:none;text-align:center;padding:34px;color:var(--muted);background:white;border-radius:16px;margin:15px 0 0 55px}.empty.show{display:block}
+    @media(max-width:850px){.topgrid,.toolgrid,.trendgrid,.status-board{grid-template-columns:1fr}.hero{padding:30px 24px}.detail-grid{grid-template-columns:1fr}.event-top{display:block}.date{display:block;margin-top:7px}.status-row{grid-template-columns:100px 1fr}}
+    @media(max-width:560px){.wrap{padding:14px 12px 48px}.hero{border-radius:20px}.section{margin-top:27px}.controls{top:5px}.timeline:before{left:8px}.event{margin-left:26px;padding:17px}.event:before{left:-27px}.empty{margin-left:26px}.result{display:none}.filters{overflow-x:auto;flex-wrap:nowrap;width:100%;padding-bottom:2px}.filter{white-space:nowrap}}
+    @media print{body{background:#fff}.wrap{max-width:none;padding:0}.hero{box-shadow:none;border-radius:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}.controls{display:none}.event,.topcard{break-inside:avoid;box-shadow:none}.event details{display:block}.event details>summary{display:none}.event details>*{display:block!important}.timeline:before{display:none}.event{margin-left:0}.event:before{display:none}.tool{-webkit-print-color-adjust:exact;print-color-adjust:exact}.footer{margin-bottom:0}a{color:inherit;text-decoration:none}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="eyebrow">AI WEEKLY · VERIFIED SIGNALS</div>
+    <h1>AI 可视化周报</h1>
+    <p class="lead">本周主线：模型能力继续上探，但真正影响落地的，是“权重是否真的可得、Agent 状态如何持久化、敏感能力和数据怎样被约束”这三类工程边界。</p>
+    <div class="meta"><span>本期 2026-11-09</span><span>覆盖 11-02—11-08</span><span>11 项精选动态</span><span>全球 × 中国</span><span>检索于 11-09（北京时间）</span></div>
+  </header>
+
+  <section class="section" aria-labelledby="top-title">
+    <div class="section-head"><h2 id="top-title">最值得关注的 3 件事</h2><span class="section-note">按产品与工程决策影响排序</span></div>
+    <div class="topgrid">
+      <article class="topcard"><div class="n">01</div><h3>Kimi K3.1 Pro 如期交付权重，但许可证并非“无限制开源”</h3><p>1.56 TB 权重已可下载；大规模 MaaS 与超大产品受额外协议或署名条件约束。重要的不只是模型能力，而是预告兑现和可用边界都可核验。</p></article>
+      <article class="topcard"><div class="n">02</div><h3>Agent 基础设施从“循环调用”变成有状态、可恢复的托管运行时</h3><p>Anthropic 线程、Mistral 持久 Agent 与 AWS 带引用的 Web Answer 同周推进，状态、审批、追踪与检索开始成为标准积木。</p></article>
+      <article class="topcard"><div class="n">03</div><h3>GPT‑6 Cyber 把高能力模型的准入与运行边界写进产品</h3><p>首批仅向获批客户开放，并默认 IP 白名单、沙箱和人类监督。它不是通用模型发布，而是高风险能力“受控交付”的样板。</p></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="status-title">
+    <div class="section-head"><h2 id="status-title">状态与关系，一眼看清</h2><span class="section-note">避免把预告、开放权重与正式开源混为一谈</span></div>
+    <div class="status-board">
+      <div class="status-card">
+        <div class="status-list">
+          <div class="status-row"><b>已经可用</b><span>Kimi K3.1 Pro 权重；Images 2.6；Gemini Omni 1.2 Flash；Claude Message Threads（Beta）；Mistral Managed Agents（公开预览）；AWS Web Answer。</span></div>
+          <div class="status-row"><b>有限访问</b><span>GPT‑6 Cyber 仅面向获批 Daybreak Red 客户；Claude Personal Finance 仅美国 Pro / Max / Ultra 分批开放。</span></div>
+          <div class="status-row"><b>只承诺后续</b><span>腾讯称 Hy4 权重与系统卡将在后续数日公布；Thinking Machines 称 Inkling 2 Small 权重将在完成安全测试后于“下周”开放。本期不计作已开放。</span></div>
+          <div class="status-row"><b>开放权重 ≠ 开源</b><span>Kimi、PLaMo 均附带专门许可证和商业门槛；能下载，不等于符合 OSI 开源定义或可无条件再分发。</span></div>
+        </div>
+      </div>
+      <div class="map-card" aria-label="本周 Agent 工程栈关系图">
+        <svg viewBox="0 0 540 260" role="img" aria-labelledby="mapTitle mapDesc">
+          <title id="mapTitle">Agent 工程栈关系</title><desc id="mapDesc">从上下文状态，经持久运行与检索工具，到审批、沙箱和观测治理。</desc>
+          <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#6d8a7b"/></marker></defs>
+          <rect x="12" y="28" width="150" height="66" rx="14" fill="#e8f0ff"/><text x="87" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#2457a6">上下文状态</text><text x="87" y="77" text-anchor="middle" font-size="12" fill="#496278">Message Threads</text>
+          <rect x="195" y="28" width="150" height="66" rx="14" fill="#dff4e9"/><text x="270" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#196b4b">持久执行</text><text x="270" y="77" text-anchor="middle" font-size="12" fill="#496258">Managed Agents</text>
+          <rect x="378" y="28" width="150" height="66" rx="14" fill="#fff1d5"/><text x="453" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#9c5b00">外部知识</text><text x="453" y="77" text-anchor="middle" font-size="12" fill="#6e5a38">Web Answer + 引用</text>
+          <path d="M162 61 H191" stroke="#6d8a7b" stroke-width="2" marker-end="url(#arr)"/><path d="M345 61 H374" stroke="#6d8a7b" stroke-width="2" marker-end="url(#arr)"/>
+          <rect x="104" y="158" width="332" height="70" rx="16" fill="#172f25"/><text x="270" y="186" text-anchor="middle" font-size="14" font-weight="700" fill="#effaf5">治理层</text><text x="270" y="208" text-anchor="middle" font-size="12" fill="#bdd8ca">审批 · 沙箱 · 追踪 · 权限 · 数据保留</text>
+          <path d="M87 96 C87 135 150 142 183 156" fill="none" stroke="#6d8a7b" stroke-width="2" marker-end="url(#arr)"/><path d="M270 96 V154" stroke="#6d8a7b" stroke-width="2" marker-end="url(#arr)"/><path d="M453 96 C453 135 390 142 357 156" fill="none" stroke="#6d8a7b" stroke-width="2" marker-end="url(#arr)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="news-title">
+    <div class="section-head"><h2 id="news-title">本周重要动态</h2><span class="section-note">点击“展开判断依据”查看影响、限制与直接来源</span></div>
+    <div class="controls" role="search">
+      <input id="search" class="search" type="search" placeholder="搜索模型、厂商、场景或限制…" aria-label="搜索动态">
+      <div class="filters" aria-label="分类筛选">
+        <button class="filter active" data-filter="all">全部</button><button class="filter" data-filter="model">大模型</button><button class="filter" data-filter="agent">Agent</button><button class="filter" data-filter="open">开放权重</button><button class="filter" data-filter="product">产品</button><button class="filter" data-filter="security">安全</button><button class="filter" data-filter="privacy">隐私</button>
+      </div><span class="result" id="result">11 / 11</span>
+    </div>
+    <div class="timeline" id="timeline">
+
+      <article class="event" data-cat="model open" data-text="Kimi K3.1 Pro 月之暗面 开放权重 许可证 vLLM SGLang 视觉 长上下文">
+        <div class="event-top"><div><div class="labels"><span class="pill open">开放权重</span><span class="pill model">多模态模型</span><span class="pill fact">预告已兑现</span></div><h3>Kimi K3.1 Pro 权重实际发布：可下载，但商业许可有门槛</h3></div><time class="date" datetime="2026-11-04">11 月 4 日</time></div>
+        <p class="summary">官方仓库已出现完整权重树（约 1.56 TB）、模型卡与许可证；模型为 2.8T 总参数、104B 激活，支持文本与图像，官方列出 1,048,576 token 上下文。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>这是对上一期“11 月 4 日开放权重”承诺的实质兑现，也让团队能把 API 评估推进到自托管验证。</div><div><b>实践影响</b>可用 vLLM、SGLang 或 TokenSpeed 部署；但 1.56 TB 文件与 104B 激活参数意味着存储、显存互联和推理成本都很高。</div><div><b>适用与限制</b>适合高预算的多模态 Agent、长上下文和私有部署。自定义许可证规定：一定规模的 MaaS 需另行协议；超大产品触发显著署名条件。它是开放权重，不应表述为 OSI 意义的开源。</div><div><b>证据性质</b>参数与兼容性来自模型卡；仓库文件可直接核验。性能分数若未独立复现，仍属厂商自测。</div><div class="sources"><b>直接来源</b><a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro" target="_blank" rel="noopener">官方模型卡</a><a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro/tree/main" target="_blank" rel="noopener">权重文件树</a><a href="https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE" target="_blank" rel="noopener">许可证原文</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="security model agent" data-text="OpenAI GPT-6 Cyber 网络安全 Codex Daybreak Red 有限访问 IP 白名单 沙箱">
+        <div class="event-top"><div><div class="labels"><span class="pill security">安全</span><span class="pill agent">Agent</span><span class="pill limited">有限访问</span></div><h3>OpenAI 发布 GPT‑6 Cyber：能力更强，也把准入与监控做成默认约束</h3></div><time class="date" datetime="2026-11-05">11 月 5 日</time></div>
+        <p class="summary">模型通过 API 与 Codex 提供，首批仅向获批的 Daybreak Red 客户开放；官方默认要求 IP 白名单，并强调沙箱和人类监督。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>这是高风险领域模型的“受控交付”案例：能力发布与客户审核、环境隔离、日志和用途限制一起落地。</div><div><b>实践影响</b>安全团队可把它用于漏洞研究和防御自动化，但不能按普通公开 API 规划。零数据保留客户通常还需 Private Safety Processing。</div><div><b>适用与限制</b>适合获批的防御、研究与授权测试。访问并非公开，也没有检索到公开定价；对真实系统的动作仍需授权、沙箱与人工复核。</div><div><b>证据性质</b>“发现 81 个 Firefox 漏洞、生成 948 个 Linux exploit”等为 OpenAI 自述，不是独立复现结论。</div><div class="sources"><b>直接来源</b><a href="https://openai.com/index/gpt-6-cyber/" target="_blank" rel="noopener">官方发布</a><a href="https://platform.openai.com/docs/models/gpt-6-cyber" target="_blank" rel="noopener">模型与访问文档</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="model product" data-text="OpenAI Images 2.6 Sunburst Flare SVG GIF 图像编辑 ChatGPT Codex API">
+        <div class="event-top"><div><div class="labels"><span class="pill model">图像模型</span><span class="pill product">正式发布</span></div><h3>OpenAI Images 2.6 上线：图像生成开始直接交付 GIF 与 SVG 工作流</h3></div><time class="date" datetime="2026-11-04">11 月 4 日</time></div>
+        <p class="summary">面向 ChatGPT 与 Codex 各订阅层全球上线，API 提供 Sunburst 与 Flare；新增图像标注式编辑、GIF 生成、SVG 导出和复杂度控制。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>输出从单张位图延伸到可编辑矢量与短动画，更贴近品牌资产、UI 素材和内容生产链。</div><div><b>实践影响</b>产品团队可把“生成—圈选修改—矢量导出”放入同一工作流；开发者可通过 API 选择质量与速度取舍。</div><div><b>适用与限制</b>适合社媒动图、图标草稿、营销视觉与界面原型。版权、人物肖像、品牌素材授权仍需团队自行把关；本次未获得可稳定核验的数值价目，故不列价格。</div><div><b>证据性质</b>“速度提升 50%”及 Flare 最快约 6 秒是厂商声明，实际延迟受提示词、尺寸与负载影响。</div><div class="sources"><b>直接来源</b><a href="https://openai.com/index/introducing-images-2-6/" target="_blank" rel="noopener">官方发布</a><a href="https://platform.openai.com/docs/guides/image-generation" target="_blank" rel="noopener">API 指南</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="model product" data-text="Google Gemini Omni 1.2 Flash 视频 音频 编辑 API 720p 4K 价格">
+        <div class="event-top"><div><div class="labels"><span class="pill model">音视频模型</span><span class="pill product">正式可用</span></div><h3>Gemini Omni 1.2 Flash 正式可用：15 秒视频可用对话连续编辑</h3></div><time class="date" datetime="2026-11-05">11 月 5 日</time></div>
+        <p class="summary">Google 在 Gemini API、Google Cloud 及企业版 Gemini 提供该模型；可生成 3–15 秒视频，支持参考素材、多轮编辑，720p 价格降至每秒 0.07 美元。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>多轮编辑与参考一致性让视频生成更像可迭代工具，而非一次性抽卡；按秒计价也更容易纳入成本模型。</div><div><b>实践影响</b>15 秒 720p 原始生成费约 1.05 美元（按官方单价计算，不含其他服务费用）；可先用 360p / 720p 草稿，再升至 1080p / 4K。</div><div><b>适用与限制</b>适合广告分镜、短片迭代和产品演示草案。涉及真人、商标、上传素材与声音克隆时，应确认授权和平台数据政策。</div><div><b>证据性质</b>价格、时长与分辨率来自官方公告；“一致性更好”等质量判断属于 Google 自述。</div><div class="sources"><b>直接来源</b><a href="https://blog.google/technology/ai/gemini-omni-1-2-flash/" target="_blank" rel="noopener">Google 官方公告</a><a href="https://ai.google.dev/gemini-api/docs/video" target="_blank" rel="noopener">Gemini API 视频文档</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="model agent" data-text="腾讯 Tencent Hy4 视觉理解 computer use 长上下文 权重 系统卡 预告">
+        <div class="event-top"><div><div class="labels"><span class="pill model">多模态模型</span><span class="pill agent">计算机操作</span><span class="pill preview">权重待发布</span></div><h3>腾讯发布 Hy4，但“将开放权重”仍是预告，不是本周已交付事实</h3></div><time class="date" datetime="2026-11-04">11 月 4 日</time></div>
+        <p class="summary">腾讯将 Hy4 定位为视觉理解、计算机操作、推理与长上下文 Agent 模型；官方同时写明权重与系统卡将在随后数日公布。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>中国头部厂商继续把模型能力从聊天推向跨界面操作与复杂任务，值得关注其工具调用和视觉定位能力。</div><div><b>实践影响</b>现在可先评估官方服务或案例，但自托管决策应等正式 Hy4 权重、系统卡、许可证与运行要求真正出现后再做。</div><div><b>适用与限制</b>官方仓库目前能核验的是 Hy4 Preview 的 Apache‑2.0 权重，不能据此推断正式 Hy4 已开放或沿用相同许可。</div><div><b>证据性质</b>能力与性能是厂商声明；“将在后续数日开放”是未来承诺，本期明确不计作已开放权重。</div><div class="sources"><b>直接来源</b><a href="https://www.tencent.com/en-us/articles/2202238.html" target="_blank" rel="noopener">腾讯官方发布</a><a href="https://github.com/Tencent-Hunyuan/Hy4" target="_blank" rel="noopener">官方仓库</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="model open" data-text="Thinking Machines Inkling 2 Small Tinker 594B 17B 激活 1M 上下文 权重 预告">
+        <div class="event-top"><div><div class="labels"><span class="pill model">多模态模型</span><span class="pill product">Tinker 可用</span><span class="pill preview">权重待开放</span></div><h3>Inkling 2 Small 登陆 Tinker：可用服务与未来开放权重需分开看</h3></div><time class="date" datetime="2026-11-05">11 月 5 日</time></div>
+        <p class="summary">Thinking Machines 发布 594B 总参数、17B 激活的多模态模型，支持 1M 上下文并已可在 Tinker 使用；官方称权重将在完成安全测试后于“下周”以 Apache‑2.0 开放。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>低激活参数的 MoE 与可变推理强度，为成本敏感的多模态任务提供新选择。</div><div><b>实践影响</b>团队现在能在 Tinker 上验证能力，但不能把计划中的 Apache‑2.0 权重纳入本周已交付资产清单。</div><div><b>适用与限制</b>适合长上下文、图像理解与可调推理预算实验。当前模型卡许可仍指向 Tinker 条款；自托管需要等待真实权重及最终许可证。</div><div><b>证据性质</b>参数、上下文与发布计划来自官方；基准为厂商报告，尚需独立复现。</div><div class="sources"><b>直接来源</b><a href="https://thinkingmachines.ai/blog/inkling-2-small/" target="_blank" rel="noopener">官方公告</a><a href="https://huggingface.co/thinking-machines-lab/Inkling-2-Small" target="_blank" rel="noopener">官方模型卡</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="agent privacy" data-text="Anthropic Claude Message Threads beta 消息线程 API 状态 缓存 ZDR HIPAA 数据保留">
+        <div class="event-top"><div><div class="labels"><span class="pill agent">Agent 基础设施</span><span class="pill preview">Beta</span><span class="pill privacy">数据边界</span></div><h3>Claude Message Threads 进入 Beta：服务端短期保存 Agent 会话状态</h3></div><time class="date" datetime="2026-11-02">11 月 2 日</time></div>
+        <p class="summary">Messages API 可把多轮消息关联到线程，减少客户端重复传输和首 token 等待；通过 Beta header 启用，覆盖 Claude API 与主要云平台渠道。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>长任务不再必须由应用层不断回传完整历史，状态管理开始成为模型平台原生能力。</div><div><b>实践影响</b>适合多轮 Agent、长工具链和交互式分析；价格与速率限制不变，但可减少请求负担与 TTFT。</div><div><b>适用与限制</b>线程内存不耐久、最后请求 5 分钟后过期，数据最晚在最后使用后 1 小时删除；目前无列出、读取或删除线程 API。该功能不符合 ZDR，也不具 HIPAA 资格。</div><div><b>证据性质</b>保留期、加密方式与适用渠道来自官方文档；Beta 语义表示接口仍可能变化。</div><div class="sources"><b>直接来源</b><a href="https://docs.anthropic.com/en/release-notes/api" target="_blank" rel="noopener">API 发布说明</a><a href="https://docs.anthropic.com/en/docs/build-with-claude/message-threads" target="_blank" rel="noopener">Message Threads 文档</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="agent product" data-text="Mistral Managed Agents SDK Workflow Builder 公共预览 持久执行 审批 沙箱 追踪">
+        <div class="event-top"><div><div class="labels"><span class="pill agent">Agent 平台</span><span class="pill preview">公开预览</span></div><h3>Mistral 推出托管 Agent 与工作流构建器公开预览</h3></div><time class="date" datetime="2026-11-05">11 月 5 日</time></div>
+        <p class="summary">Managed Agents SDK 支持同一代码在本地、自托管或 Mistral 托管环境运行；托管任务可持续数小时或数日，崩溃后恢复，并内建审批、打断、沙箱与追踪。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>Agent 的价值逐步从“会调工具”转向“任务能否可靠运行、恢复并接受治理”。</div><div><b>实践影响</b>工作流构建器可生成、测试并部署可检查的代码，适合把原型移交给工程团队；同一 SDK 有助于降低环境切换成本。</div><div><b>适用与限制</b>Managed Agents 与 Workflow Builder 是公开预览，HTTP API connectors 仍是私有预览；生产承诺、区域和价格需在采用前单独核验。</div><div><b>证据性质</b>功能与发布状态来自官方文档；本期未进行实际负载或故障恢复测试。</div><div class="sources"><b>直接来源</b><a href="https://docs.mistral.ai/agents/managed-agents" target="_blank" rel="noopener">Managed Agents 文档</a><a href="https://docs.mistral.ai/agents/workflow-builder" target="_blank" rel="noopener">Workflow Builder 文档</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="agent product" data-text="AWS Bedrock AgentCore Web Answer GA 搜索 引用 MCP IAM domain filter 零数据外流">
+        <div class="event-top"><div><div class="labels"><span class="pill agent">检索工具</span><span class="pill product">GA</span></div><h3>Amazon Bedrock AgentCore Web Answer GA：把搜索、合成与引用封装成托管工具</h3></div><time class="date" datetime="2026-11-05">11 月 5 日</time></div>
+        <p class="summary">Agent 可并行检索网页并获得带来源引用的综合答案，支持域名包含/排除与发布日期过滤；通过 AgentCore Gateway、MCP 和 IAM 接入。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>“带引用的网络检索”从自建流水线变为标准 Agent 工具，可减少搜索、抓取、去重和引用拼装的工程量。</div><div><b>实践影响</b>适合市场研究、合规监测、客服知识补全；域名与日期过滤有利于把可信来源策略写进工具层。</div><div><b>适用与限制</b>当前仅在美国东部（弗吉尼亚北部）提供，并按工具调用计费；答案有引用不等于事实自动正确，仍需验证来源与发布时间。</div><div><b>证据性质</b>区域、能力、IAM 与“zero data egress”表述来自 AWS 官方发布。</div><div class="sources"><b>直接来源</b><a href="https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-answer/" target="_blank" rel="noopener">AWS 官方公告</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="open model" data-text="Preferred Networks PLaMo 3 Translate 翻译 开放权重 日本 离线 0.8B 2B 8B 31B 许可证">
+        <div class="event-top"><div><div class="labels"><span class="pill open">开放权重</span><span class="pill model">翻译模型</span><span class="pill fact">专门许可证</span></div><h3>PLaMo 3 Translate 发布四档开放权重模型，瞄准离线与边缘翻译</h3></div><time class="date" datetime="2026-11-05">11 月 5 日</time></div>
+        <p class="summary">Preferred Networks 发布 0.8B、2B、8B、31B 四种规模，主打本地、离线和边缘设备上的翻译。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>专用小模型让敏感文本无需离开设备，成本与隐私路径比通用云端大模型更可控。</div><div><b>实践影响</b>可从 0.8B 开始验证设备端延迟和术语质量，再按硬件与质量需求向上选择规模。</div><div><b>适用与限制</b>PLaMo Community License 对个人及年营收不超过 10 亿日元的组织允许免费商用/非商用；超过门槛需商业协议。应称开放权重，不宜称无条件开源。</div><div><b>证据性质</b>规模、用途和许可门槛来自 PFN 官方；翻译质量需按语言对与行业术语自行评估。</div><div class="sources"><b>直接来源</b><a href="https://www.preferred.jp/en/news/pr20261105/" target="_blank" rel="noopener">PFN 官方公告</a><a href="https://huggingface.co/pfnet/plamo-3-translate-0.8b" target="_blank" rel="noopener">模型入口</a></div></div></details>
+      </article>
+
+      <article class="event" data-cat="product privacy" data-text="Anthropic Claude Personal Finance 个人财务 Plaid 只读 美国 Pro Max Ultra 隐私">
+        <div class="event-top"><div><div class="labels"><span class="pill product">产品 Beta</span><span class="pill privacy">金融数据</span><span class="pill limited">美国分批开放</span></div><h3>Claude Personal Finance 进入 Beta：只读聚合财务信息，不执行交易</h3></div><time class="date" datetime="2026-11-05">11 月 5 日</time></div>
+        <p class="summary">美国 Pro、Max、Ultra 用户开始分批获得财务中心，可经 Plaid 读取余额和最多 24 个月交易记录；产品不能转账、管理资金或投资。</p>
+        <details class="details"><summary>展开判断依据</summary><div class="detail-grid"><div><b>为什么重要</b>通用助手开始进入高敏感、强权限边界的日常工作流，“只读”设计降低了误操作半径。</div><div><b>实践影响</b>适合支出归类、现金流回顾和准备报税材料，但金额、分类和建议必须回到原始账单核对。</div><div><b>适用与限制</b>仅美国付费个人层；不提供投资建议。余额可能滞后 1–2 天，数据受 Plaid 条款约束；对话保留至用户删除。官方称财务中心对话不用于训练模型。</div><div><b>证据性质</b>权限、可用范围与数据字段来自官方帮助文档；本期未连接账户实测。</div><div class="sources"><b>直接来源</b><a href="https://www.anthropic.com/news/claude-personal-finance" target="_blank" rel="noopener">Anthropic 官方发布</a><a href="https://support.anthropic.com/en/articles/claude-personal-finance" target="_blank" rel="noopener">官方帮助文档</a></div></div></details>
+      </article>
+    </div>
+    <div class="empty" id="empty">没有匹配结果。试试更短的关键词或切回“全部”。</div>
+  </section>
+
+  <section class="section" aria-labelledby="try-title">
+    <div class="section-head"><h2 id="try-title">本周值得尝试的 3 个实践</h2><span class="section-note">仅给出入门路径，不声称已执行实测</span></div>
+    <div class="toolgrid">
+      <article class="tool"><span class="pill">长 Agent 会话</span><h3>Claude Message Threads</h3><p><b>解决：</b>客户端反复发送长历史、首 token 变慢。</p><p><b>入门：</b>在 Messages API 加入 <code>message-threads-2026-08-12</code> Beta header。</p><p><b>门槛：</b>API 账户；价格与速率限制不变。</p><p><b>注意：</b>非 ZDR、非 HIPAA；线程短期保留且不可主动列出/删除。</p><a href="https://docs.anthropic.com/en/docs/build-with-claude/message-threads" target="_blank" rel="noopener">打开文档 →</a></article>
+      <article class="tool"><span class="pill">视频快速迭代</span><h3>Gemini Omni 1.2 Flash</h3><p><b>解决：</b>短视频从参考素材到多轮修改的连续工作流。</p><p><b>入门：</b>Gemini API 视频文档；先用低分辨率草稿。</p><p><b>成本：</b>720p 官方价 0.07 美元/秒；15 秒约 1.05 美元。</p><p><b>注意：</b>上传真人、商标、声音与客户素材前核对授权和数据政策。</p><a href="https://ai.google.dev/gemini-api/docs/video" target="_blank" rel="noopener">打开文档 →</a></article>
+      <article class="tool"><span class="pill">敏感文本本地翻译</span><h3>PLaMo 3 Translate 0.8B</h3><p><b>解决：</b>离线/边缘翻译，减少文档出端。</p><p><b>入门：</b>从 Hugging Face 0.8B 权重验证语言对、术语和延迟。</p><p><b>门槛：</b>本地推理环境；规模越大硬件要求越高。</p><p><b>注意：</b>年营收超过 10 亿日元需商业协议；本地运行仍要管理日志和缓存。</p><a href="https://huggingface.co/pfnet/plamo-3-translate-0.8b" target="_blank" rel="noopener">打开模型 →</a></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="trend-title">
+    <div class="section-head"><h2 id="trend-title">趋势判断与行动建议</h2><span class="section-note">编辑判断，依据本期已核实事实</span></div>
+    <div class="trendgrid">
+      <article class="trend"><h3>1. 建一张“状态台账”，比追榜单更有用</h3><p>Kimi 已兑现权重；Hy4 与 Inkling 仍只是未来承诺。采购或技术雷达至少应拆分：正式服务、预览、候补、权重可下载、许可证可用、真正开源。</p></article>
+      <article class="trend"><h3>2. Agent 评审要从模型扩展到运行时</h3><p>Anthropic、Mistral、AWS 的共同信号是：状态、恢复、审批、引用和权限正成为标准能力。PoC 验收项应加入故障恢复、数据保留、工具权限与可追踪性。</p></article>
+      <article class="trend"><h3>3. 敏感场景先定权限，再谈效果</h3><p>GPT‑6 Cyber 的受限准入与 Personal Finance 的只读设计都在缩小风险面。对安全、金融、医疗等工作流，先定义可读、可写、可执行和人工复核边界。</p></article>
+    </div>
+  </section>
+
+  <section class="section notice" aria-label="资料局限"><strong>资料局限：</strong>本期仅统计 2026 年 11 月 2—8 日已发生且能由一手来源核验的进展。厂商基准、速度和质量表述均按“厂商自述”处理；未获取到稳定公开数值的价格不做推算。无法访问完整往期编辑判断，因此除 Kimi 权重兑现外，不宣称系统性跨期变化。</section>
+
+  <section class="section method" aria-labelledby="method-title"><h2 id="method-title">方法与口径</h2><ul><li>优先使用官方公告、产品文档、模型卡、仓库与许可证；事件日期以实际发布或可用日期为准。</li><li>相同事件合并；未来页面与尚未兑现的预告不计为已发布。开放权重与开源严格区分。</li><li>量化信息只在口径可比时使用；本期不制作跨模型排行榜，也不使用热度、市场份额或增长曲线等无可靠来源数字。</li><li>所有外链均为直接来源；检索时间：2026-11-09（北京时间）。</li></ul></section>
+
+  <footer class="footer"><span>AI 可视化周报 · 2026-11-09</span><span>自包含 UTF‑8 HTML · 无远程字体、图片、脚本或图表库</span></footer>
+</main>
+<script>
+(() => {
+  const cards = [...document.querySelectorAll('.event')];
+  const buttons = [...document.querySelectorAll('.filter')];
+  const input = document.getElementById('search');
+  const result = document.getElementById('result');
+  const empty = document.getElementById('empty');
+  let category = 'all';
+  const normalize = s => s.toLowerCase().replace(/\s+/g,' ').trim();
+  function update(){
+    const query = normalize(input.value);
+    let visible = 0;
+    cards.forEach(card => {
+      const categoryMatch = category === 'all' || card.dataset.cat.split(' ').includes(category);
+      const haystack = normalize(card.textContent + ' ' + (card.dataset.text || ''));
+      const searchMatch = !query || query.split(' ').every(word => haystack.includes(word));
+      const show = categoryMatch && searchMatch;
+      card.classList.toggle('hidden', !show);
+      if(show) visible++;
+    });
+    result.textContent = `${visible} / ${cards.length}`;
+    empty.classList.toggle('show', visible === 0);
+  }
+  buttons.forEach(button => button.addEventListener('click', () => {
+    category = button.dataset.filter;
+    buttons.forEach(b => { b.classList.toggle('active', b === button); b.setAttribute('aria-pressed', b === button ? 'true' : 'false'); });
+    update();
+  }));
+  input.addEventListener('input', update);
+  buttons.forEach((b,i) => b.setAttribute('aria-pressed', i === 0 ? 'true' : 'false'));
+  update();
+})();
+</script>
+</body>
+</html>

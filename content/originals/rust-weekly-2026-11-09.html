@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#b85b2b">
+  <title>Rust 热点周报｜2026-11-09</title>
+  <style>
+    :root{--bg:#f6efe6;--paper:#fffaf4;--ink:#2b1c16;--muted:#715b4e;--copper:#b85b2b;--orange:#e78545;--rust:#7d3017;--line:#dfc9b7;--red:#a3352d;--green:#2f7653;--blue:#356b8c;--violet:#7152a4;--shadow:0 16px 44px rgba(70,35,19,.12);--r:22px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 8% 0,#f3c08e 0,transparent 28%),linear-gradient(180deg,#f2dfca,var(--bg) 34rem);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;line-height:1.68}a{color:var(--copper);text-underline-offset:3px}a:hover{color:var(--rust)}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#efe0d3;border-radius:6px;padding:.1em .35em}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.hero{position:relative;overflow:hidden;margin-top:22px;padding:44px clamp(24px,5vw,64px);border-radius:30px;background:linear-gradient(132deg,#371b11,#6f2e18 60%,#ad5025);color:#fff7ef;box-shadow:var(--shadow)}.hero:after{content:"";position:absolute;width:370px;height:370px;right:-100px;top:-130px;border-radius:50%;border:58px solid rgba(255,255,255,.075)}.brand{display:flex;align-items:center;gap:13px;font-weight:850;letter-spacing:.09em;text-transform:uppercase}.brand svg{width:46px;height:46px}.hero h1{font-size:clamp(2.4rem,7vw,5.2rem);line-height:1;margin:27px 0 14px}.hero .dek{max-width:850px;font-size:clamp(1rem,2vw,1.28rem);color:#f6dac8}.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.pill,.tag{display:inline-flex;align-items:center;border-radius:999px;font-weight:750;font-size:.82rem}.pill{padding:8px 12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2)}.stamp{margin-top:18px;font-size:.87rem;color:#f1c7ae}.toolbar{position:sticky;top:6px;z-index:20;display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;padding:11px;border:1px solid var(--line);border-radius:16px;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(12px);box-shadow:0 6px 25px rgba(65,31,16,.08)}button,input{font:inherit}button{padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);cursor:pointer}button:hover,button.active{background:var(--rust);color:white;border-color:var(--rust)}.search{min-width:180px;flex:1;padding:8px 12px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink)}.section{margin:52px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:18px}.eyebrow{color:var(--copper);font-weight:850;letter-spacing:.11em;text-transform:uppercase;font-size:.78rem}.section h2{font-size:clamp(1.65rem,4vw,2.4rem);line-height:1.2;margin:0}.note{font-size:.9rem;color:var(--muted)}.briefs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.brief{min-height:205px;padding:22px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}.brief .n{font-size:2.65rem;font-weight:900;line-height:1;color:var(--orange)}.brief h3{font-size:1.16rem;margin:18px 0 8px}.brief p{margin:0;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.card{position:relative;padding:24px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);box-shadow:0 10px 30px rgba(69,35,20,.07)}.card.priority{grid-column:span 2;background:linear-gradient(120deg,#fff6ea,#fffdf9)}.card.priority:before{content:"";position:absolute;inset:0 auto 0 0;width:7px;border-radius:22px 0 0 22px;background:linear-gradient(var(--orange),var(--red))}.card[hidden]{display:none}.card-top{display:flex;align-items:start;justify-content:space-between;gap:12px}.card h3{font-size:1.34rem;line-height:1.36;margin:8px 0 10px}.date{font-size:.86rem;color:var(--muted);white-space:nowrap}.tags{display:flex;gap:6px;flex-wrap:wrap}.tag{padding:4px 9px;border:1px solid currentColor;color:var(--copper)}.tag.release{color:var(--green)}.tag.security{color:var(--red)}.tag.proposal{color:var(--violet)}.tag.merged{color:var(--blue)}.fact{margin:14px 0}.impact{margin:14px 0;padding:13px 15px;border-radius:14px;background:#f1e1d2;border-left:4px solid var(--copper)}.impact b{color:var(--rust)}details{margin-top:15px;padding-top:12px;border-top:1px dashed var(--line)}summary{cursor:pointer;color:var(--copper);font-weight:760}details ul{margin-bottom:0;padding-left:1.2rem}.source{display:inline-flex;margin-top:14px;font-weight:760}.matrix{overflow:auto;margin-top:14px}.matrix table{width:100%;border-collapse:collapse;font-size:.9rem}.matrix th,.matrix td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}.matrix th{color:var(--muted)}.timeline{position:relative;padding-left:32px}.timeline:before{content:"";position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:var(--line)}.event{position:relative;margin-bottom:20px;padding:17px 20px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}.event:before{content:"";position:absolute;left:-29px;top:23px;width:12px;height:12px;border-radius:50%;background:var(--copper);box-shadow:0 0 0 5px var(--bg)}.event time{font-weight:850;color:var(--copper)}.event p{margin:5px 0 0;color:var(--muted)}.pulse{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:23px;border:1px solid var(--line);border-radius:var(--r);background:#eee0d2}.pulse article{padding:15px;border-radius:14px;background:rgba(255,255,255,.48)}.pulse h3{font-size:1rem;margin:4px 0}.background{padding:22px;border-radius:var(--r);border:1px solid var(--line);background:linear-gradient(120deg,#f3e7da,#fff9f1)}.sources{columns:2;column-gap:40px;padding-left:1.2rem}.sources li{break-inside:avoid;margin-bottom:9px}.method{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--paper)}footer{padding:35px 0 60px;color:var(--muted);font-size:.9rem}.tiny{font-size:.8rem;color:var(--muted)}
+    @media(max-width:760px){.wrap{width:min(100% - 20px,1180px)}.hero{margin-top:10px;padding:30px 22px;border-radius:22px}.briefs,.grid,.pulse{grid-template-columns:1fr}.card.priority{grid-column:span 1}.section{margin:38px 0}.section-head{align-items:start;flex-direction:column}.sources{columns:1}.card-top{display:block}.date{display:block;margin-top:7px}.toolbar{top:4px}.search{order:-1;flex-basis:100%}}
+    @media(prefers-color-scheme:dark){:root{--bg:#17100d;--paper:#211713;--ink:#f5e8de;--muted:#c7ab99;--line:#51372c;--rust:#ef9860;--shadow:0 18px 45px rgba(0,0,0,.3)}body{background:radial-gradient(circle at 8% 0,#5c2b17 0,transparent 25%),var(--bg)}code{background:#39261e}.impact{background:#312018}.pulse{background:#291b16}.pulse article,.background{background:rgba(255,255,255,.04)}}
+    @media print{body{background:white;color:#111;font-size:10.5pt}.hero{color:#111;background:white;border:1px solid #999;box-shadow:none}.hero .dek,.stamp{color:#333}.hero:after,.toolbar{display:none}.section{margin:28px 0}.brief,.card,.event,.pulse,.method,.background{background:white;box-shadow:none;break-inside:avoid}.grid{display:block}.card{margin-bottom:12px}.sources{columns:2}details>*{display:block!important}a{color:#111;text-decoration:none}}
+  </style>
+</head>
+<body>
+  <header class="wrap hero">
+    <div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="27" fill="none" stroke="#ee975d" stroke-width="6"/><path d="M32 3v12M32 49v12M3 32h12M49 32h12M11.5 11.5l8.5 8.5M44 44l8.5 8.5M52.5 11.5L44 20M20 44l-8.5 8.5" stroke="#fff2e8" stroke-width="4" stroke-linecap="round"/><circle cx="32" cy="32" r="10" fill="#ee975d"/></svg>Rust Weekly Signal · 中文版</div>
+    <h1>Rust 热点周报</h1>
+    <p class="dek">本周安全重点从 Web 请求边界延伸到数据库内存安全与文件解析；工具链同时修补 rustup 回归，rustc 在元数据体积与编译指令数之间做出经测量的取舍。</p>
+    <div class="meta"><span class="pill">本期日期 2026-11-09</span><span class="pill">覆盖 11-02 — 11-08</span><span class="pill">8 条精选动态</span><span class="pill">一手来源优先</span></div>
+    <p class="stamp">检索时间：2026-11-09 08:19（中国标准时间） · 事件日期按原始公告、发布或报告日期标注</p>
+  </header>
+
+  <main class="wrap">
+    <nav class="toolbar" aria-label="内容筛选"><input id="search" class="search" type="search" placeholder="搜索标题、标签或正文…"><button class="active" data-filter="all">全部</button><button data-filter="compiler">编译器 / 语言</button><button data-filter="cargo">Cargo / 工具</button><button data-filter="async">异步 / Web</button><button data-filter="security">安全</button><button data-filter="data">数据 / 解析</button><button id="toggleDetails">展开全部</button><button id="printBtn">打印 / PDF</button></nav>
+
+    <section class="section" aria-labelledby="summary-title">
+      <div class="section-head"><div><div class="eyebrow">Executive brief</div><h2 id="summary-title">3 条重点速览</h2></div><p class="note">按实际影响排序</p></div>
+      <div class="briefs">
+        <article class="brief"><div class="n">01</div><h3>Actix 请求边界收到五项修复</h3><p>涵盖请求走私、压缩炸弹、Brotli 大窗口内存绕过，以及 Windows 8.3 短文件名泄露；公开服务应核对组合版本。</p></article>
+        <article class="brief"><div class="n">02</div><h3>SurrealDB 修复三项内存安全问题</h3><p><code>surrealkv</code> 越界读、KV 后端 use-after-free 与 <code>reblessive</code> 的不健全 Send/Sync，分别需要 1.2.0、SurrealDB 3.3.0 或 4.0.0。</p></article>
+        <article class="brief"><div class="n">03</div><h3>不可信文件仍是高风险入口</h3><p>OCI、ZIP、Excel/OLE2 与 Wikilinks 解析均出现可由小输入触发的穿越、进程终止或资源耗尽问题。</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="hot-title">
+      <div class="section-head"><div><div class="eyebrow">Priority desk</div><h2 id="hot-title">热点卡片</h2></div><p class="note">正式发布、项目进展与测量报告分开标注</p></div>
+      <div class="grid" id="cards">
+        <article class="card priority" data-cat="security async" data-search="actix web http files request smuggling decompression brotli windows short names 3.20.3 4.18.2 0.7.4">
+          <div class="card-top"><div class="tags"><span class="tag security">Web 安全 · 5 项</span><span class="tag">Actix</span><span class="tag">远程输入</span></div><time class="date">公告 2026-11-06</time></div>
+          <h3>1. Actix 修复请求走私、解压耗尽与 Windows 隐藏文件泄露</h3>
+          <p class="fact">本周公告覆盖五条路径：<code>actix-http</code> 对畸形 chunked trailer 的解析差异可形成请求走私；gzip/deflate/Brotli/Zstd 解压可在调用方限额前消耗资源；非标准大窗口 Brotli 可让约 850 字节请求触发约 1 GiB 缓冲区；<code>actix-files</code> 在 Windows 8.3 短文件名卷上可能通过 <code>ENV~1</code> 等别名暴露 <code>.env</code> 或 <code>.git/config</code>。</p>
+          <div class="impact"><b>为什么重要：</b>解压在 handler 与身份校验前发生，单靠提取器大小限制不能挡住；请求走私还取决于前置代理与 Actix 的解析差异，可能绕过代理/WAF 访问控制。</div>
+          <div class="matrix"><table><thead><tr><th>组件</th><th>安全版本 / 条件</th></tr></thead><tbody><tr><td><code>actix-http</code></td><td>请求走私 <code>&gt;=3.20.2</code>；通用解压 <code>&gt;=3.20.1</code>；Brotli 大窗口需 <code>&gt;=3.20.3</code></td></tr><tr><td><code>actix-web</code></td><td><code>&gt;=4.18.2</code>，并解析到安全的 <code>actix-http</code></td></tr><tr><td><code>actix-files</code></td><td>Windows 用户升级到 <code>&gt;=0.7.4</code></td></tr></tbody></table></div>
+          <details><summary>升级与兼容性建议</summary><ul><li>优先锁定 <code>actix-http &gt;=3.20.3</code>、<code>actix-web &gt;=4.18.2</code>；用 <code>cargo tree -i actix-http</code> 核对真实解析版本。</li><li>无法立即升级时，在反向代理或 middleware 层拒绝压缩请求，或从依赖图关闭 <code>compress-brotli</code>；这会影响接受压缩请求的客户端兼容性。</li><li>Windows 静态文件服务不要把密钥、源码与站点文件放同一目录；升级后测试短文件名、chunked trailer、压缩请求和代理连接复用。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0446.html">请求走私公告 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0455.html">Brotli 公告</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0447.html">Actix Web 解压公告</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0443.html">文件泄露公告</a>
+        </article>
+
+        <article class="card priority" data-cat="security data async" data-search="surrealdb surrealkv out of bounds read use after free data race double free reblessive affinitypool 4.0.0 3.3.0 1.2.0">
+          <div class="card-top"><div class="tags"><span class="tag security">高危内存安全 · 3 项</span><span class="tag">SurrealDB</span><span class="tag">KV 后端</span></div><time class="date">公告 2026-11-06</time></div>
+          <h3>2. SurrealDB / SurrealKV 修复越界读、UAF 与双重释放</h3>
+          <p class="fact"><code>surrealkv</code> 对短于内部键格式的输入只用 <code>debug_assert!</code> 检查，release 构建可发生越界读；SurrealDB 多个 KV 后端把非 <code>'static</code> 借用送入 affinity pool，泄露返回 future 后可 use-after-free；<code>surrealdb-core</code> 依赖的 <code>reblessive</code> 又不健全地声明 Send/Sync，安全代码可制造数据竞争与 double free。</p>
+          <div class="impact"><b>实际影响：</b>这些不是普通查询错误，而是内存安全边界问题。攻击面依赖本地数据、损坏/构造 SSTable、后端类型以及调用方能否泄露 future，但安全 Rust 调用方本身无需写 <code>unsafe</code> 就可能触发。</div>
+          <div class="matrix"><table><thead><tr><th>公告</th><th>修复版本</th></tr></thead><tbody><tr><td>SurrealKV 越界读</td><td><code>surrealkv &gt;=1.2.0</code>；SurrealDB 4.0.0 已携带</td></tr><tr><td>affinitypool future UAF</td><td><code>surrealdb &gt;=3.3.0</code></td></tr><tr><td>reblessive Send/Sync</td><td><code>surrealdb-core &gt;=4.0.0</code></td></tr></tbody></table></div>
+          <details><summary>升级路径与风险</summary><ul><li>先通过锁文件确认是否启用 <code>kv-mem</code>、<code>kv-surrealkv</code> 或 <code>kv-rocksdb</code>，以及实际 <code>surrealkv</code> 版本。</li><li>4.0.0 属于主版本升级，需按官方迁移说明回归 SurrealQL、存储后端、数据格式与部署流程；仅为修复 UAF 而不能跨主版时，3.x 至少升级到 3.3.0。</li><li>升级后对现有 SSTable/数据库文件做备份和只读验证，避免把损坏输入测试直接用于唯一生产副本。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0452.html">SurrealKV 公告 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0453.html">UAF 公告</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0454.html">Send/Sync 公告</a>
+        </article>
+
+        <article class="card" data-cat="security cargo data" data-search="ocipkg oci archive path traversal arbitrary write delete image store 0.4.1">
+          <div class="card-top"><div class="tags"><span class="tag security">高危路径穿越</span><span class="tag">OCI</span><span class="tag">供应链</span></div><time class="date">公告 2026-11-06</time></div>
+          <h3>3. ocipkg 加载恶意 OCI 归档可写出或删除镜像仓库之外的文件</h3>
+          <p class="fact"><code>ocipkg &lt;=0.4.0</code> 从归档自身的 <code>index.json</code> 读取镜像名，而解析器允许主机名为 <code>..</code>；目标路径因此可逃逸本地镜像存储。启用 overwrite 时，代码甚至可能先对逃逸路径执行递归删除，再在外部位置解包 layer。</p>
+          <div class="impact"><b>为什么重要：</b>这是安装/制品导入边界上的任意文件写入与删除，公告将其归入可升级为代码执行的路径穿越。需要用户加载攻击者提供的 OCI 归档，但调用方不必已有本地权限。</div>
+          <details><summary>升级建议</summary><ul><li>升级到 <code>ocipkg &gt;=0.4.1</code>；新版本同时校验 OCI reference 语法和最终路径组件。</li><li>在更新前不要对不可信归档使用 overwrite；即使在容器内，也应限制文件权限与挂载范围。</li><li>升级后对镜像名中 <code>..</code>、绝对路径和非 normal 组件的回归样例进行验证。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0450.html">RustSec RUSTSEC-2026-0450 ↗</a>
+        </article>
+
+        <article class="card" data-cat="security data" data-search="zip calamine xls xlsb ole2 symlink unbounded allocation oom process abort 9.0.0 0.38.0">
+          <div class="card-top"><div class="tags"><span class="tag security">高危 DoS · 2 项</span><span class="tag">ZIP / Excel</span><span class="tag">不可信文件</span></div><time class="date">公告 11-02 / 11-03</time></div>
+          <h3>4. 小型恶意 ZIP 与 Excel 文件可终止进程或耗尽内存</h3>
+          <p class="fact"><code>zip::ZipArchive::extract()</code> 会按 symlink 条目中攻击者声明的未压缩大小预分配目标缓冲区，112 字节归档即可请求极大地址空间并触发不可捕获的进程 abort；<code>calamine</code> 的 CFB/OLE2 解析器则可在畸形目录流上 panic，或因自引用 DIFAT 链从 512 字节文件增长到多 GB 分配。</p>
+          <div class="impact"><b>实际影响：</b>上传附件、邮件处理、制品导入、备份恢复和简历/表格解析都可能直接接触不可信文件。ZIP 问题不是 Rust panic，<code>catch_unwind</code> 与工作线程隔离均无法挽救整个进程。</div>
+          <details><summary>修复版本与部署建议</summary><ul><li><code>zip</code> 升级到 <code>&gt;=9.0.0</code>；这是较大版本跨度时应检查 feature、压缩算法和 API 变化。</li><li><code>calamine</code> 升级到 <code>&gt;=0.38.0</code>；影响 <code>.xls</code>、<code>.xlsb</code> 以及从 <code>.xlsx</code> 提取 VBA 的路径。</li><li>无论升级与否，都建议把不可信文档解析放在有限内存、有限 CPU、有限时长的隔离进程中。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0429.html">zip 公告 ↗</a>&nbsp; · &nbsp;<a href="https://rustsec.org/advisories/RUSTSEC-2026-0436.html">calamine 公告</a>
+        </article>
+
+        <article class="card" data-cat="security async data" data-search="pulldown cmark wikilinks nested images quadratic parser markdown 0.13.6">
+          <div class="card-top"><div class="tags"><span class="tag security">高危 DoS</span><span class="tag">Markdown</span><span class="tag">条件触发</span></div><time class="date">公告 2026-11-02</time></div>
+          <h3>5. pulldown-cmark 再修一项 Wikilinks 二次复杂度问题</h3>
+          <p class="fact">启用 <code>Options::ENABLE_WIKILINKS</code> 时，嵌套图片 wikilink（形如 <code>![[![[…]]]]</code>）会让解析器对内部文本反复扫描，耗时随嵌套深度呈二次增长。与上周指数事件膨胀问题不同，本次事件数可很小，但解析工作仍被大量丢弃。</p>
+          <div class="impact"><b>适用条件：</b>仅影响解析不可信 Markdown 且启用 Wikilinks 的应用，包括使用 <code>Options::all()</code>；该选项默认关闭。修复已在 <code>pulldown-cmark 0.13.6</code> 发布。</div>
+          <details><summary>升级与缓解</summary><ul><li>从上周建议的 0.13.5 继续升级到 <code>&gt;=0.13.6</code>，才能同时覆盖新披露的嵌套图片路径。</li><li>无法升级时关闭 <code>ENABLE_WIKILINKS</code>，并限制输入长度、嵌套深度和解析时间。</li><li>0.13.0 之前版本不受该特定功能路径影响；不要仅凭这一条公告判断整体安全状态。</li></ul></details>
+          <a class="source" href="https://rustsec.org/advisories/RUSTSEC-2026-0433.html">RustSec RUSTSEC-2026-0433 ↗</a>
+        </article>
+
+        <article class="card" data-cat="cargo" data-search="rustup 1.29.3 illegal instruction sse4.1 solaris lock regression">
+          <div class="card-top"><div class="tags"><span class="tag release">正式发布</span><span class="tag">rustup 1.29.3</span><span class="tag">工具链安装器</span></div><time class="date">发布 2026-11-03</time></div>
+          <h3>6. rustup 1.29.3 修复旧 x86_64 CPU 与 Solaris 回归</h3>
+          <p class="fact">Rustup 团队发布 1.29.3，修复 1.29.2 后在缺少 SSE4.1 的部分 x86_64 CPU 上出现的 “Illegal instruction”，以及 Solaris 的 “<code>lock()</code> not supported” 错误。</p>
+          <div class="impact"><b>实际影响：</b>如果开发机、构建节点或自托管 runner 使用较旧 x86_64 处理器，1.29.2 可能连正常更新路径都无法完成；Solaris 用户也应更新。其他平台主要是常规补丁升级。</div>
+          <details><summary>更新方式与例外</summary><ul><li>关闭可能占用 rustup 的 IDE 后运行 <code>rustup self update</code>；普通 <code>rustup update</code> 结束时也会更新 rustup。</li><li>若 self-update 本身失败，官方建议下载对应 <code>rustup-init</code>，确认无 rustup 进程后手动替换二进制。</li><li>端点防护软件可能短期拦截新二进制或大量 rust-docs 小文件；不要为绕过扫描而关闭组织安全策略，应走白名单/审核流程。</li></ul></details>
+          <a class="source" href="https://blog.rust-lang.org/2026/11/03/Rustup-1.29.3/">Rust 官方公告 ↗</a>
+        </article>
+
+        <article class="card" data-cat="compiler" data-search="rustc perf rmeta metadata adaptive sparse encoding 33 percent 0.4 instruction November 2">
+          <div class="card-top"><div class="tags"><span class="tag merged">已合并 · 尚未稳定发布</span><span class="tag">rustc 性能</span><span class="tag">官方测量</span></div><time class="date">报告 2026-11-02</time></div>
+          <h3>7. rustc 元数据稀疏编码：部分真实基准 rmeta 缩小 33%</h3>
+          <p class="fact">官方 rustc-perf 周报记录：自适应稀疏编码 PR #164484 在部分真实基准上把 <code>rmeta</code> 体积降低 33%，并降低 max RSS；代价是相关主基准指令数平均增加约 0.4%，cycles 与 wall-time 在该报告中保持中性。团队在合并前接受了这一取舍。</p>
+          <div class="impact"><b>为什么值得关注：</b>大型 workspace 的元数据体积与内存占用会影响磁盘、缓存和增量构建，但这不是“编译快 33%”。数据只适用于报告涵盖的基准与比较范围，不应外推为所有项目性能。</div>
+          <details><summary>开发者该如何使用这条信息</summary><ul><li>该改动已进主分支但尚未随新的 stable Rust 发布；不要把 nightly 结果当成当前稳定工具链行为。</li><li>有大型 workspace 的团队可在对应工具链发布后，记录本项目 <code>target</code>、rmeta、峰值 RSS 与 wall-time，再决定缓存策略。</li><li>本期不把 33% 画成生态趋势图，因为它是特定 PR 在部分基准上的测量结果。</li></ul></details>
+          <a class="source" href="https://github.com/rust-lang/rustc-perf/blob/87c69dbbcdc5f571ebe50dc0107c846b6a102422/triage/2026/2026-11-02.md">rustc-perf 完整报告 ↗</a>&nbsp; · &nbsp;<a href="https://github.com/rust-lang/rust/pull/164484">rust-lang/rust #164484</a>
+        </article>
+
+        <article class="card" data-cat="compiler" data-search="rustc_codegen_gcc aarch64 bootstrap gccjit experimental alternative backend report">
+          <div class="card-top"><div class="tags"><span class="tag proposal">项目进展 · 实验后端</span><span class="tag">AArch64</span><span class="tag">GCC codegen</span></div><time class="date">报告 2026-11-03</time></div>
+          <h3>8. rustc_codegen_gcc 首次在 AArch64 上完整自举 rustc</h3>
+          <p class="fact">项目进展报告称，GCC 代码生成后端已在 AArch64 上完成 rustc 全量 bootstrap，依赖 rustc 对间接返回（sret）处理的重构、禁用非请求的 linker-plugin LTO，以及后端自身的 sret ABI 实现。UI 测试通过数由 7,699 增至 7,958，失败数从 21 降至 17。</p>
+          <div class="impact"><b>状态边界：</b>这是替代代码生成后端的重要里程碑，不代表 stable rustc 默认支持 GCC 后端或已可替代 LLVM。报告仍列出 binutils 同步问题，并计划在完成已知修复和测试后进行 crater run。</div>
+          <details><summary>适用人群与实践建议</summary><ul><li>对非 LLVM 架构支持、GCC 优化或编译器后端开发者值得跟踪；普通应用无需更改默认工具链。</li><li>项目报告中的完成度与测试数量属于该项目自报数据，不是 Rust 官方稳定性承诺。</li><li>试用者应按项目构建说明在隔离环境验证，并与 LLVM 后端比较正确性、诊断和生成代码，而不是直接用于关键生产构建。</li></ul></details>
+          <a class="source" href="https://blog.antoyo.xyz/rustc_codegen_gcc-progress-report-44">项目进展报告 ↗</a>&nbsp; · &nbsp;<a href="https://github.com/rust-lang/rustc_codegen_gcc">官方仓库</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="timeline-title">
+      <div class="section-head"><div><div class="eyebrow">Chronology</div><h2 id="timeline-title">事件时间线</h2></div><p class="note">按公告或报告日期</p></div>
+      <div class="timeline">
+        <article class="event"><time>11 月 2 日</time><p>zip 进程终止、pulldown-cmark 二次复杂度公告发布；rustc-perf 发布当周编译器性能报告。</p></article>
+        <article class="event"><time>11 月 3 日</time><p>rustup 1.29.3 发布；calamine CFB/OLE2 DoS 公告发布；rustc_codegen_gcc 报告 AArch64 自举里程碑。</p></article>
+        <article class="event"><time>11 月 6 日</time><p>Actix、SurrealDB/SurrealKV 与 ocipkg 多项安全公告集中发布。</p></article>
+      </div>
+    </section>
+
+    <section class="section background" aria-labelledby="background-title">
+      <div class="eyebrow">Background · 主覆盖期之前</div>
+      <h2 id="background-title">Cargo <code>required-targets</code> RFC 已批准，尚待实现</h2>
+      <p>RFC #4013 于 2026 年 11 月 1 日合并，早于本期主覆盖期一天，故不计入 8 条主榜。它为 <code>Cargo.toml</code> 的 <code>[package]</code> 提议 <code>required-targets</code> 字段，让包用 <code>cfg</code> 语法声明可构建目标，帮助 workspace 的包选择跳过不适用成员。</p>
+      <p><b>状态提醒：</b>RFC 获批仅代表设计方向通过，不等于当前 stable Cargo 已支持；实现由 <a href="https://github.com/rust-lang/cargo/issues/17671">Cargo #17671</a> 跟踪。它也不等同于限制依赖解析或 <code>cargo vendor</code> 的目标集合，后者被明确拆成其他设计。 <a href="https://github.com/rust-lang/rfcs/pull/4013">RFC 原文</a></p>
+    </section>
+
+    <section class="section pulse" aria-labelledby="pulse-title">
+      <article><div class="eyebrow">Stable channel</div><h3 id="pulse-title">本周无新 stable rustc</h3><p class="tiny">Rust 官方博客在覆盖期内没有新的稳定编译器发布；rustc 性能和 GCC 后端条目均明确不是 stable 功能公告。</p></article>
+      <article><div class="eyebrow">Ecosystem check</div><h3>Tokio / Axum / 数据库 ORM</h3><p class="tiny">Tokio、Axum、Serde、SeaORM、SQLx、utoipa 在 11 月 2 日至 8 日未发现足以进入主榜的重要正式版本；Actix 与 SurrealDB 安全更新优先级更高。</p></article>
+      <article><div class="eyebrow">Scope note</div><h3>安全公告密集周</h3><p class="tiny">主榜 5 条安全项是按影响面合并后的编辑整理，不代表漏洞热度或项目质量排名；同一项目的关联公告没有拆开凑数。</p></article>
+    </section>
+
+    <section class="section" aria-labelledby="sources-title">
+      <div class="section-head"><div><div class="eyebrow">Primary sources</div><h2 id="sources-title">来源区</h2></div><p class="note">社区周报仅用于发现候选</p></div>
+      <ol class="sources">
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0443.html">RUSTSEC-2026-0443 · actix-files</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0446.html">RUSTSEC-2026-0446 · Actix 请求走私</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0447.html">RUSTSEC-2026-0447 · actix-web 解压</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0448.html">RUSTSEC-2026-0448 · actix-http 解压</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0455.html">RUSTSEC-2026-0455 · Brotli 大窗口</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0452.html">RUSTSEC-2026-0452 · SurrealKV 越界读</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0453.html">RUSTSEC-2026-0453 · SurrealDB UAF</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0454.html">RUSTSEC-2026-0454 · SurrealDB double free</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0450.html">RUSTSEC-2026-0450 · ocipkg 路径穿越</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0429.html">RUSTSEC-2026-0429 · zip 进程终止</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0436.html">RUSTSEC-2026-0436 · calamine DoS</a></li>
+        <li><a href="https://rustsec.org/advisories/RUSTSEC-2026-0433.html">RUSTSEC-2026-0433 · pulldown-cmark</a></li>
+        <li><a href="https://blog.rust-lang.org/2026/11/03/Rustup-1.29.3/">Rust Blog · rustup 1.29.3</a></li>
+        <li><a href="https://github.com/rust-lang/rustc-perf/blob/87c69dbbcdc5f571ebe50dc0107c846b6a102422/triage/2026/2026-11-02.md">rustc-perf · 2026-11-02 triage</a></li>
+        <li><a href="https://github.com/rust-lang/rust/pull/164484">rust-lang/rust #164484 · adaptive sparse metadata</a></li>
+        <li><a href="https://blog.antoyo.xyz/rustc_codegen_gcc-progress-report-44">rustc_codegen_gcc Progress Report #44</a></li>
+        <li><a href="https://github.com/rust-lang/rfcs/pull/4013">RFC #4013 · required-targets（背景）</a></li>
+      </ol>
+      <div class="method"><b>资料完整性提示：</b>主体覆盖 2026-11-02 至 2026-11-08，检索截至 2026-11-09 08:19（中国标准时间）。先以 Rust 官方博客、RustSec、官方项目仓库、rustc-perf 与原始 RFC 核验；This Week in Rust 仅用于发现候选，未作为关键事实的唯一依据。RFC #4013 的实际合并日期为 11 月 1 日，因此独立放入背景区。本期没有新的 stable Rust 编译器，也没有把 rustc 主分支性能变化或 rustc_codegen_gcc 项目进展写成稳定能力。修复版本需结合实际 feature、维护分支、MSRV 与主版本迁移风险执行，不能把依赖升级视为无条件兼容。</div>
+    </section>
+  </main>
+
+  <footer class="wrap">Rust 热点周报 · 2026-11-09<br><span class="tiny">“8 条精选”仅是本页编辑整理计数，不代表市场份额、项目排名或量化热度。</span></footer>
+  <script>
+    const cards=[...document.querySelectorAll('.card[data-cat]')],filters=[...document.querySelectorAll('[data-filter]')],search=document.getElementById('search');let active='all';
+    function refresh(){const q=search.value.trim().toLowerCase();cards.forEach(c=>{const byCat=active==='all'||c.dataset.cat.split(' ').includes(active);const hay=(c.dataset.search+' '+c.textContent).toLowerCase();c.hidden=!(byCat&&(!q||hay.includes(q)));});}
+    filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;refresh();}));search.addEventListener('input',refresh);
+    let opened=false;document.getElementById('toggleDetails').addEventListener('click',e=>{opened=!opened;document.querySelectorAll('details').forEach(d=>d.open=opened);e.currentTarget.textContent=opened?'收起全部':'展开全部';});document.getElementById('printBtn').addEventListener('click',()=>window.print());
+  </script>
+</body>
+</html>

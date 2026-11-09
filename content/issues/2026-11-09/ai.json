@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "column": "ai",
+  "date": "2026-11-09",
+  "title": "AI 可视化周报｜2026-11-09",
+  "summary": "原文整理 11 项 AI 动态，侧重模型权重与许可证、有状态 Agent 基础设施，以及敏感能力和数据的使用边界。",
+  "coverage": "2026-11-02 至 2026-11-08；期刊日期 2026-11-09。检索于 2026-11-09（北京时间）。",
+  "provenance": "来自用户指定原始对话及持久文件的当期 HTML 周报，按字节保留。归档阶段核验文件日期、完整性、SHA-256，并检查静态脚本与外链；未重新逐条核验新闻事实，也未复现项目或模型评测。来源链接摘自原文。保留厂商自述、产品访问限制、开放权重许可证与尚未兑现预告的区别；原文未宣称系统性跨期变化。站点导览不替代原文。",
+  "original": {
+    "path": "ai-weekly-2026-11-09.html",
+    "sha256": "4b47fd208fa272350fe73aa02bad79465ec49080457eca091f0f3923f844d48a"
+  },
+  "sources": [
+    {
+      "id": "source-1",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro"
+    },
+    {
+      "id": "source-2",
+      "title": "权重文件树",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/tree/main"
+    },
+    {
+      "id": "source-3",
+      "title": "许可证原文",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro/blob/main/LICENSE"
+    },
+    {
+      "id": "source-4",
+      "title": "官方发布",
+      "url": "https://openai.com/index/gpt-6-cyber/"
+    },
+    {
+      "id": "source-5",
+      "title": "模型与访问文档",
+      "url": "https://platform.openai.com/docs/models/gpt-6-cyber"
+    },
+    {
+      "id": "source-6",
+      "title": "官方发布",
+      "url": "https://openai.com/index/introducing-images-2-6/"
+    },
+    {
+      "id": "source-7",
+      "title": "API 指南",
+      "url": "https://platform.openai.com/docs/guides/image-generation"
+    },
+    {
+      "id": "source-8",
+      "title": "Google 官方公告",
+      "url": "https://blog.google/technology/ai/gemini-omni-1-2-flash/"
+    },
+    {
+      "id": "source-9",
+      "title": "Gemini API 视频文档",
+      "url": "https://ai.google.dev/gemini-api/docs/video"
+    },
+    {
+      "id": "source-10",
+      "title": "腾讯官方发布",
+      "url": "https://www.tencent.com/en-us/articles/2202238.html"
+    },
+    {
+      "id": "source-11",
+      "title": "官方仓库",
+      "url": "https://github.com/Tencent-Hunyuan/Hy4"
+    },
+    {
+      "id": "source-12",
+      "title": "官方公告",
+      "url": "https://thinkingmachines.ai/blog/inkling-2-small/"
+    },
+    {
+      "id": "source-13",
+      "title": "官方模型卡",
+      "url": "https://huggingface.co/thinking-machines-lab/Inkling-2-Small"
+    },
+    {
+      "id": "source-14",
+      "title": "API 发布说明",
+      "url": "https://docs.anthropic.com/en/release-notes/api"
+    },
+    {
+      "id": "source-15",
+      "title": "Message Threads 文档",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/message-threads"
+    },
+    {
+      "id": "source-16",
+      "title": "Managed Agents 文档",
+      "url": "https://docs.mistral.ai/agents/managed-agents"
+    },
+    {
+      "id": "source-17",
+      "title": "Workflow Builder 文档",
+      "url": "https://docs.mistral.ai/agents/workflow-builder"
+    },
+    {
+      "id": "source-18",
+      "title": "AWS 官方公告",
+      "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-answer/"
+    },
+    {
+      "id": "source-19",
+      "title": "PFN 官方公告",
+      "url": "https://www.preferred.jp/en/news/pr20261105/"
+    },
+    {
+      "id": "source-20",
+      "title": "模型入口",
+      "url": "https://huggingface.co/pfnet/plamo-3-translate-0.8b"
+    },
+    {
+      "id": "source-21",
+      "title": "Anthropic 官方发布",
+      "url": "https://www.anthropic.com/news/claude-personal-finance"
+    },
+    {
+      "id": "source-22",
+      "title": "官方帮助文档",
+      "url": "https://support.anthropic.com/en/articles/claude-personal-finance"
+    }
+  ]
+}
